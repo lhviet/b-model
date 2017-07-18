@@ -19,25 +19,6 @@ class UserFriendship {
   constructor() {
   }
 
-  get user_keyid_1() {
-    return this.value['user_keyid_1'];
-  }
-  set user_keyid_1(user_keyid_1: string) {
-    this.value['user_keyid_1'] = user_keyid_1;
-  }
-  get user_keyid_2() {
-    return this.value['user_keyid_2'];
-  }
-  set user_keyid_2(user_keyid_2: string) {
-    this.value['user_keyid_2'] = user_keyid_2;
-  }
-  get status() {
-    return this.value['status'];
-  }
-  set status(status: number) {
-    this.value['status'] = status;
-  }
-
   /**
    * Setup model based on Person model return from server (sModel = server-Model)
    * @param sModel
