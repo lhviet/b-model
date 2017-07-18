@@ -1,12 +1,12 @@
 /*
 * This User model (class) must contain the same attributes in value field of server User/UserBasicInfo model
 * */
-import {HelperLanguage} from "./functions/helperLanguage";
-import {HelperCountry} from "./functions/helperCountry";
-import {Helper} from "./functions/helper";
-import {HelperStatus} from "./functions/helperStatus";
+import {HelperLanguage} from "../functions/helperLanguage";
+import {HelperCountry} from "../functions/helperCountry";
+import {Helper} from "../functions/helper";
+import {HelperStatus} from "../functions/helperStatus";
 
-export class User {
+class User {
   keyid = '';
 
   value = {
@@ -76,3 +76,5 @@ export class User {
   }
 
 }
+
+export default User;

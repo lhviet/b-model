@@ -1,6 +1,6 @@
-import {Helper} from "./functions/helper";
+import {Helper} from "../functions/helper";
 
-export class Info {
+class Info {
 
   keyid = '';
   value: any = {
@@ -43,3 +43,5 @@ export class Info {
     this.addition.created_at = Helper.getDatetime(this.value.created_at);
   }
 }
+
+export default Info;

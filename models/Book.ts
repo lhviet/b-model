@@ -1,9 +1,9 @@
-import {Helper} from "./functions/helper";
-import {HelperLanguage} from "./functions/helperLanguage";
-import {HelperCountry} from "./functions/helperCountry";
-import {HelperStatus} from "./functions/helperStatus";
+import {Helper} from "../functions/helper";
+import {HelperLanguage} from "../functions/helperLanguage";
+import {HelperCountry} from "../functions/helperCountry";
+import {HelperStatus} from "../functions/helperStatus";
 
-export class Book {
+class Book {
 
   keyid = '';
   value: any = {
@@ -130,3 +130,5 @@ export class Book {
   }
 
 }
+
+export default Book;

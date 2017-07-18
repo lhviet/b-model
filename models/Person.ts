@@ -1,10 +1,10 @@
 import * as moment from "moment";
-import {Helper} from "./functions/helper";
-import {HelperLanguage} from "./functions/helperLanguage";
-import {HelperCountry} from "./functions/helperCountry";
-import {HelperStatus} from "./functions/helperStatus";
+import {Helper} from "../functions/helper";
+import {HelperLanguage} from "../functions/helperLanguage";
+import {HelperCountry} from "../functions/helperCountry";
+import {HelperStatus} from "../functions/helperStatus";
 
-export class Person {
+class Person {
 
   keyid = '';
   value: any = {
@@ -125,3 +125,5 @@ export class Person {
   }
 
 }
+
+export default Person;

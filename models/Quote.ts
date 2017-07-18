@@ -1,7 +1,7 @@
+import {Helper} from "../functions/helper";
+import {HelperLanguage} from "../functions/helperLanguage";
 
-import {Helper} from "./functions/helper";
-import {HelperLanguage} from "./functions/helperLanguage";
-export class Quote {
+class Quote {
 
   keyid = '';
   value = {
@@ -43,3 +43,5 @@ export class Quote {
     this.addition.created_at = Helper.getDatetime(this.value.created_at);
   }
 }
+
+export default Quote;

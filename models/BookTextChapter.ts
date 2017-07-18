@@ -1,6 +1,6 @@
-import {Helper} from "./functions/helper";
+import {Helper} from "../functions/helper";
 
-export class BookTextChapter {
+class BookTextChapter {
 
   keyid = '';
   value = {
@@ -49,3 +49,5 @@ export class BookTextChapter {
 
   }
 }
+
+export default BookTextChapter;

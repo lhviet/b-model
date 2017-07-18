@@ -32,4 +32,4 @@ class DbLimitation {
   }
 }
 
-export { DbLimitation };
+export default DbLimitation;

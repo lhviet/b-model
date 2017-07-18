@@ -1,7 +1,7 @@
-import {Helper} from "./functions/helper";
-import {HelperLanguage} from "./functions/helperLanguage";
+import {Helper} from "../functions/helper";
+import {HelperLanguage} from "../functions/helperLanguage";
 
-export class Slider {
+class Slider {
 
   keyid = '';
   value = {
@@ -46,3 +46,5 @@ export class Slider {
     this.addition.created_at = Helper.getDatetime(this.value.created_at);
   }
 }
+
+export default Slider;

@@ -1,5 +1,6 @@
-import {Helper} from "./functions/helper";
-export class EventModel {
+import {Helper} from "../functions/helper";
+
+class EventModel {
   keyid: string;
   value: any;
   /*value: {
@@ -57,3 +58,5 @@ export class EventModel {
     this.addition.created_at = Helper.getDatetime(this.value.created_at);
   }
 }
+
+export default EventModel;

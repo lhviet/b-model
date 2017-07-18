@@ -1,5 +1,5 @@
 
-export class Configs {
+class Configs {
 
   keyid = '';
   value: {
@@ -39,3 +39,5 @@ export class Configs {
   setupAddition() {
   }
 }
+
+export default Configs;

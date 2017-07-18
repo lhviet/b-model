@@ -1,8 +1,8 @@
-import {Helper} from "./functions/helper";
-import {HelperLanguage} from "./functions/helperLanguage";
-import {HelperStatus} from "./functions/helperStatus";
+import {Helper} from "../functions/helper";
+import {HelperLanguage} from "../functions/helperLanguage";
+import {HelperStatus} from "../functions/helperStatus";
 
-export class BookText {
+class BookText {
 
   keyid = '';
   value = {
@@ -122,3 +122,5 @@ export class BookText {
 
   }
 }
+
+export default BookText;

@@ -1,7 +1,7 @@
 /*
  * This UserFriendship model (class) must contain the same attributes in value field of server UserFriendship model
  * */
-import {HelperStatus} from "./functions/helperStatus";
+import {HelperStatus} from "../functions/helperStatus";
 
 class UserFriendship {
   keyid = '';
@@ -56,4 +56,4 @@ class UserFriendship {
   }
 }
 
-export { UserFriendship };
+export default UserFriendship;
