@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://viet_hoang_le@bitbucket.org/viet_hoang_le/bibooki-models.git"
+    "url": "git+https://viet_hoang_le@bitbucket.org/viet_hoang_le/b-models.git"
   },
   "author": "bibooki",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/viet_hoang_le/bibooki-models#readme",
+  "homepage": "https://viet_hoang_le@bitbucket.org/viet_hoang_le/b-models#readme",
 
   "dependencies": {
     "moment": "^2.18.1"
