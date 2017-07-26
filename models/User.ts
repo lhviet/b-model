@@ -69,10 +69,10 @@ class User {
   }
 
   isUser() {
-    return this.value.role=='user';
+    return this.value.role === 'user';
   }
   isAdmin() {
-    return this.value.role=='admin';
+    return this.value.role === 'admin';
   }
 
 }
