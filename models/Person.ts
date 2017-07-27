@@ -4,15 +4,50 @@ import {HelperLanguage} from "../functions/helperLanguage";
 import {HelperCountry} from "../functions/helperCountry";
 import {HelperStatus} from "../functions/helperStatus";
 
+interface IPersonValue {
+  contributor_keyid: string;
+  custom_url: string;
+  native_name: string;
+  english_name: string;
+  alternative_names: {};
+  language: string;
+  country: string;
+  gender: string;
+  year_of_birth: number;
+  year_of_death: number;
+  description: string;
+  tags: string;
+  links: string[];
+  images: string[];
+  updated_at: number;
+  created_at: number;
+  status: string;
+}
+interface IPersonAddition {
+  additional_nameArr: any[];
+  additional_nameArr2: any[];
+  linkArr: any[];
+  imageArr: any[];
+  tags: string[];
+  country: string;
+  language: string;
+  languageEn: string;
+  updated_at: string;
+  created_at: string;
+  age: number;
+  statusColor: string;
+}
+
 class Person {
 
   keyid = '';
-  value: any = {
+
+  value: IPersonValue = {
     contributor_keyid: '',
     custom_url: '',
     native_name: '',
     english_name: '',
-    alternative_names: {},
+    alternative_names: {en: []},
     language: 'en',
     country: 'U_N',
     gender: 'noanswer',
@@ -27,7 +62,7 @@ class Person {
     status: '',
   };
 
-  addition: any = {
+  addition: IPersonAddition = {
     additional_nameArr: [['','en','English']],
     additional_nameArr2: [['','en','English']],
     linkArr: [],
@@ -42,19 +77,17 @@ class Person {
     statusColor: '',
   };
 
-
   constructor() {
-    this.value.alternative_names = {
-      en: []
-    };
   }
 
   /**
    * Setup model based on Person model return from server (sModel = server-Model)
    * @param sModel
-   * @param isFlat
+   * @param {boolean} isFlat
+   * @param {string} withImgCDN
+   * @returns {Person}
    */
-  setupModel(sModel: any, isFlat = false) {
+  setupModel(sModel: any, isFlat = false, withImgCDN = '') {
     this.keyid = sModel.keyid;
     if (isFlat)
       for (let key in this.value) {
@@ -63,11 +96,11 @@ class Person {
       }
     else
       this.value = sModel.value;
-    this.setupAddition();
+    this.setupAddition(withImgCDN);
     return this;
   }
 
-  setupAddition() {
+  setupAddition(withImgCDN = '') {
     // setup alternative_names
     this.addition.additional_nameArr = [['','en','English']];
     this.addition.additional_nameArr2 = [];
@@ -89,14 +122,15 @@ class Person {
 
     // setup links
     this.addition.linkArr = [];
-    for (let link of this.value.links) {
-      this.addition.linkArr.push({url: link});
+    for (const link of this.value.links) {
+      this.addition.linkArr.push({url: ('' + link)});
     }
 
     // setup images
     this.addition.imageArr = [];
-    for (let link of this.value.images) {
-      this.addition.imageArr.push({url: link});
+    for (const link of this.value.images) {
+      const url = link.indexOf('/uploads/') == 0 && withImgCDN ? (withImgCDN + link) : ('' + link);
+      this.addition.imageArr.push({url});
     }
 
     // setup tags
