@@ -100,7 +100,7 @@ class Person {
     return this;
   }
 
-  setupAddition(withImgCDN) {
+  setupAddition(withImgCDN = '') {
     // setup alternative_names
     this.addition.additional_nameArr = [['','en','English']];
     this.addition.additional_nameArr2 = [];
@@ -129,7 +129,7 @@ class Person {
     // setup images
     this.addition.imageArr = [];
     for (const link of this.value.images) {
-      const url = link.indexOf('/uploads/') == 0 && withImgCDN ? (withImgCDN + link) : ('' + link);
+      const url = link.indexOf('/uploads/') === 0 && withImgCDN ? (withImgCDN + link) : ('' + link);
       this.addition.imageArr.push({url});
     }
 
