@@ -96,12 +96,11 @@ class Person {
       }
     else
       this.value = sModel.value;
-    this.value.images = this.value.images.map(link => ((link.indexOf('/uploads/') == 0 && withImgCDN ? withImgCDN : '') + link));
-    this.setupAddition();
+    this.setupAddition(withImgCDN);
     return this;
   }
 
-  setupAddition() {
+  setupAddition(withImgCDN) {
     // setup alternative_names
     this.addition.additional_nameArr = [['','en','English']];
     this.addition.additional_nameArr2 = [];
@@ -130,7 +129,8 @@ class Person {
     // setup images
     this.addition.imageArr = [];
     for (const link of this.value.images) {
-      this.addition.imageArr.push({url: '' + link});
+      const url = link.indexOf('/uploads/') == 0 && withImgCDN ? (withImgCDN + link) : ('' + link);
+      this.addition.imageArr.push({url});
     }
 
     // setup tags
