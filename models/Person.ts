@@ -96,9 +96,7 @@ class Person {
       }
     else
       this.value = sModel.value;
-    this.value.images.map(link => {
-      link = (link.indexOf('/uploads/') == 0 && withImgCDN ? withImgCDN : '') + link;
-    });
+    this.value.images = this.value.images.map(link => ((link.indexOf('/uploads/') == 0 && withImgCDN ? withImgCDN : '') + link));
     this.setupAddition();
     return this;
   }
