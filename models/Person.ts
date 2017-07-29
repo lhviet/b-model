@@ -129,7 +129,8 @@ class Person {
     // setup images
     this.addition.imageArr = [];
     for (const link of this.value.images) {
-      const url = link.indexOf('/uploads/') === 0 && withImgCDN ? (withImgCDN + link) : ('' + link);
+      const isValid = link.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
+      const url = isValid && withImgCDN ? (withImgCDN + link) : ('' + link);
       this.addition.imageArr.push({url});
     }
 

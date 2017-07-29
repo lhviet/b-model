@@ -54,8 +54,9 @@ class Book {
    * Setup model based on Book model return from server (sModel = server-Model)
    * @param sModel
    * @param isFlat
+   * @param {string} withImgCDN
    */
-  setupModel(sModel: any, isFlat = false) {
+  setupModel(sModel: any, isFlat = false, withImgCDN = '') {
     this.keyid = sModel.keyid;
     if (isFlat)
       for (let key in this.value) {
@@ -64,11 +65,11 @@ class Book {
       }
     else
       this.value = sModel.value;
-    this.setupAddition();
+    this.setupAddition(withImgCDN);
     return this;
   }
 
-  setupAddition() {
+  setupAddition(withImgCDN = '') {
     // setup alternative_names
     this.addition.additional_nameArr = [['','en','English']];
     this.addition.additional_nameArr2 = [];
@@ -97,7 +98,9 @@ class Book {
     // setup images
     this.addition.imageArr = [];
     for (let link of this.value.images) {
-      this.addition.imageArr.push({url: link});
+      const isValid = link.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
+      const url = isValid && withImgCDN ? (withImgCDN + link) : ('' + link);
+      this.addition.imageArr.push({url});
     }
 
     // setup tags

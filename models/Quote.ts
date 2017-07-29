@@ -1,5 +1,5 @@
-import {Helper} from "../functions/helper";
-import {HelperLanguage} from "../functions/helperLanguage";
+import {Helper} from '../functions/helper';
+import {HelperLanguage} from '../functions/helperLanguage';
 
 class Quote {
 
@@ -19,6 +19,7 @@ class Quote {
   addition = {
     language: '',
     languageEn: '',
+    cover_url: '',
     created_at: '',
   };
 
@@ -28,19 +29,24 @@ class Quote {
   /**
    * Setup model based on Book model return from server (sModel = server-Model)
    * @param sModel
+   * @param {string} withImgCDN
    */
-  setupModel(sModel: any) {
+  setupModel(sModel: any, withImgCDN = '') {
     this.keyid = sModel.keyid;
     this.value = sModel.value;
-    this.setupAddition();
+    this.setupAddition(withImgCDN);
     return this;
   }
 
-  setupAddition() {
+  setupAddition(withImgCDN = '') {
     this.addition.languageEn = HelperLanguage.getLanguageName(this.value.language);
     this.addition.language = HelperLanguage.getLanguageNative(this.value.language);
 
     this.addition.created_at = Helper.getDatetime(this.value.created_at);
+
+    // setup images
+    const isValid = this.value.cover_url.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
+    this.addition.cover_url = isValid && withImgCDN ? (withImgCDN + this.value.cover_url) : ('' + this.value.cover_url);
   }
 }
 
