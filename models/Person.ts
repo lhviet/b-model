@@ -84,10 +84,9 @@ class Person {
    * Setup model based on Person model return from server (sModel = server-Model)
    * @param sModel
    * @param {boolean} isFlat
-   * @param {string} withImgCDN
    * @returns {Person}
    */
-  setupModel(sModel: any, isFlat = false, withImgCDN = '') {
+  setupModel(sModel: any, isFlat = false): Person {
     this.keyid = sModel.keyid;
     if (isFlat)
       for (let key in this.value) {
@@ -96,11 +95,11 @@ class Person {
       }
     else
       this.value = sModel.value;
-    this.setupAddition(withImgCDN);
+    this.setupAddition();
     return this;
   }
 
-  setupAddition(withImgCDN = '') {
+  setupAddition(): void {
     // setup alternative_names
     this.addition.additional_nameArr = [['','en','English']];
     this.addition.additional_nameArr2 = [];
@@ -129,9 +128,7 @@ class Person {
     // setup images
     this.addition.imageArr = [];
     for (const link of this.value.images) {
-      const isValid = link.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
-      const url = isValid && withImgCDN ? (withImgCDN + link) : ('' + link);
-      this.addition.imageArr.push({url});
+      this.addition.imageArr.push({url: link});
     }
 
     // setup tags
@@ -153,6 +150,21 @@ class Person {
       this.addition.age = 0;
 
     this.addition.statusColor = HelperStatus.getStatusColor(this.value.status);
+  }
+
+  /**
+   * @param {string} cdnHost
+   * @returns {Person}
+   */
+  setupImageCDN(cdnHost = ''): Person {
+    // setup images
+    this.addition.imageArr = [];
+    for (const link of this.value.images) {
+      const isValid = link.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
+      const url = isValid && cdnHost ? (cdnHost + link) : ('' + link);
+      this.addition.imageArr.push({url});
+    }
+    return this;
   }
 
   isPendingOrRejected(): boolean {

@@ -29,24 +29,33 @@ class Quote {
   /**
    * Setup model based on Book model return from server (sModel = server-Model)
    * @param sModel
-   * @param {string} withImgCDN
    */
-  setupModel(sModel: any, withImgCDN = '') {
+  setupModel(sModel: any): Quote {
     this.keyid = sModel.keyid;
     this.value = sModel.value;
-    this.setupAddition(withImgCDN);
+    this.setupAddition();
     return this;
   }
 
-  setupAddition(withImgCDN = '') {
+  setupAddition(): void {
     this.addition.languageEn = HelperLanguage.getLanguageName(this.value.language);
     this.addition.language = HelperLanguage.getLanguageNative(this.value.language);
 
     this.addition.created_at = Helper.getDatetime(this.value.created_at);
 
     // setup images
-    const isValid = this.value.cover_url.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
-    this.addition.cover_url = isValid && withImgCDN ? (withImgCDN + this.value.cover_url) : ('' + this.value.cover_url);
+    this.addition.cover_url = this.value.cover_url;
+  }
+
+  /**
+   * @param {string} cdnHost
+   * @returns {Quote}
+   */
+  setupImageCDN(cdnHost = ''): Quote {
+    // setup images
+    const isValid = this.value.cover_url.indexOf('/uploads/') === 0 || this.value.cover_url.indexOf('/images/') === 0;
+    this.addition.cover_url = isValid && cdnHost ? (cdnHost + this.value.cover_url) : ('' + this.value.cover_url);
+    return this;
   }
 }
 

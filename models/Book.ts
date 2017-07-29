@@ -53,10 +53,10 @@ class Book {
   /**
    * Setup model based on Book model return from server (sModel = server-Model)
    * @param sModel
-   * @param isFlat
-   * @param {string} withImgCDN
+   * @param {boolean} isFlat
+   * @returns {Book}
    */
-  setupModel(sModel: any, isFlat = false, withImgCDN = '') {
+  setupModel(sModel: any, isFlat = false): Book {
     this.keyid = sModel.keyid;
     if (isFlat)
       for (let key in this.value) {
@@ -65,11 +65,11 @@ class Book {
       }
     else
       this.value = sModel.value;
-    this.setupAddition(withImgCDN);
+    this.setupAddition();
     return this;
   }
 
-  setupAddition(withImgCDN = '') {
+  setupAddition(): void {
     // setup alternative_names
     this.addition.additional_nameArr = [['','en','English']];
     this.addition.additional_nameArr2 = [];
@@ -97,10 +97,8 @@ class Book {
 
     // setup images
     this.addition.imageArr = [];
-    for (let link of this.value.images) {
-      const isValid = link.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
-      const url = isValid && withImgCDN ? (withImgCDN + link) : ('' + link);
-      this.addition.imageArr.push({url});
+    for (const link of this.value.images) {
+      this.addition.imageArr.push({url: link});
     }
 
     // setup tags
@@ -118,6 +116,21 @@ class Book {
     this.addition.created_at = Helper.getDatetime(this.value.created_at);
 
     this.addition.statusColor = HelperStatus.getStatusColor(this.value.status);
+  }
+
+  /**
+   * @param {string} cdnHost
+   * @returns {Book}
+   */
+  setupImageCDN(cdnHost = ''): Book {
+    // setup images
+    this.addition.imageArr = [];
+    for (const link of this.value.images) {
+      const isValid = link.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
+      const url = isValid && cdnHost ? (cdnHost + link) : ('' + link);
+      this.addition.imageArr.push({url});
+    }
+    return this;
   }
 
   // update countries' names in additional field
