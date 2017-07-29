@@ -1,4 +1,5 @@
 import * as moment from 'moment';
+import * as shortid from 'shortid';
 
 class BMHelper {
 
@@ -53,6 +54,10 @@ class BMHelper {
     let newUrl = customUrl.toLowerCase().replace(/\s/g, '-');
     newUrl = newUrl.replace(/[^A-Za-z0-9-]/g, '').trim();
     return newUrl;
+  }
+
+  static randomShortid(): string {
+    return shortid.generate();
   }
 }
 

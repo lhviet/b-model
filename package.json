@@ -15,7 +15,8 @@
   "homepage": "https://viet_hoang_le@bitbucket.org/viet_hoang_le/b-models#readme",
   "dependencies": {
     "@angular/core": "^4.3.2",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
     "@angular/compiler": "^4.3.2",
