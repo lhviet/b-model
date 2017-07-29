@@ -1,6 +1,5 @@
-import {BMHelper} from '../functions/helper';
-import {BMHelperLanguage} from '../functions/helperLanguage';
-import {BMHelperStatus} from '../functions/helperStatus';
+
+import {BMHelperLanguage, BMHelper, BMHelperStatus} from '../functions';
 
 class BMBookText {
 

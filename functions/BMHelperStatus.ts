@@ -173,4 +173,4 @@ class BMHelperStatus {
   }
 }
 
-export {BMHelperStatus};
+export default BMHelperStatus;

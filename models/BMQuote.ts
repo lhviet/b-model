@@ -1,5 +1,4 @@
-import {BMHelper} from '../functions/helper';
-import {BMHelperLanguage} from '../functions/helperLanguage';
+import {BMHelperLanguage, BMHelper} from '../functions';
 
 class BMQuote {
 

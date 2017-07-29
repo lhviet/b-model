@@ -1,10 +1,7 @@
 /*
 * This User model (class) must contain the same attributes in value field of server User/UserBasicInfo model
 * */
-import {BMHelperLanguage} from '../functions/helperLanguage';
-import {HelperCountry} from '../functions/helperCountry';
-import {BMHelper} from '../functions/helper';
-import {BMHelperStatus} from '../functions/helperStatus';
+import {BMHelperLanguage, BMHelper, BMHelperCountry, BMHelperStatus} from '../functions';
 
 class BMUser {
   keyid = '';
@@ -64,7 +61,7 @@ class BMUser {
 
   private setupAddition() {
     // setup language & country
-    this.addition.country = HelperCountry.getCountryName(this.basic.country);
+    this.addition.country = BMHelperCountry.getCountryName(this.basic.country);
     this.addition.language = BMHelperLanguage.getLanguageNative(this.basic.language);
     this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
 

@@ -1,8 +1,5 @@
 import * as moment from 'moment';
-import {BMHelper} from '../functions/helper';
-import {BMHelperLanguage} from '../functions/helperLanguage';
-import {HelperCountry} from '../functions/helperCountry';
-import {BMHelperStatus} from '../functions/helperStatus';
+import {BMHelperLanguage, BMHelperCountry, BMHelper, BMHelperStatus} from '../functions';
 
 interface IPersonValue {
   contributor_keyid: string;
@@ -137,7 +134,7 @@ class BMPerson {
     this.addition.tags = this.value.tags ? this.value.tags.split(',') : [];
 
     // setup language & country
-    this.addition.country = HelperCountry.getCountryName(this.value.country);
+    this.addition.country = BMHelperCountry.getCountryName(this.value.country);
     this.addition.languageEn = BMHelperLanguage.getLanguageName(this.value.language);
     this.addition.language = BMHelperLanguage.getLanguageNative(this.value.language);
 

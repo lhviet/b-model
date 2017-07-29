@@ -1,4 +1,4 @@
-import {BMHelper} from '../functions/helper';
+import {BMHelper} from '../functions';
 
 class BMEventModel {
   keyid: string;

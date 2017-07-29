@@ -1,7 +1,7 @@
-import BMHelper from './helper';
-import BMHelperCountry from './helperCountry';
-import BMHelperLanguage from './helperLanguage';
-import BMHelperStatus from './helperStatus';
+import BMHelper from './BMHelper';
+import BMHelperCountry from './BMHelperCountry';
+import BMHelperLanguage from './BMHelperLanguage';
+import BMHelperStatus from './BMHelperStatus';
 
 export {
   BMHelper,

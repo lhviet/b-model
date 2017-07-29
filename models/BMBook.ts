@@ -1,9 +1,6 @@
-import {BMHelper} from '../functions/helper';
-import {BMHelperLanguage} from '../functions/helperLanguage';
-import {HelperCountry} from '../functions/helperCountry';
-import {BMHelperStatus} from '../functions/helperStatus';
-
 // Bibooki Model Book
+import {BMHelperLanguage, BMHelperCountry, BMHelper, BMHelperStatus} from '../functions';
+
 class BMBook {
 
   keyid = '';
@@ -76,7 +73,7 @@ class BMBook {
     // setup alternative_names
     this.addition.additional_nameArr = [['', 'en', 'English']];
     this.addition.additional_nameArr2 = [];
-    if (typeof this.value.alternative_names === 'string'){
+    if (typeof this.value.alternative_names === 'string') {
       this.addition.additional_nameArr.push([this.value.alternative_names, 'en', 'English']);
       this.addition.additional_nameArr2.push([this.value.alternative_names, 'en', 'English']);
     } else {
@@ -87,7 +84,7 @@ class BMBook {
         this.addition.additional_nameArr2.push([altNames2, lang, BMHelperLanguage.getLanguageName(lang)]);
       }
     }
-    if (this.addition.additional_nameArr.length > 1){
+    if (this.addition.additional_nameArr.length > 1) {
       this.addition.additional_nameArr.splice(0, 1);
     }
 
@@ -111,7 +108,7 @@ class BMBook {
     this.addition.language = BMHelperLanguage.getLanguageNative(this.value.language);
     this.addition.countries = this.value.countries ? this.value.countries.split(',') : [];
     this.addition.countryNames = this.addition.countries.map((countryCode: string) => {
-      return HelperCountry.getCountryName(countryCode);
+      return BMHelperCountry.getCountryName(countryCode);
     });
 
     this.addition.updated_at = BMHelper.getDatetime(this.value.updated_at);
@@ -139,7 +136,7 @@ class BMBook {
   updateCountries() {
     this.value.countries = this.addition.countries.toString();
     this.addition.countryNames = this.addition.countries.map((countryCode: string) => {
-      return HelperCountry.getCountryName(countryCode);
+      return BMHelperCountry.getCountryName(countryCode);
     });
   }
 

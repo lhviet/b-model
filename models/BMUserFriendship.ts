@@ -1,7 +1,7 @@
 /*
  * This UserFriendship model (class) must contain the same attributes in value field of server UserFriendship model
  * */
-import {BMHelperStatus} from '../functions/helperStatus';
+import {BMHelperStatus} from '../functions';
 
 class BMUserFriendship {
   keyid = '';
