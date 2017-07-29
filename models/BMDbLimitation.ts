@@ -1,30 +1,30 @@
+class BMDbLimitation {
 
-class DbLimitation {
-  offset: number;
-  limit: number;
-  sorter: string;
-  direct: string;
-
-  static UNLIMITED_FILTERS: DbLimitation = {
+  static UNLIMITED_FILTERS: BMDbLimitation = {
     offset: 0,
     limit: 0,
     sorter: '',
     direct: ''
   };
 
-  static LIMITATION_DEFAULT_25: DbLimitation = {
+  static LIMITATION_DEFAULT_25: BMDbLimitation = {
     offset: 0,
     limit: 25,
     sorter: 'created_at',
     direct: 'desc'
   };
 
-  static LIMITATION_DEFAULT_150: DbLimitation = {
+  static LIMITATION_DEFAULT_150: BMDbLimitation = {
     offset: 0,
     limit: 150,
     sorter: 'created_at',
     direct: 'desc'
   };
+
+  offset: number;
+  limit: number;
+  sorter: string;
+  direct: string;
 
   constructor(offset?: number, limit?: number) {
     this.offset = offset || 0;
@@ -32,4 +32,4 @@ class DbLimitation {
   }
 }
 
-export default DbLimitation;
+export default BMDbLimitation;

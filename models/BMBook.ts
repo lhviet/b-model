@@ -1,9 +1,10 @@
-import {Helper} from "../functions/helper";
-import {HelperLanguage} from "../functions/helperLanguage";
-import {HelperCountry} from "../functions/helperCountry";
-import {HelperStatus} from "../functions/helperStatus";
+import {BMHelper} from '../functions/helper';
+import {BMHelperLanguage} from '../functions/helperLanguage';
+import {HelperCountry} from '../functions/helperCountry';
+import {BMHelperStatus} from '../functions/helperStatus';
 
-class Book {
+// Bibooki Model Book
+class BMBook {
 
   keyid = '';
   value: any = {
@@ -28,8 +29,8 @@ class Book {
   };
 
   addition: any = {
-    additional_nameArr: [['','en','English']],
-    additional_nameArr2: [['','en','English']],
+    additional_nameArr: [['', 'en', 'English']],
+    additional_nameArr2: [['', 'en', 'English']],
     linkArr: [],
     imageArr: [],
     tags: [],
@@ -51,38 +52,39 @@ class Book {
   }
 
   /**
-   * Setup model based on Book model return from server (sModel = server-Model)
+   * Setup model based on BMBook model return from server (sModel = server-Model)
    * @param sModel
    * @param {boolean} isFlat
-   * @returns {Book}
+   * @returns {BMBook}
    */
-  setupModel(sModel: any, isFlat = false): Book {
+  setupModel(sModel: any, isFlat = false): BMBook {
     this.keyid = sModel.keyid;
-    if (isFlat)
-      for (let key in this.value) {
-        if (sModel[key])
+    if (isFlat) {
+      for (const key in this.value) {
+        if (sModel[key]) {
           this.value[key] = sModel[key];
+        }
       }
-    else
+    } else {
       this.value = sModel.value;
+    }
     this.setupAddition();
     return this;
   }
 
   setupAddition(): void {
     // setup alternative_names
-    this.addition.additional_nameArr = [['','en','English']];
+    this.addition.additional_nameArr = [['', 'en', 'English']];
     this.addition.additional_nameArr2 = [];
     if (typeof this.value.alternative_names === 'string'){
-      this.addition.additional_nameArr.push([this.value.alternative_names, 'en','English']);
-      this.addition.additional_nameArr2.push([this.value.alternative_names, 'en','English']);
-    }
-    else {
-      for (let lang in this.value.alternative_names) {
-        let altNames1 = this.value.alternative_names[lang].toString().replace(/,/g, '\n');
-        let altNames2 = this.value.alternative_names[lang].toString().replace(/,/g, ', ');
-        this.addition.additional_nameArr.push([altNames1, lang, HelperLanguage.getLanguageName(lang)]);
-        this.addition.additional_nameArr2.push([altNames2, lang, HelperLanguage.getLanguageName(lang)]);
+      this.addition.additional_nameArr.push([this.value.alternative_names, 'en', 'English']);
+      this.addition.additional_nameArr2.push([this.value.alternative_names, 'en', 'English']);
+    } else {
+      for (const lang in this.value.alternative_names) {
+        const altNames1 = this.value.alternative_names[lang].toString().replace(/,/g, '\n');
+        const altNames2 = this.value.alternative_names[lang].toString().replace(/,/g, ', ');
+        this.addition.additional_nameArr.push([altNames1, lang, BMHelperLanguage.getLanguageName(lang)]);
+        this.addition.additional_nameArr2.push([altNames2, lang, BMHelperLanguage.getLanguageName(lang)]);
       }
     }
     if (this.addition.additional_nameArr.length > 1){
@@ -91,7 +93,7 @@ class Book {
 
     // setup links
     this.addition.linkArr = [];
-    for (let link of this.value.links) {
+    for (const link of this.value.links) {
       this.addition.linkArr.push({url: link});
     }
 
@@ -105,24 +107,24 @@ class Book {
     this.addition.tags = this.value.tags ? this.value.tags.split(',') : [];
 
     // setup language & countries
-    this.addition.languageEn = HelperLanguage.getLanguageName(this.value.language);
-    this.addition.language = HelperLanguage.getLanguageNative(this.value.language);
+    this.addition.languageEn = BMHelperLanguage.getLanguageName(this.value.language);
+    this.addition.language = BMHelperLanguage.getLanguageNative(this.value.language);
     this.addition.countries = this.value.countries ? this.value.countries.split(',') : [];
     this.addition.countryNames = this.addition.countries.map((countryCode: string) => {
       return HelperCountry.getCountryName(countryCode);
     });
 
-    this.addition.updated_at = Helper.getDatetime(this.value.updated_at);
-    this.addition.created_at = Helper.getDatetime(this.value.created_at);
+    this.addition.updated_at = BMHelper.getDatetime(this.value.updated_at);
+    this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
 
-    this.addition.statusColor = HelperStatus.getStatusColor(this.value.status);
+    this.addition.statusColor = BMHelperStatus.getStatusColor(this.value.status);
   }
 
   /**
    * @param {string} cdnHost
-   * @returns {Book}
+   * @returns {BMBook}
    */
-  setupImageCDN(cdnHost = ''): Book {
+  setupImageCDN(cdnHost = ''): BMBook {
     // setup images
     this.addition.imageArr = [];
     for (const link of this.value.images) {
@@ -142,9 +144,9 @@ class Book {
   }
 
   isPendingOrRejected(): boolean {
-    return HelperStatus.isPendingOrRejected(this.value.status);
+    return BMHelperStatus.isPendingOrRejected(this.value.status);
   }
 
 }
 
-export default Book;
+export default BMBook;

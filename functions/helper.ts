@@ -1,6 +1,6 @@
-import * as moment from "moment";
+import * as moment from 'moment';
 
-export class Helper {
+class BMHelper {
 
   static parseArray(input: string): any[] {
     let result = [input];
@@ -8,8 +8,7 @@ export class Helper {
       let tempStr = input.replace(/{/g, '[');
       tempStr = tempStr.replace(/}/g, ']');
       result = JSON.parse(tempStr);
-    }
-    catch (ex) {
+    } catch (ex) {
       console.error('parseArray ERROR = ' + JSON.stringify(ex));
       console.error('parseArray ERROR input = ' + JSON.stringify(input));
     }
@@ -20,8 +19,7 @@ export class Helper {
     let result = {input};
     try {
       result = JSON.parse(input);
-    }
-    catch (ex) {
+    } catch (ex) {
       console.error('parseObject ERROR = ' + JSON.stringify(ex));
       console.error('parseObject ERROR input = ' + JSON.stringify(input));
     }
@@ -29,8 +27,8 @@ export class Helper {
   }
 
   static getDatetime(timestamp: any) {
-    let mom = moment.unix(timestamp);
-    return mom.format("MMM Do, YYYY, h:mm a");
+    const mom = moment.unix(timestamp);
+    return mom.format('MMM Do, YYYY, h:mm a');
   }
 
   static getNumberOfPage(total: number, limit: number): number {
@@ -45,9 +43,8 @@ export class Helper {
     let currentPage = 1;
     if (index >= limit && index < total) {
       currentPage = Math.floor(index / limit) + 1;
-    }
-    else if (index >= total) {
-      currentPage = Helper.getNumberOfPage(total, limit);
+    } else if (index >= total) {
+      currentPage = BMHelper.getNumberOfPage(total, limit);
     }
     return currentPage;
   }
@@ -57,5 +54,6 @@ export class Helper {
     newUrl = newUrl.replace(/[^A-Za-z0-9-]/g, '').trim();
     return newUrl;
   }
-
 }
+
+export default BMHelper;

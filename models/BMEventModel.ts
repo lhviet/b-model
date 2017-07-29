@@ -1,6 +1,6 @@
-import {Helper} from "../functions/helper";
+import {BMHelper} from '../functions/helper';
 
-class EventModel {
+class BMEventModel {
   keyid: string;
   value: any;
   /*value: {
@@ -27,8 +27,10 @@ class EventModel {
     created_at: ''
   };
 
-  constructor(keyid?:string) {
-    if (keyid) this.keyid = keyid;
+  constructor(keyid?: string) {
+    if (keyid) {
+      this.keyid = keyid;
+    }
     this.value = {};
     /*this.value = {
       actor: { keyid: '', username: '', displayname: '', avatar_url: '' },
@@ -55,8 +57,8 @@ class EventModel {
   }
 
   setupAddition() {
-    this.addition.created_at = Helper.getDatetime(this.value.created_at);
+    this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
   }
 }
 
-export default EventModel;
+export default BMEventModel;

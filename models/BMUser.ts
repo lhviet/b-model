@@ -1,12 +1,12 @@
 /*
 * This User model (class) must contain the same attributes in value field of server User/UserBasicInfo model
 * */
-import {HelperLanguage} from "../functions/helperLanguage";
-import {HelperCountry} from "../functions/helperCountry";
-import {Helper} from "../functions/helper";
-import {HelperStatus} from "../functions/helperStatus";
+import {BMHelperLanguage} from '../functions/helperLanguage';
+import {HelperCountry} from '../functions/helperCountry';
+import {BMHelper} from '../functions/helper';
+import {BMHelperStatus} from '../functions/helperStatus';
 
-class User {
+class BMUser {
   keyid = '';
 
   value = {
@@ -45,16 +45,19 @@ class User {
   }
 
   /**
-   * Setup model based on Person model return from server (sModel = server-Model)
+   * Setup model based on BMPerson model return from server (sModel = server-Model)
    * @param sModel
    */
   setupModel(sModel: any) {
-    if (sModel.keyid)
+    if (sModel.keyid) {
       this.keyid = sModel.keyid;
-    if (sModel.value)
+    }
+    if (sModel.value) {
       this.value = sModel.value;
-    if (sModel.basic)
+    }
+    if (sModel.basic) {
       this.basic = sModel.basic;
+    }
     this.setupAddition();
     return this;
   }
@@ -62,10 +65,10 @@ class User {
   private setupAddition() {
     // setup language & country
     this.addition.country = HelperCountry.getCountryName(this.basic.country);
-    this.addition.language = HelperLanguage.getLanguageNative(this.basic.language);
-    this.addition.created_at = Helper.getDatetime(this.value.created_at);
+    this.addition.language = BMHelperLanguage.getLanguageNative(this.basic.language);
+    this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
 
-    this.addition.statusColor = HelperStatus.getStatusColor(this.value.status);
+    this.addition.statusColor = BMHelperStatus.getStatusColor(this.value.status);
   }
 
   isUser() {
@@ -77,4 +80,4 @@ class User {
 
 }
 
-export default User;
+export default BMUser;

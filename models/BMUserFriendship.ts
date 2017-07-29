@@ -1,9 +1,9 @@
 /*
  * This UserFriendship model (class) must contain the same attributes in value field of server UserFriendship model
  * */
-import {HelperStatus} from "../functions/helperStatus";
+import {BMHelperStatus} from '../functions/helperStatus';
 
-class UserFriendship {
+class BMUserFriendship {
   keyid = '';
   value = {
     user_keyid_1: '',
@@ -20,21 +20,23 @@ class UserFriendship {
   }
 
   /**
-   * Setup model based on Person model return from server (sModel = server-Model)
+   * Setup model based on BMPerson model return from server (sModel = server-Model)
    * @param sModel
    */
   setupModel(sModel: any) {
-    if (sModel.keyid)
+    if (sModel.keyid) {
       this.keyid = sModel.keyid;
-    if (sModel.value)
+    }
+    if (sModel.value) {
       this.value = sModel.value;
+    }
     this.setupAddition();
     return this;
   }
 
   private setupAddition() {
-    this.addition.status = HelperStatus.getFriendshipSttLabel(this.value.status);
+    this.addition.status = BMHelperStatus.getFriendshipSttLabel(this.value.status);
   }
 }
 
-export default UserFriendship;
+export default BMUserFriendship;

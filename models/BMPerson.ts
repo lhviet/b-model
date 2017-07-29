@@ -1,8 +1,8 @@
-import * as moment from "moment";
-import {Helper} from "../functions/helper";
-import {HelperLanguage} from "../functions/helperLanguage";
-import {HelperCountry} from "../functions/helperCountry";
-import {HelperStatus} from "../functions/helperStatus";
+import * as moment from 'moment';
+import {BMHelper} from '../functions/helper';
+import {BMHelperLanguage} from '../functions/helperLanguage';
+import {HelperCountry} from '../functions/helperCountry';
+import {BMHelperStatus} from '../functions/helperStatus';
 
 interface IPersonValue {
   contributor_keyid: string;
@@ -23,6 +23,7 @@ interface IPersonValue {
   created_at: number;
   status: string;
 }
+
 interface IPersonAddition {
   additional_nameArr: any[];
   additional_nameArr2: any[];
@@ -38,7 +39,7 @@ interface IPersonAddition {
   statusColor: string;
 }
 
-class Person {
+class BMPerson {
 
   keyid = '';
 
@@ -63,8 +64,8 @@ class Person {
   };
 
   addition: IPersonAddition = {
-    additional_nameArr: [['','en','English']],
-    additional_nameArr2: [['','en','English']],
+    additional_nameArr: [['', 'en', 'English']],
+    additional_nameArr2: [['', 'en', 'English']],
     linkArr: [],
     imageArr: [],
     tags: [],
@@ -81,41 +82,42 @@ class Person {
   }
 
   /**
-   * Setup model based on Person model return from server (sModel = server-Model)
+   * Setup model based on BMPerson model return from server (sModel = server-Model)
    * @param sModel
    * @param {boolean} isFlat
-   * @returns {Person}
+   * @returns {BMPerson}
    */
-  setupModel(sModel: any, isFlat = false): Person {
+  setupModel(sModel: any, isFlat = false): BMPerson {
     this.keyid = sModel.keyid;
-    if (isFlat)
-      for (let key in this.value) {
-        if (sModel[key])
+    if (isFlat) {
+      for (const key in this.value) {
+        if (sModel[key]) {
           this.value[key] = sModel[key];
+        }
       }
-    else
+    } else {
       this.value = sModel.value;
+    }
     this.setupAddition();
     return this;
   }
 
   setupAddition(): void {
     // setup alternative_names
-    this.addition.additional_nameArr = [['','en','English']];
+    this.addition.additional_nameArr = [['', 'en', 'English']];
     this.addition.additional_nameArr2 = [];
-    if (typeof this.value.alternative_names === 'string'){
-      this.addition.additional_nameArr.push([this.value.alternative_names, 'en','English']);
-      this.addition.additional_nameArr2.push([this.value.alternative_names, 'en','English']);
-    }
-    else {
-      for (let lang in this.value.alternative_names) {
-        let altNames1 = this.value.alternative_names[lang].toString().replace(/,/g, '\n');
-        let altNames2 = this.value.alternative_names[lang].toString().replace(/,/g, ', ');
-        this.addition.additional_nameArr.push([altNames1, lang, HelperLanguage.getLanguageName(lang)]);
-        this.addition.additional_nameArr2.push([altNames2, lang, HelperLanguage.getLanguageName(lang)]);
+    if (typeof this.value.alternative_names === 'string') {
+      this.addition.additional_nameArr.push([this.value.alternative_names, 'en', 'English']);
+      this.addition.additional_nameArr2.push([this.value.alternative_names, 'en', 'English']);
+    } else {
+      for (const lang in this.value.alternative_names) {
+        const altNames1 = this.value.alternative_names[lang].toString().replace(/,/g, '\n');
+        const altNames2 = this.value.alternative_names[lang].toString().replace(/,/g, ', ');
+        this.addition.additional_nameArr.push([altNames1, lang, BMHelperLanguage.getLanguageName(lang)]);
+        this.addition.additional_nameArr2.push([altNames2, lang, BMHelperLanguage.getLanguageName(lang)]);
       }
     }
-    if (this.addition.additional_nameArr.length > 1){
+    if (this.addition.additional_nameArr.length > 1) {
       this.addition.additional_nameArr.splice(0, 1);
     }
 
@@ -136,27 +138,29 @@ class Person {
 
     // setup language & country
     this.addition.country = HelperCountry.getCountryName(this.value.country);
-    this.addition.languageEn = HelperLanguage.getLanguageName(this.value.language);
-    this.addition.language = HelperLanguage.getLanguageNative(this.value.language);
+    this.addition.languageEn = BMHelperLanguage.getLanguageName(this.value.language);
+    this.addition.language = BMHelperLanguage.getLanguageNative(this.value.language);
 
-    this.addition.updated_at = Helper.getDatetime(this.value.updated_at);
-    this.addition.created_at = Helper.getDatetime(this.value.created_at);
+    this.addition.updated_at = BMHelper.getDatetime(this.value.updated_at);
+    this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
 
     // setup years of living (ages)
     this.addition.age = +this.value.year_of_death - +this.value.year_of_birth;
-    if (this.addition.age < 0)
+    if (this.addition.age < 0) {
       this.addition.age = moment().year() - +this.value.year_of_birth;
-    if (this.addition.age > 200)
+    }
+    if (this.addition.age > 200) {
       this.addition.age = 0;
+    }
 
-    this.addition.statusColor = HelperStatus.getStatusColor(this.value.status);
+    this.addition.statusColor = BMHelperStatus.getStatusColor(this.value.status);
   }
 
   /**
    * @param {string} cdnHost
-   * @returns {Person}
+   * @returns {BMPerson}
    */
-  setupImageCDN(cdnHost = ''): Person {
+  setupImageCDN(cdnHost = ''): BMPerson {
     // setup images
     this.addition.imageArr = [];
     for (const link of this.value.images) {
@@ -168,9 +172,9 @@ class Person {
   }
 
   isPendingOrRejected(): boolean {
-    return HelperStatus.isPendingOrRejected(this.value.status);
+    return BMHelperStatus.isPendingOrRejected(this.value.status);
   }
 
 }
 
-export default Person;
+export default BMPerson;

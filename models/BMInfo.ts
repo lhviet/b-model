@@ -1,10 +1,10 @@
-import {Helper} from "../functions/helper";
+import {BMHelper} from '../functions/helper';
 
-class Info {
+class BMInfo {
 
   keyid = '';
   value: any = {
-    contributor_keyid: '',// 36 varchars
+    contributor_keyid: '', // 36 varchars
     custom_url: '',       // 125 varchars
     language: 'en',       // 2 chars
     title: '',            // 125 varchars
@@ -39,9 +39,9 @@ class Info {
 
   setupAddition() {
     this.addition.image_location = '/uploads/info/' + this.keyid + '/';
-    this.addition.updated_at = Helper.getDatetime(this.value.updated_at);
-    this.addition.created_at = Helper.getDatetime(this.value.created_at);
+    this.addition.updated_at = BMHelper.getDatetime(this.value.updated_at);
+    this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
   }
 }
 
-export default Info;
+export default BMInfo;

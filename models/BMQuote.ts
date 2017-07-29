@@ -1,7 +1,7 @@
-import {Helper} from '../functions/helper';
-import {HelperLanguage} from '../functions/helperLanguage';
+import {BMHelper} from '../functions/helper';
+import {BMHelperLanguage} from '../functions/helperLanguage';
 
-class Quote {
+class BMQuote {
 
   keyid = '';
   value = {
@@ -27,10 +27,10 @@ class Quote {
   }
 
   /**
-   * Setup model based on Book model return from server (sModel = server-Model)
+   * Setup model based on BMBook model return from server (sModel = server-Model)
    * @param sModel
    */
-  setupModel(sModel: any): Quote {
+  setupModel(sModel: any): BMQuote {
     this.keyid = sModel.keyid;
     this.value = sModel.value;
     this.setupAddition();
@@ -38,10 +38,10 @@ class Quote {
   }
 
   setupAddition(): void {
-    this.addition.languageEn = HelperLanguage.getLanguageName(this.value.language);
-    this.addition.language = HelperLanguage.getLanguageNative(this.value.language);
+    this.addition.languageEn = BMHelperLanguage.getLanguageName(this.value.language);
+    this.addition.language = BMHelperLanguage.getLanguageNative(this.value.language);
 
-    this.addition.created_at = Helper.getDatetime(this.value.created_at);
+    this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
 
     // setup images
     this.addition.cover_url = this.value.cover_url;
@@ -49,9 +49,9 @@ class Quote {
 
   /**
    * @param {string} cdnHost
-   * @returns {Quote}
+   * @returns {BMQuote}
    */
-  setupImageCDN(cdnHost = ''): Quote {
+  setupImageCDN(cdnHost = ''): BMQuote {
     // setup images
     const isValid = this.value.cover_url.indexOf('/uploads/') === 0 || this.value.cover_url.indexOf('/images/') === 0;
     this.addition.cover_url = isValid && cdnHost ? (cdnHost + this.value.cover_url) : ('' + this.value.cover_url);
@@ -59,4 +59,4 @@ class Quote {
   }
 }
 
-export default Quote;
+export default BMQuote;

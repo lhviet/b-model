@@ -1,4 +1,4 @@
-class HelperStatus {
+class BMHelperStatus {
   public static list = {
     pending: {
       code: 'pending',
@@ -91,22 +91,27 @@ class HelperStatus {
   };
 
   static isPending(code: string) {
-    return code == HelperStatus.list.pending.code;
+    return code === BMHelperStatus.list.pending.code;
   }
+
   static isVerifying(code: string) {
-    return code == HelperStatus.list.verifying.code;
+    return code === BMHelperStatus.list.verifying.code;
   }
+
   static isRejected(code: string) {
-    return code == HelperStatus.list.rejected.code;
+    return code === BMHelperStatus.list.rejected.code;
   }
+
   static isDisabled(code: string) {
-    return code == HelperStatus.list.disabled.code;
+    return code === BMHelperStatus.list.disabled.code;
   }
+
   static isActive(code: string) {
-    return code == HelperStatus.list.active.code;
+    return code === BMHelperStatus.list.active.code;
   }
+
   static isPendingOrRejected(code: string) {
-    return (code == HelperStatus.list.pending.code || code == HelperStatus.list.rejected.code);
+    return (code === BMHelperStatus.list.pending.code || code === BMHelperStatus.list.rejected.code);
   }
 
   static getStatusColor(code: string): string {
@@ -132,35 +137,34 @@ class HelperStatus {
   }
 
   static getSharingSttLabel(code: number): string {
-    let sharing_stt = HelperStatus.list.sharing_status;
+    const sharing_stt = BMHelperStatus.list.sharing_status;
     let label = '';
-    for (let key in sharing_stt) {
-      if (sharing_stt[key].code == code) {
+    for (const key in sharing_stt) {
+      if (sharing_stt[key].code === code) {
         label = sharing_stt[key].label;
         break;
       }
     }
     return label;
   }
+
   static getSharingSttIcon(code: number): string {
     let label = '';
-    if (code == 1) {
+    if (code === 1) {
       label = 'fa-globe';
-    }
-    else if (code == 2) {
+    } else if (code === 2) {
       label = 'fa-users';
-    }
-    else if (code == 3) {
+    } else if (code === 3) {
       label = 'fa-user-secret';
     }
     return label;
   }
 
   static getFriendshipSttLabel(code: number): string {
-    let friendship_stt = HelperStatus.list.friendship_status;
+    const friendship_stt = BMHelperStatus.list.friendship_status;
     let label = '';
-    for (let key in friendship_stt) {
-      if (friendship_stt[key].code == code) {
+    for (const key in friendship_stt) {
+      if (friendship_stt[key].code === code) {
         label = friendship_stt[key].label;
         break;
       }
@@ -168,4 +172,5 @@ class HelperStatus {
     return label;
   }
 }
-export {HelperStatus};
+
+export {BMHelperStatus};
