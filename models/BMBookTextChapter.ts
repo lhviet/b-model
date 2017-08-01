@@ -1,7 +1,8 @@
 
 import {BMHelper} from '../functions';
+import BMBase from './BMBase';
 
-class BMBookTextChapter {
+class BMBookTextChapter extends BMBase {
 
   keyid = '';
   value = {
@@ -26,6 +27,15 @@ class BMBookTextChapter {
   };
 
   constructor() {
+    super();
+  }
+
+  /**
+   * @param {string} cdnHost
+   * @returns {BMBookTextChapter}
+   */
+  setupImageCDN(cdnHost = ''): BMBookTextChapter {
+    return super.setupImageCDN(cdnHost);
   }
 
   /**

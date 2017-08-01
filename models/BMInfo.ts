@@ -1,6 +1,7 @@
 import {BMHelper} from '../functions';
+import BMBase from './BMBase';
 
-class BMInfo {
+class BMInfo extends BMBase {
 
   keyid = '';
   value: any = {
@@ -24,7 +25,17 @@ class BMInfo {
     book_keyids: [],
   };
 
-  constructor() {}
+  constructor() {
+    super();
+  }
+
+  /**
+   * @param {string} cdnHost
+   * @returns {BMInfo}
+   */
+  setupImageCDN(cdnHost = ''): BMInfo {
+    return super.setupImageCDN(cdnHost);
+  }
 
   /**
    * Setup model based on the model returned from server (sModel = server-Model)

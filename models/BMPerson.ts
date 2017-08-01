@@ -1,5 +1,6 @@
 import * as moment from 'moment';
 import {BMHelperLanguage, BMHelperCountry, BMHelper, BMHelperStatus} from '../functions';
+import BMBase from './BMBase';
 
 interface IPersonValue {
   contributor_keyid: string;
@@ -36,7 +37,7 @@ interface IPersonAddition {
   statusColor: string;
 }
 
-class BMPerson {
+class BMPerson extends BMBase {
 
   keyid = '';
 
@@ -76,6 +77,15 @@ class BMPerson {
   };
 
   constructor() {
+    super();
+  }
+
+  /**
+   * @param {string} cdnHost
+   * @returns {BMPerson}
+   */
+  setupImageCDN(cdnHost = ''): BMPerson {
+    return super.setupImageCDN(cdnHost);
   }
 
   /**
@@ -151,21 +161,6 @@ class BMPerson {
     }
 
     this.addition.statusColor = BMHelperStatus.getStatusColor(this.value.status);
-  }
-
-  /**
-   * @param {string} cdnHost
-   * @returns {BMPerson}
-   */
-  setupImageCDN(cdnHost = ''): BMPerson {
-    // setup images
-    this.addition.imageArr = [];
-    for (const link of this.value.images) {
-      const isValid = link.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
-      const url = isValid && cdnHost ? (cdnHost + link) : ('' + link);
-      this.addition.imageArr.push({url});
-    }
-    return this;
   }
 
   isPendingOrRejected(): boolean {

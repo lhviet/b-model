@@ -1,7 +1,8 @@
 
 import {BMHelperLanguage, BMHelper, BMHelperStatus} from '../functions';
+import BMBase from './BMBase';
 
-class BMBookText {
+class BMBookText extends BMBase {
 
   keyid = '';
   value = {
@@ -44,9 +45,18 @@ class BMBookText {
   };
 
   constructor() {
+    super();
     this.value.alternative_names = {
       en: []
     };
+  }
+
+  /**
+   * @param {string} cdnHost
+   * @returns {BMBookText}
+   */
+  setupImageCDN(cdnHost = ''): BMBookText {
+    return super.setupImageCDN(cdnHost);
   }
 
   /**

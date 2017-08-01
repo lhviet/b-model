@@ -1,7 +1,8 @@
 // Bibooki Model Book
 import {BMHelperLanguage, BMHelperCountry, BMHelper, BMHelperStatus} from '../functions';
+import BMBase from './BMBase';
 
-class BMBook {
+class BMBook extends BMBase {
 
   keyid = '';
   value: any = {
@@ -43,9 +44,18 @@ class BMBook {
   creditPersonRoles = {}; // in format {personKeyid: ['author', 'writer', 'translator',...]}
 
   constructor() {
+    super();
     this.value.alternative_names = {
       en: []
     };
+  }
+
+  /**
+   * @param {string} cdnHost
+   * @returns {BMBook}
+   */
+  setupImageCDN(cdnHost = ''): BMBook {
+    return super.setupImageCDN(cdnHost);
   }
 
   /**

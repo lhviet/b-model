@@ -23,6 +23,17 @@ class BMSlider {
   }
 
   /**
+   * @param {string} cdnHost
+   * @returns {BMSlider}
+   */
+  setupImageCDN(cdnHost = ''): BMSlider {
+    // setup images
+    const isValid = this.value.cover_url.indexOf('/uploads/') === 0 || this.value.cover_url.indexOf('/images/') === 0;
+    this.addition.cover_url = isValid && cdnHost ? (cdnHost + this.value.cover_url) : ('' + this.value.cover_url);
+    return this;
+  }
+
+  /**
    * Setup model based on BMBook model return from server (sModel = server-Model)
    * @param sModel
    */
