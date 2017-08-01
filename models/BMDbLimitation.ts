@@ -26,9 +26,11 @@ class BMDbLimitation {
   sorter: string;
   direct: string;
 
-  constructor(offset?: number, limit?: number) {
+  constructor(offset?: number, limit?: number, sorter?: string, direct?: string) {
     this.offset = offset || 0;
     this.limit = limit || 25;
+    this.sorter = sorter || '';
+    this.direct = direct || '';
   }
 }
 
