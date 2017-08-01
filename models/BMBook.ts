@@ -127,21 +127,6 @@ class BMBook extends BMBase {
     this.addition.statusColor = BMHelperStatus.getStatusColor(this.value.status);
   }
 
-  /**
-   * @param {string} cdnHost
-   * @returns {BMBook}
-   */
-  setupImageCDN(cdnHost = ''): BMBook {
-    // setup images
-    this.addition.imageArr = [];
-    for (const link of this.value.images) {
-      const isValid = link.indexOf('/uploads/') === 0 || link.indexOf('/images/') === 0;
-      const url = isValid && cdnHost ? (cdnHost + link) : ('' + link);
-      this.addition.imageArr.push({url});
-    }
-    return this;
-  }
-
   // update countries' names in additional field
   updateCountries() {
     this.value.countries = this.addition.countries.toString();
