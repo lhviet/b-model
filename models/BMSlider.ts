@@ -32,7 +32,13 @@ class BMSlider {
       || this.value.cover_url.indexOf('uploads/') === 0
       || this.value.cover_url.indexOf('/images/') === 0
       || this.value.cover_url.indexOf('images/') === 0;
-    this.addition.cover_url = isValid && cdnHost ? (cdnHost + this.value.cover_url) : ('' + this.value.cover_url);
+    if (isValid && cdnHost) {
+      this.addition.cover_url = cdnHost + (this.value.cover_url.indexOf('/') === 0 ?
+        this.value.cover_url.substring(1)
+        : this.value.cover_url);
+    } else {
+      this.addition.cover_url = this.value.cover_url;
+    }
     return this;
   }
 

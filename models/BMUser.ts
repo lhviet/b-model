@@ -53,12 +53,24 @@ class BMUser {
       || this.basic.cover_url.indexOf('uploads/') === 0
       || this.basic.cover_url.indexOf('/images/') === 0
       || this.basic.cover_url.indexOf('images/') === 0;
-    this.addition.cover_url = isValid && cdnHost ? (cdnHost + this.basic.cover_url) : ('' + this.basic.cover_url);
+    if (isValid && cdnHost) {
+      this.addition.cover_url = cdnHost + (this.basic.cover_url.indexOf('/') === 0 ?
+        this.basic.cover_url.substring(1)
+        : this.basic.cover_url);
+    } else {
+      this.addition.cover_url = this.basic.cover_url;
+    }
     isValid = this.basic.avatar_url.indexOf('/uploads/') === 0
       || this.basic.avatar_url.indexOf('uploads/') === 0
       || this.basic.avatar_url.indexOf('/images/') === 0
       || this.basic.avatar_url.indexOf('images/') === 0;
-    this.addition.avatar_url = isValid && cdnHost ? (cdnHost + this.basic.avatar_url) : ('' + this.basic.avatar_url);
+    if (isValid && cdnHost) {
+      this.addition.avatar_url = cdnHost + (this.basic.avatar_url.indexOf('/') === 0 ?
+        this.basic.avatar_url.substring(1)
+        : this.basic.avatar_url);
+    } else {
+      this.addition.avatar_url = this.basic.avatar_url;
+    }
     return this;
   }
 

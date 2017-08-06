@@ -21,8 +21,12 @@ class BMBase {
         || link.indexOf('uploads/') === 0
         || link.indexOf('/images/') === 0
         || link.indexOf('images/') === 0;
-      const url = isValid && cdnHost ? (cdnHost + link) : ('' + link);
-      this.addition.imageArr.push({url});
+      if (isValid && cdnHost) {
+        const url = cdnHost + (link.indexOf('/') === 0 ? link.substring(1) : link);
+        this.addition.imageArr.push({url});
+      } else {
+        this.addition.imageArr.push({url: link});
+      }
     }
     return this;
   }
