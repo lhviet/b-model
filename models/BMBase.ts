@@ -33,7 +33,7 @@ class BMBase {
     for (const urlObj of this.addition.imageArr) {
       const index = cdnHost && cdnHost.length > 0 ? urlObj.url.indexOf(cdnHost) : -1;
       const url = index > -1 ? (urlObj.url.substring(index + cdnHost.length)) : urlObj.url;
-      this.value.images.push({url});
+      this.value.images.push(url);
     }
     return this;
   }
