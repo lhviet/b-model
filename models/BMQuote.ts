@@ -31,7 +31,10 @@ class BMQuote {
    */
   setupImageCDN(cdnHost = ''): BMQuote {
     // setup images
-    const isValid = this.value.cover_url.indexOf('/uploads/') === 0 || this.value.cover_url.indexOf('/images/') === 0;
+    const isValid = this.value.cover_url.indexOf('/uploads/') === 0
+      || this.value.cover_url.indexOf('uploads/') === 0
+      || this.value.cover_url.indexOf('/images/') === 0
+      || this.value.cover_url.indexOf('images/') === 0;
     this.addition.cover_url = isValid && cdnHost ? (cdnHost + this.value.cover_url) : ('' + this.value.cover_url);
     return this;
   }

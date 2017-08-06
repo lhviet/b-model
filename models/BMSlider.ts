@@ -28,7 +28,10 @@ class BMSlider {
    */
   setupImageCDN(cdnHost = ''): BMSlider {
     // setup images
-    const isValid = this.value.cover_url.indexOf('/uploads/') === 0 || this.value.cover_url.indexOf('/images/') === 0;
+    const isValid = this.value.cover_url.indexOf('/uploads/') === 0
+      || this.value.cover_url.indexOf('uploads/') === 0
+      || this.value.cover_url.indexOf('/images/') === 0
+      || this.value.cover_url.indexOf('images/') === 0;
     this.addition.cover_url = isValid && cdnHost ? (cdnHost + this.value.cover_url) : ('' + this.value.cover_url);
     return this;
   }
@@ -59,7 +62,8 @@ class BMSlider {
     this.addition.language = BMHelperLanguage.getLanguageNative(this.value.language);
 
     // try to decache the image
-    if (this.value.cover_url.indexOf('/uploads/slider/') > -1) {
+    if (this.value.cover_url.indexOf('/uploads/slider/') > -1
+      || this.value.cover_url.indexOf('uploads/slider/') > -1) {
       this.addition.cover_url = this.value.cover_url + '?_ts=' + new Date().getTime();
     } else {
       this.addition.cover_url = this.value.cover_url;

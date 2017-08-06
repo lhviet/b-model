@@ -49,9 +49,15 @@ class BMUser {
    */
   setupImageCDN(cdnHost = ''): BMUser {
     // setup images
-    let isValid = this.basic.cover_url.indexOf('/uploads/') === 0 || this.basic.cover_url.indexOf('/images/') === 0;
+    let isValid = this.basic.cover_url.indexOf('/uploads/') === 0
+      || this.basic.cover_url.indexOf('uploads/') === 0
+      || this.basic.cover_url.indexOf('/images/') === 0
+      || this.basic.cover_url.indexOf('images/') === 0;
     this.addition.cover_url = isValid && cdnHost ? (cdnHost + this.basic.cover_url) : ('' + this.basic.cover_url);
-    isValid = this.basic.avatar_url.indexOf('/uploads/') === 0 || this.basic.avatar_url.indexOf('/images/') === 0;
+    isValid = this.basic.avatar_url.indexOf('/uploads/') === 0
+      || this.basic.avatar_url.indexOf('uploads/') === 0
+      || this.basic.avatar_url.indexOf('/images/') === 0
+      || this.basic.avatar_url.indexOf('images/') === 0;
     this.addition.avatar_url = isValid && cdnHost ? (cdnHost + this.basic.avatar_url) : ('' + this.basic.avatar_url);
     return this;
   }
