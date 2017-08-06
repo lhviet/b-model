@@ -57,6 +57,18 @@ class BMUser {
   }
 
   /**
+   * @param {string} cdnHost
+   * @returns {BMUser}
+   */
+  convertAdditionImg2Value(cdnHost = ''): BMUser {
+    let index = cdnHost && cdnHost.length > 0 ? this.addition.cover_url.indexOf(cdnHost) : -1;
+    this.basic.cover_url = index > -1 ? (this.addition.cover_url.substring(index + cdnHost.length)) : this.addition.cover_url;
+    index = cdnHost && cdnHost.length > 0 ? this.addition.avatar_url.indexOf(cdnHost) : -1;
+    this.basic.avatar_url = index > -1 ? (this.addition.avatar_url.substring(index + cdnHost.length)) : this.addition.avatar_url;
+    return this;
+  }
+
+  /**
    * Setup model based on BMPerson model return from server (sModel = server-Model)
    * @param sModel
    */

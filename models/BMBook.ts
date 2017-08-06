@@ -59,6 +59,14 @@ class BMBook extends BMBase {
   }
 
   /**
+   * @param {string} cdnHost
+   * @returns {BMBook}
+   */
+  convertAdditionImg2Value(cdnHost = ''): BMBook {
+    return super.convertAdditionImg2Value(cdnHost);
+  }
+
+  /**
    * Setup model based on BMBook model return from server (sModel = server-Model)
    * @param sModel
    * @param {boolean} isFlat

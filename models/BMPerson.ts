@@ -89,6 +89,14 @@ class BMPerson extends BMBase {
   }
 
   /**
+   * @param {string} cdnHost
+   * @returns {BMPerson}
+   */
+  convertAdditionImg2Value(cdnHost = ''): BMPerson {
+    return super.convertAdditionImg2Value(cdnHost);
+  }
+
+  /**
    * Setup model based on BMPerson model return from server (sModel = server-Model)
    * @param sModel
    * @param {boolean} isFlat

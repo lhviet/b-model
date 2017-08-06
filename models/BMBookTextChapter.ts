@@ -39,6 +39,14 @@ class BMBookTextChapter extends BMBase {
   }
 
   /**
+   * @param {string} cdnHost
+   * @returns {BMBookTextChapter}
+   */
+  convertAdditionImg2Value(cdnHost = ''): BMBookTextChapter {
+    return super.convertAdditionImg2Value(cdnHost);
+  }
+
+  /**
    * Setup model based on the model returned from server (sModel = server-Model)
    * @param sModel
    */

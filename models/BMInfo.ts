@@ -38,6 +38,14 @@ class BMInfo extends BMBase {
   }
 
   /**
+   * @param {string} cdnHost
+   * @returns {BMInfo}
+   */
+  convertAdditionImg2Value(cdnHost = ''): BMInfo {
+    return super.convertAdditionImg2Value(cdnHost);
+  }
+
+  /**
    * Setup model based on the model returned from server (sModel = server-Model)
    * @param sModel
    */

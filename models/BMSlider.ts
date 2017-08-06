@@ -34,6 +34,16 @@ class BMSlider {
   }
 
   /**
+   * @param {string} cdnHost
+   * @returns {BMSlider}
+   */
+  convertAdditionImg2Value(cdnHost = ''): BMSlider {
+    const index = cdnHost && cdnHost.length > 0 ? this.addition.cover_url.indexOf(cdnHost) : -1;
+    this.value.cover_url = index > -1 ? (this.addition.cover_url.substring(index + cdnHost.length)) : this.addition.cover_url;
+    return this;
+  }
+
+  /**
    * Setup model based on BMBook model return from server (sModel = server-Model)
    * @param sModel
    */
