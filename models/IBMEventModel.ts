@@ -1,9 +1,7 @@
-import {IBMEventModel} from './IBMEventModel';
+import {IBMBase} from './IBMBase';
 
-export class BMEventModel implements IBMEventModel {
+export interface IBMEventModel extends IBMBase {
 
-  keyid: string;
-  value: any;
   /*value: {
     actor: {
       keyid: string,
@@ -23,8 +21,4 @@ export class BMEventModel implements IBMEventModel {
     description: string,
     created_at: number
   };*/
-
-  constructor() {
-  }
-
 }

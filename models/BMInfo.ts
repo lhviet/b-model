@@ -1,7 +1,6 @@
-import {BMHelper} from '../functions';
-import BMBase from './BMBase';
+import {IBMInfo} from './IBMInfo';
 
-class BMInfo extends BMBase {
+export class BMInfo implements IBMInfo{
 
   keyid = '';
   value: any = {
@@ -15,52 +14,6 @@ class BMInfo extends BMBase {
     created_at: 0,        // 10 digits
   };
 
-  addition: any = {
-    image_location: '',
-    imageArr: [],
-    updated_at: '',
-    created_at: '',
-
-    person_keyids: [],
-    book_keyids: [],
-  };
-
   constructor() {
-    super();
-  }
-
-  /**
-   * @param {string} cdnHost
-   * @returns {BMInfo}
-   */
-  setupImageCDN(cdnHost = ''): BMInfo {
-    return super.setupImageCDN(cdnHost);
-  }
-
-  /**
-   * @param {string} cdnHost
-   * @returns {BMInfo}
-   */
-  convertAdditionImg2Value(cdnHost = ''): BMInfo {
-    return super.convertAdditionImg2Value(cdnHost);
-  }
-
-  /**
-   * Setup model based on the model returned from server (sModel = server-Model)
-   * @param sModel
-   */
-  setupModel(sModel: any) {
-    this.keyid = sModel.keyid;
-    this.value = sModel.value;
-    this.setupAddition();
-    return this;
-  }
-
-  setupAddition() {
-    this.addition.image_location = '/uploads/info/' + this.keyid + '/';
-    this.addition.updated_at = BMHelper.getDatetime(this.value.updated_at);
-    this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
   }
 }
-
-export default BMInfo;

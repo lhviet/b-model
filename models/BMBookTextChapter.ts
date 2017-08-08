@@ -1,8 +1,6 @@
+import {IBMBookTextChapter} from './IBMBookTextChapter';
 
-import {BMHelper} from '../functions';
-import BMBase from './BMBase';
-
-class BMBookTextChapter extends BMBase {
+export class BMBookTextChapter implements IBMBookTextChapter {
 
   keyid = '';
   value = {
@@ -19,55 +17,6 @@ class BMBookTextChapter extends BMBase {
     created_at: 0,
   };
 
-  addition = {
-    linkArr: [],
-    imageArr: [],
-    updated_at: '',
-    created_at: '',
-  };
-
   constructor() {
-    super();
-  }
-
-  /**
-   * @param {string} cdnHost
-   * @returns {BMBookTextChapter}
-   */
-  setupImageCDN(cdnHost = ''): BMBookTextChapter {
-    return super.setupImageCDN(cdnHost);
-  }
-
-  /**
-   * @param {string} cdnHost
-   * @returns {BMBookTextChapter}
-   */
-  convertAdditionImg2Value(cdnHost = ''): BMBookTextChapter {
-    return super.convertAdditionImg2Value(cdnHost);
-  }
-
-  /**
-   * Setup model based on the model returned from server (sModel = server-Model)
-   * @param sModel
-   */
-  setupModel(sModel: any) {
-    this.keyid = sModel.keyid;
-    this.value = sModel.value;
-    this.setupAddition();
-    return this;
-  }
-
-  setupAddition() {
-    // setup links
-    this.addition.linkArr = [];
-    for (const link of this.value.links) {
-      this.addition.linkArr.push({url: link});
-    }
-
-    this.addition.updated_at = BMHelper.getDatetime(this.value.updated_at);
-    this.addition.created_at = BMHelper.getDatetime(this.value.created_at);
-
   }
 }
-
-export default BMBookTextChapter;

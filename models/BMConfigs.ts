@@ -1,4 +1,6 @@
-class BMConfigs {
+import {IBMConfigs} from './IBMConfigs';
+
+export class BMConfigs implements IBMConfigs {
 
   static CONFIG_NAMES = {
     sliders_in_homepage: 'slider_home_', // name to be store in BMConfigs Table slider_home_en, slider_home_vn, ...
@@ -16,27 +18,6 @@ class BMConfigs {
     description: '',
   };
 
-  addition = {};
-
-  constructor(name?: string) {
-    if (name) {
-      this.value.name = name;
-    }
-  }
-
-  /**
-   * Setup model based on BMBook model return from server (sModel = server-Model)
-   * @param sModel
-   */
-  setupModel(sModel: any) {
-    this.keyid = sModel.keyid;
-    this.value = sModel.value;
-    this.setupAddition();
-    return this;
-  }
-
-  setupAddition() {
+  constructor() {
   }
 }
-
-export default BMConfigs;

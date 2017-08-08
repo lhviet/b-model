@@ -1,20 +1,22 @@
-class BMDbLimitation {
+import {IBMDbLimitation} from './IBMDbLimitation';
 
-  static UNLIMITED_FILTERS: BMDbLimitation = {
+export class BMDbLimitation implements IBMDbLimitation{
+
+  static UNLIMITED_FILTERS: IBMDbLimitation = {
     offset: 0,
     limit: 0,
     sorter: '',
     direct: ''
   };
 
-  static LIMITATION_DEFAULT_25: BMDbLimitation = {
+  static LIMITATION_DEFAULT_25: IBMDbLimitation = {
     offset: 0,
     limit: 25,
     sorter: 'created_at',
     direct: 'desc'
   };
 
-  static LIMITATION_DEFAULT_150: BMDbLimitation = {
+  static LIMITATION_DEFAULT_150: IBMDbLimitation = {
     offset: 0,
     limit: 150,
     sorter: 'created_at',
@@ -33,5 +35,3 @@ class BMDbLimitation {
     this.direct = direct || '';
   }
 }
-
-export default BMDbLimitation;
