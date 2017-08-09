@@ -9,6 +9,7 @@ import {IBMPerson} from './interfaces/IBMPerson';
 import {IBMQuote} from './interfaces/IBMQuote';
 import {IBMSlider} from './interfaces/IBMSlider';
 import {IBMUser} from './interfaces/IBMUser';
+import {IBMUserBasicInfo} from './interfaces/IBMUserBasicInfo';
 import {IBMUserFriendship} from './interfaces/IBMUserFriendship';
 import {BMModel} from './BMModel';
 
@@ -24,6 +25,7 @@ export {
   IBMQuote,
   IBMSlider,
   IBMUser,
+  IBMUserBasicInfo,
   IBMUserFriendship,
   BMModel
 };

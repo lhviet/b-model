@@ -183,15 +183,6 @@ export class BMModel {
     };
   }
 
-  static initLimitation(): IBMDbLimitation {
-    return {
-      offset: 0,
-      limit: 25,
-      sorter: '',
-      direct: ''
-    }
-  }
-
   constructor() {
   }
 
