@@ -7,7 +7,7 @@ export interface IBMPerson extends IBMBase {
     custom_url: string;
     native_name: string;
     english_name: string;
-    alternative_names: {};
+    alternative_names: any;
     language: string;
     country: string;
     gender: string;
