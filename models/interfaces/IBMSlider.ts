@@ -1,6 +1,6 @@
-import {IBMBase} from './IBMBase';
+export interface IBMSlider {
 
-export interface IBMSlider extends IBMBase {
+  keyid: string;
 
   value: {
     language: string, // 2 chars

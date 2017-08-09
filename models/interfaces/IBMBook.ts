@@ -1,6 +1,6 @@
-import {IBMBase} from './IBMBase';
+export interface IBMBook {
 
-export interface IBMBook extends IBMBase {
+  keyid: string;
 
   value: {
     contributor_keyid: string,

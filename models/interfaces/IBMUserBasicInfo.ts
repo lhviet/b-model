@@ -1,6 +1,6 @@
-import {IBMBase} from './IBMBase';
+export interface IBMUserBasicInfo {
 
-export interface IBMUserBasicInfo extends IBMBase {
+  keyid: string;
 
   value: {
     update_from_provider: string,

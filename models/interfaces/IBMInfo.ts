@@ -1,6 +1,6 @@
-import {IBMBase} from './IBMBase';
+export interface IBMInfo {
 
-export interface IBMInfo extends IBMBase {
+  keyid: string;
 
   value: {
     contributor_keyid: string, // 36 varchars

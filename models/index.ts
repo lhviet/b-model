@@ -1,28 +1,16 @@
-import {IBMBook} from './IBMBook';
-import {IBMBookText} from './IBMBookText';
-import {IBMBookTextChapter} from './IBMBookTextChapter';
-import {IBMConfigs} from './IBMConfigs';
-import {IBMDbLimitation} from './IBMDbLimitation';
-import {IBMEventModel} from './IBMEventModel';
-import {IBMInfo} from './IBMInfo';
-import {IBMPerson} from './IBMPerson';
-import {IBMQuote} from './IBMQuote';
-import {IBMSlider} from './IBMSlider';
-import {IBMUser} from './IBMUser';
-import {IBMUserFriendship} from './IBMUserFriendship';
-
-import {BMBook} from './BMBook';
-import {BMBookText} from './BMBookText';
-import {BMBookTextChapter} from './BMBookTextChapter';
-import {BMConfigs} from './BMConfigs';
-import {BMDbLimitation} from './BMDbLimitation';
-import {BMEventModel} from './BMEventModel';
-import {BMInfo} from './BMInfo';
-import {BMPerson} from './BMPerson';
-import {BMQuote} from './BMQuote';
-import {BMSlider} from './BMSlider';
-import {BMUser} from './BMUser';
-import {BMUserFriendship} from './BMUserFriendship';
+import {IBMBook} from './interfaces/IBMBook';
+import {IBMBookText} from './interfaces/IBMBookText';
+import {IBMBookTextChapter} from './interfaces/IBMBookTextChapter';
+import {IBMConfigs} from './interfaces/IBMConfigs';
+import {IBMDbLimitation} from './interfaces/IBMDbLimitation';
+import {IBMEventModel} from './interfaces/IBMEventModel';
+import {IBMInfo} from './interfaces/IBMInfo';
+import {IBMPerson} from './interfaces/IBMPerson';
+import {IBMQuote} from './interfaces/IBMQuote';
+import {IBMSlider} from './interfaces/IBMSlider';
+import {IBMUser} from './interfaces/IBMUser';
+import {IBMUserFriendship} from './interfaces/IBMUserFriendship';
+import {BMModel} from './BMModel';
 
 export {
   IBMBook,
@@ -37,16 +25,5 @@ export {
   IBMSlider,
   IBMUser,
   IBMUserFriendship,
-  BMBook,
-  BMBookText,
-  BMBookTextChapter,
-  BMConfigs,
-  BMDbLimitation,
-  BMEventModel,
-  BMInfo,
-  BMPerson,
-  BMQuote,
-  BMSlider,
-  BMUser,
-  BMUserFriendship
+  BMModel
 };

@@ -1,6 +1,6 @@
-import {IBMBase} from './IBMBase';
+export interface IBMConfigs {
 
-export interface IBMConfigs extends IBMBase {
+  keyid: string;
 
   value: {
     name: string,       // 15 chars

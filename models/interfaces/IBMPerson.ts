@@ -1,6 +1,6 @@
-import {IBMBase} from './IBMBase';
+export interface IBMPerson {
 
-export interface IBMPerson extends IBMBase {
+  keyid: string;
 
   value: {
     contributor_keyid: string;

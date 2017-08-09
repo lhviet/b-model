@@ -1,6 +1,6 @@
-import {IBMBase} from './IBMBase';
+export interface IBMQuote {
 
-export interface IBMQuote extends IBMBase {
+  keyid: string;
 
   value: {
     person_keyid: string,   // 36 chars

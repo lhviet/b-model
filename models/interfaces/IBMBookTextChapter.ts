@@ -1,6 +1,7 @@
-import {IBMBase} from './IBMBase';
+export interface IBMBookTextChapter {
 
-export interface IBMBookTextChapter extends IBMBase {
+
+  keyid: string;
 
   value: {
     booktext_keyid: string, // 36 varchars

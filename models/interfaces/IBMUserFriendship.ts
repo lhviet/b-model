@@ -1,6 +1,6 @@
-import {IBMBase} from './IBMBase';
+export interface IBMUserFriendship {
 
-export interface IBMUserFriendship extends IBMBase {
+  keyid: string;
 
   value: {
     user_keyid_1: string,

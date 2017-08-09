@@ -1,6 +1,7 @@
-import {IBMBase} from './IBMBase';
+export interface IBMBookText {
 
-export interface IBMBookText extends IBMBase {
+  keyid: string;
+
   value: {
     contributor_keyid: string,
     book_keyid: string,
@@ -21,4 +22,5 @@ export interface IBMBookText extends IBMBase {
     updated_at: number,
     created_at: number,
   };
+
 }

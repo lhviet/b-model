@@ -1,10 +1,11 @@
-import {IBMBase} from './IBMBase';
+export interface IBMUser {
 
-export interface IBMUser extends IBMBase {
+  keyid: string;
 
   value: {
     username: string,
     email: string,
+    password?: string,
     status: string,
     role: string,
     created_at: number,
