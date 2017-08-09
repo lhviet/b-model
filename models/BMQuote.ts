@@ -8,13 +8,15 @@ export class BMQuote implements IBMQuote{
     book_keyid: '',     // 36 chars
     person_info: '',    // 125 chars
     book_info: '',      // 125 chars
-    language: 'en', // 2 chars
+    language: '', // 2 chars
     content: '',        // 1,255 varchars
-    cover_url: '/images/default-cover.png', // 1,255 chars
+    cover_url: '', // 1,255 chars
     tags: '', // 250 chars
     created_at: 0,   // 10 digits
   };
 
   constructor() {
+    this.value.language = 'en';
+    this.value.cover_url = '/images/default-cover.png';
   }
 }

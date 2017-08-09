@@ -6,7 +6,7 @@ export class BMInfo implements IBMInfo{
   value: any = {
     contributor_keyid: '', // 36 varchars
     custom_url: '',       // 125 varchars
-    language: 'en',       // 2 chars
+    language: '',       // 2 chars
     title: '',            // 125 varchars
     description: '',      // 512 varchars
     content: '',          // TEXT
@@ -15,5 +15,6 @@ export class BMInfo implements IBMInfo{
   };
 
   constructor() {
+    this.value.language = 'en';
   }
 }

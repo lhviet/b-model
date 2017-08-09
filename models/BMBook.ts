@@ -9,14 +9,14 @@ export class BMBook implements IBMBook {
     native_name: '',
     english_name: '',
     alternative_names: {},
-    language: 'en',
+    language: '',
     countries: '',
-    type: 'text',
+    type: '',
     year_of_start: 0,
     year_of_end: 0,
     author_info: '',
-    links: [''],
-    images: ['/images/default-book.png'],
+    links: [],
+    images: [],
     updated_at: 0,
     created_at: 0,
     status: '',
@@ -25,9 +25,11 @@ export class BMBook implements IBMBook {
   };
 
   constructor() {
-    this.value.alternative_names = {
-      en: []
-    };
+    this.value.language = 'en';
+    this.value.type = 'text';
+    this.value.links.push('');
+    this.value.images.push('/images/default-book.png');
+    this.value.alternative_names['en'] = [];
   }
 
 }

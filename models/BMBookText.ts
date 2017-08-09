@@ -7,7 +7,7 @@ export class BMBookText implements IBMBookText {
     contributor_keyid: '',
     book_keyid: '',
     custom_url: '',
-    language: 'en',
+    language: '',
     native_name: '',
     alternative_names: {},
     author_info: '',
@@ -15,8 +15,8 @@ export class BMBookText implements IBMBookText {
     description: '',
     year: null,
     status: 1,
-    links: [''],
-    images: ['/images/default-book.png'],
+    links: [],
+    images: [],
     files: [''],
     isbn: '',
     tags: '',
@@ -25,8 +25,9 @@ export class BMBookText implements IBMBookText {
   };
 
   constructor() {
-    this.value.alternative_names = {
-      en: []
-    };
+    this.value.language = 'en';
+    this.value.links.push('');
+    this.value.images.push('/images/default-book.png');
+    this.value.alternative_names['en'] = [];
   }
 }

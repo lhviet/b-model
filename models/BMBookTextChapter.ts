@@ -11,12 +11,13 @@ export class BMBookTextChapter implements IBMBookTextChapter {
     chapter_name: '',   // 255 varchars
     description: '',     // 1024 varchars
     content: '',         // TEXT varchars
-    links: [''],          // varchar , links in format ['url-1','url-2',...]
+    links: [],          // varchar , links in format ['url-1','url-2',...]
     image_location: '', // folder of images of this chapter
     updated_at: 0,
     created_at: 0,
   };
 
   constructor() {
+    this.value.links.push('');
   }
 }
