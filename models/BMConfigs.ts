@@ -8,11 +8,7 @@ export class BMConfigs implements IBMConfigs {
   };
 
   keyid = '';
-  value: {
-    name: string,       // 15 chars
-    config_value: any,      // 1255 chars
-    description: string, // 255 chars
-  } = {
+  value = {
     name: '',
     config_value: '',
     description: '',
