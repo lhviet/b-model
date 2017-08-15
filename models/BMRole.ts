@@ -1,4 +1,4 @@
-export class Role {
+export class BMRole {
   static book_person_role = {
     author: {
       code: 'author',
@@ -40,9 +40,9 @@ export class Role {
     }
   };
 
-  static isUser = (roleCode: string): boolean => roleCode === Role.user_role.user.code;
-  static isAdmin = (roleCode: string): boolean => roleCode === Role.user_role.admin.code;
-  static isAdminSuper = (roleCode: string): boolean => roleCode === Role.user_role.superAdmin.code;
+  static isUser = (roleCode: string): boolean => roleCode === BMRole.user_role.user.code;
+  static isAdmin = (roleCode: string): boolean => roleCode === BMRole.user_role.admin.code;
+  static isAdminSuper = (roleCode: string): boolean => roleCode === BMRole.user_role.superAdmin.code;
   static isAdminOrSuper = (roleCode: string): boolean =>
-    roleCode === Role.user_role.admin.code || roleCode === Role.user_role.superAdmin.code;
+    roleCode === BMRole.user_role.admin.code || roleCode === BMRole.user_role.superAdmin.code;
 }

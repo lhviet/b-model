@@ -11,8 +11,8 @@ import {IBMUserFriendship} from './interfaces/IBMUserFriendship';
 import {IBMConfigs} from './interfaces/IBMConfigs';
 import {IBMDbLimitation} from './interfaces/IBMDbLimitation';
 import * as moment from 'moment';
-import {Status} from './Status';
-import {Role} from './Role';
+import {BMStatus} from './BMStatus';
+import {BMRole} from './BMRole';
 
 export class BMModel {
 
@@ -22,8 +22,8 @@ export class BMModel {
       username: '',
       email: '',
       password: '',
-      status: Status.list.general.verifying.code, // 15 chars,
-      role: Role.user_role.user.code,   // 15 chars
+      status: BMStatus.list.general.verifying.code, // 15 chars,
+      role: BMRole.user_role.user.code,   // 15 chars
       updated_at: NOW,
       created_at: NOW,
     };

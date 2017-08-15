@@ -1,4 +1,4 @@
-export class Gender {
+export class BMGender {
   static list = {
     noanswer: {
       code: 'noanswer',
@@ -18,5 +18,5 @@ export class Gender {
     }
   };
 
-  static getGenderLabel = (gender_code): string => Gender.list[gender_code].label;
+  static getGenderLabel = (gender_code): string => BMGender.list[gender_code].label;
 }

@@ -1,4 +1,4 @@
-export class Status {
+export class BMStatus {
   static list = {
     general: {
       pending: {
@@ -88,14 +88,14 @@ export class Status {
     }
   };
 
-  static isPending = (code: string): boolean => code === Status.list.general.pending.code;
-  static isVerifying = (code: string): boolean => code === Status.list.general.verifying.code;
-  static isRejected = (code: string): boolean => code === Status.list.general.rejected.code;
-  static isDisabled = (code: string): boolean => code === Status.list.general.disabled.code;
-  static isActive = (code: string): boolean => code === Status.list.general.active.code;
+  static isPending = (code: string): boolean => code === BMStatus.list.general.pending.code;
+  static isVerifying = (code: string): boolean => code === BMStatus.list.general.verifying.code;
+  static isRejected = (code: string): boolean => code === BMStatus.list.general.rejected.code;
+  static isDisabled = (code: string): boolean => code === BMStatus.list.general.disabled.code;
+  static isActive = (code: string): boolean => code === BMStatus.list.general.active.code;
   static isPendingOrRejected = (code: string): boolean =>
-    code === Status.list.general.pending.code || code === Status.list.general.rejected.code;
+    code === BMStatus.list.general.pending.code || code === BMStatus.list.general.rejected.code;
   static isFriend = (code: number): boolean => code === 1 || code === 2;
-  static isSharing_public = (code: number): boolean => code === Status.list.sharing_status.public.code;
-  static isSharing_friend = (code: number): boolean => code === Status.list.sharing_status.friends.code;
+  static isSharing_public = (code: number): boolean => code === BMStatus.list.sharing_status.public.code;
+  static isSharing_friend = (code: number): boolean => code === BMStatus.list.sharing_status.friends.code;
 }

@@ -12,9 +12,9 @@ import {IBMUser} from './interfaces/IBMUser';
 import {IBMUserBasicInfo} from './interfaces/IBMUserBasicInfo';
 import {IBMUserFriendship} from './interfaces/IBMUserFriendship';
 import {BMModel} from './BMModel';
-import {Status} from './Status';
-import {Role} from './Role';
-import {Gender} from './Gender';
+import {BMStatus} from './BMStatus';
+import {BMRole} from './BMRole';
+import {BMGender} from './BMGender';
 
 export {
   IBMBook,
@@ -31,7 +31,7 @@ export {
   IBMUserBasicInfo,
   IBMUserFriendship,
   BMModel,
-  Status,
-  Role,
-  Gender
+  BMStatus,
+  BMRole,
+  BMGender
 };
