@@ -15,6 +15,7 @@ import {BMModel} from './BMModel';
 import {BMStatus} from './BMStatus';
 import {BMRole} from './BMRole';
 import {BMGender} from './BMGender';
+import {BDbLimitation} from './BDbLimitation';
 
 export {
   IBMBook,
@@ -33,5 +34,6 @@ export {
   BMModel,
   BMStatus,
   BMRole,
-  BMGender
+  BMGender,
+  BDbLimitation
 };
