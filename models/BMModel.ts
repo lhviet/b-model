@@ -1,24 +1,23 @@
-import {IBMUser} from './interfaces/IBMUser';
-import {IBMPerson} from './interfaces/IBMPerson';
-import {IBMUserBasicInfo} from './interfaces/IBMUserBasicInfo';
-import {IBMBook} from './interfaces/IBMBook';
-import {IBMBookText} from './interfaces/IBMBookText';
-import {IBMBookTextChapter} from './interfaces/IBMBookTextChapter';
-import {IBMQuote} from './interfaces/IBMQuote';
-import {IBMSlider} from './interfaces/IBMSlider';
-import {IBMInfo} from './interfaces/IBMInfo';
-import {IBMUserFriendship} from './interfaces/IBMUserFriendship';
-import {IBMConfigs} from './interfaces/IBMConfigs';
-import {IBMDbLimitation} from './interfaces/IBMDbLimitation';
+import {IBMUserValue} from './interfaces/IBMUser';
+import {IBMPersonValue} from './interfaces/IBMPerson';
+import {IBMUserBasicInfoValue} from './interfaces/IBMUserBasicInfo';
+import {IBMBookValue} from './interfaces/IBMBook';
+import {IBMBookTextValue} from './interfaces/IBMBookText';
+import {IBMBookTextChapterValue} from './interfaces/IBMBookTextChapter';
+import {IBMQuoteValue} from './interfaces/IBMQuote';
+import {IBMSliderValue} from './interfaces/IBMSlider';
+import {IBMInfoValue} from './interfaces/IBMInfo';
+import {IBMUserFriendshipValue} from './interfaces/IBMUserFriendship';
+import {IBMConfigsValue} from './interfaces/IBMConfigs';
 import * as moment from 'moment';
 import {BMStatus} from './BMStatus';
 import {BMRole} from './BMRole';
 
 export class BMModel {
 
-  static initUser(): IBMUser.value {
+  static initUser(): IBMUserValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMUserValue>{
       username: '',
       email: '',
       password: '',
@@ -29,9 +28,9 @@ export class BMModel {
     };
   }
 
-  static initUserBasic(): IBMUserBasicInfo.value {
+  static initUserBasic(): IBMUserBasicInfoValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMUserBasicInfoValue>{
       update_from_provider: '',
       displayname: '',
       firstname: '',
@@ -50,9 +49,9 @@ export class BMModel {
     }
   }
 
-  static initPerson(): IBMPerson.value {
+  static initPerson(): IBMPersonValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMPersonValue>{
       contributor_keyid: '',
       custom_url: '',
       native_name: '',
@@ -73,9 +72,9 @@ export class BMModel {
     }
   }
 
-  static initBook(): IBMBook.value {
+  static initBook(): IBMBookValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMBookValue>{
       contributor_keyid: '',
       custom_url: '',
       native_name: '',
@@ -97,9 +96,9 @@ export class BMModel {
     }
   }
 
-  static initBookText(): IBMBookText.value {
+  static initBookText(): IBMBookTextValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMBookTextValue>{
       contributor_keyid: '',
       book_keyid: '',
       custom_url: '',
@@ -121,9 +120,9 @@ export class BMModel {
     };
   }
 
-  static initBookTextChapter(): IBMBookTextChapter.value {
+  static initBookTextChapter(): IBMBookTextChapterValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMBookTextChapterValue>{
       booktext_keyid: '', // 36 varchars
       custom_url: '',     // 125 varchars
       chapter_order: 1,           // 4 digits
@@ -138,9 +137,9 @@ export class BMModel {
     };
   }
 
-  static initQuote(): IBMQuote.value {
+  static initQuote(): IBMQuoteValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMQuoteValue>{
       person_keyid: '',   // 36 chars
       book_keyid: '',     // 36 chars
       person_info: '',    // 125 chars
@@ -153,9 +152,9 @@ export class BMModel {
     }
   }
 
-  static initSlider(): IBMSlider.value {
+  static initSlider(): IBMSliderValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMSliderValue>{
       language: 'en', // 2 chars
       content: '',    // 512 varchars
       cover_url: '/images/default-cover.png', // 1,255 chars
@@ -165,9 +164,9 @@ export class BMModel {
     };
   }
 
-  static initInfo(): IBMInfo.value {
+  static initInfo(): IBMInfoValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMInfoValue>{
       contributor_keyid: '', // 36 varchars
       custom_url: '',       // 125 varchars
       language: 'en',       // 2 chars
@@ -179,9 +178,9 @@ export class BMModel {
     }
   }
 
-  static initUserFriendship(): IBMUserFriendship.value {
+  static initUserFriendship(): IBMUserFriendshipValue {
     const NOW = moment().format('X');
-    return {
+    return <IBMUserFriendshipValue>{
       user_keyid_1: '',
       user_keyid_2: '',
       status: -1,
@@ -189,7 +188,7 @@ export class BMModel {
     };
   }
 
-  static initConfig(): IBMConfigs.value {
+  static initConfig(): IBMConfigsValue {
     return {
       name: '',
       config_value: '',

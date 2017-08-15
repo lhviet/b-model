@@ -96,6 +96,6 @@ export class BMStatus {
   static isPendingOrRejected = (code: string): boolean =>
     code === BMStatus.list.general.pending.code || code === BMStatus.list.general.rejected.code;
   static isFriend = (code: number): boolean => code === 1 || code === 2;
-  static isSharing_public = (code: number): boolean => code === BMStatus.list.sharing_status.public.code;
-  static isSharing_friend = (code: number): boolean => code === BMStatus.list.sharing_status.friends.code;
+  static isSharing_public = (code: number): boolean => code === BMStatus.list.sharing_status.public_share.code;
+  static isSharing_friend = (code: number): boolean => code === BMStatus.list.sharing_status.friends_share.code;
 }
