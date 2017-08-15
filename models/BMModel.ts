@@ -16,8 +16,8 @@ import {BMRole} from './BMRole';
 export class BMModel {
 
   static initUser(): IBMUserValue {
-    const NOW = moment().format('X');
-    return <IBMUserValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMUserValue = {
       username: '',
       email: '',
       password: '',
@@ -26,11 +26,12 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,
     };
+    return value;
   }
 
   static initUserBasic(): IBMUserBasicInfoValue {
-    const NOW = moment().format('X');
-    return <IBMUserBasicInfoValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMUserBasicInfoValue = {
       update_from_provider: '',
       displayname: '',
       firstname: '',
@@ -46,12 +47,13 @@ export class BMModel {
       timezone: '',
       quote: '',
       updated_at: NOW,
-    }
+    };
+    return value;
   }
 
   static initPerson(): IBMPersonValue {
-    const NOW = moment().format('X');
-    return <IBMPersonValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMPersonValue = {
       contributor_keyid: '',
       custom_url: '',
       native_name: '',
@@ -69,12 +71,13 @@ export class BMModel {
       status: '',
       updated_at: NOW,
       created_at: NOW,
-    }
+    };
+    return value;
   }
 
   static initBook(): IBMBookValue {
-    const NOW = moment().format('X');
-    return <IBMBookValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMBookValue = {
       contributor_keyid: '',
       custom_url: '',
       native_name: '',
@@ -93,12 +96,13 @@ export class BMModel {
       status: '',
       updated_at: NOW,
       created_at: NOW
-    }
+    };
+    return value;
   }
 
   static initBookText(): IBMBookTextValue {
-    const NOW = moment().format('X');
-    return <IBMBookTextValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMBookTextValue = {
       contributor_keyid: '',
       book_keyid: '',
       custom_url: '',
@@ -118,11 +122,12 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,
     };
+    return value;
   }
 
   static initBookTextChapter(): IBMBookTextChapterValue {
-    const NOW = moment().format('X');
-    return <IBMBookTextChapterValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMBookTextChapterValue = {
       booktext_keyid: '', // 36 varchars
       custom_url: '',     // 125 varchars
       chapter_order: 1,           // 4 digits
@@ -135,11 +140,12 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,
     };
+    return value;
   }
 
   static initQuote(): IBMQuoteValue {
-    const NOW = moment().format('X');
-    return <IBMQuoteValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMQuoteValue = {
       person_keyid: '',   // 36 chars
       book_keyid: '',     // 36 chars
       person_info: '',    // 125 chars
@@ -149,12 +155,13 @@ export class BMModel {
       cover_url: '/images/default-cover.png', // 1,255 chars
       tags: '', // 250 chars
       created_at: NOW,   // 10 digits
-    }
+    };
+    return value;
   }
 
   static initSlider(): IBMSliderValue {
-    const NOW = moment().format('X');
-    return <IBMSliderValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMSliderValue = {
       language: 'en', // 2 chars
       content: '',    // 512 varchars
       cover_url: '/images/default-cover.png', // 1,255 chars
@@ -162,11 +169,12 @@ export class BMModel {
       tags: '',       // 250 chars
       created_at: NOW,  // 10 digits
     };
+    return value;
   }
 
   static initInfo(): IBMInfoValue {
-    const NOW = moment().format('X');
-    return <IBMInfoValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMInfoValue = {
       contributor_keyid: '', // 36 varchars
       custom_url: '',       // 125 varchars
       language: 'en',       // 2 chars
@@ -175,25 +183,28 @@ export class BMModel {
       content: '',          // TEXT
       updated_at: NOW,        // 10 digits
       created_at: NOW,        // 10 digits
-    }
+    };
+    return value;
   }
 
   static initUserFriendship(): IBMUserFriendshipValue {
-    const NOW = moment().format('X');
-    return <IBMUserFriendshipValue>{
+    const NOW = parseInt(moment().format('X'), 10);
+    const value: IBMUserFriendshipValue = {
       user_keyid_1: '',
       user_keyid_2: '',
       status: -1,
       created_at: NOW,
     };
+    return value;
   }
 
   static initConfig(): IBMConfigsValue {
-    return {
+    const value: IBMConfigsValue = {
       name: '',
       config_value: '',
       description: '',
     };
+    return value;
   }
 
   constructor() {
