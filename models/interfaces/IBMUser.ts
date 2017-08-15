@@ -8,6 +8,7 @@ export interface IBMUser {
     password?: string,
     status: string,
     role: string,
+    updated_at: number,
     created_at: number,
   };
 

@@ -10,21 +10,27 @@ import {IBMInfo} from './interfaces/IBMInfo';
 import {IBMUserFriendship} from './interfaces/IBMUserFriendship';
 import {IBMConfigs} from './interfaces/IBMConfigs';
 import {IBMDbLimitation} from './interfaces/IBMDbLimitation';
+import * as moment from 'moment';
+import {Status} from './Status';
+import {Role} from './Role';
 
 export class BMModel {
 
   static initUser(): IBMUser.value {
+    const NOW = moment().format('X');
     return {
       username: '',
       email: '',
       password: '',
-      status: '',
-      role: '',
-      created_at: 0,
+      status: Status.list.general.verifying.code, // 15 chars,
+      role: Role.user_role.user.code,   // 15 chars
+      updated_at: NOW,
+      created_at: NOW,
     };
   }
 
   static initUserBasic(): IBMUserBasicInfo.value {
+    const NOW = moment().format('X');
     return {
       update_from_provider: '',
       displayname: '',
@@ -40,11 +46,12 @@ export class BMModel {
       country: '',
       timezone: '',
       quote: '',
-      updated_at: 0,
+      updated_at: NOW,
     }
   }
 
   static initPerson(): IBMPerson.value {
+    const NOW = moment().format('X');
     return {
       contributor_keyid: '',
       custom_url: '',
@@ -61,12 +68,13 @@ export class BMModel {
       links: [''],
       images: ['/images/default-person.png'],
       status: '',
-      updated_at: 0,
-      created_at: 0,
+      updated_at: NOW,
+      created_at: NOW,
     }
   }
 
   static initBook(): IBMBook.value {
+    const NOW = moment().format('X');
     return {
       contributor_keyid: '',
       custom_url: '',
@@ -84,12 +92,13 @@ export class BMModel {
       description: '',
       tags: '',
       status: '',
-      updated_at: 0,
-      created_at: 0
+      updated_at: NOW,
+      created_at: NOW
     }
   }
 
   static initBookText(): IBMBookText.value {
+    const NOW = moment().format('X');
     return {
       contributor_keyid: '',
       book_keyid: '',
@@ -107,12 +116,13 @@ export class BMModel {
       files: [''],
       isbn: '',
       tags: '',
-      updated_at: 0,
-      created_at: 0,
+      updated_at: NOW,
+      created_at: NOW,
     };
   }
 
   static initBookTextChapter(): IBMBookTextChapter.value {
+    const NOW = moment().format('X');
     return {
       booktext_keyid: '', // 36 varchars
       custom_url: '',     // 125 varchars
@@ -123,12 +133,13 @@ export class BMModel {
       content: '',         // TEXT varchars
       links: [''],          // varchar , links in format ['url-1','url-2',...]
       image_location: '', // folder of images of this chapter
-      updated_at: 0,
-      created_at: 0,
+      updated_at: NOW,
+      created_at: NOW,
     };
   }
 
   static initQuote(): IBMQuote.value {
+    const NOW = moment().format('X');
     return {
       person_keyid: '',   // 36 chars
       book_keyid: '',     // 36 chars
@@ -138,22 +149,24 @@ export class BMModel {
       content: '',        // 1,255 varchars
       cover_url: '/images/default-cover.png', // 1,255 chars
       tags: '', // 250 chars
-      created_at: 0,   // 10 digits
+      created_at: NOW,   // 10 digits
     }
   }
 
   static initSlider(): IBMSlider.value {
+    const NOW = moment().format('X');
     return {
       language: 'en', // 2 chars
       content: '',    // 512 varchars
       cover_url: '/images/default-cover.png', // 1,255 chars
       link: '',       // 1,255 chars
       tags: '',       // 250 chars
-      created_at: 0,  // 10 digits
+      created_at: NOW,  // 10 digits
     };
   }
 
   static initInfo(): IBMInfo.value {
+    const NOW = moment().format('X');
     return {
       contributor_keyid: '', // 36 varchars
       custom_url: '',       // 125 varchars
@@ -161,17 +174,18 @@ export class BMModel {
       title: '',            // 125 varchars
       description: '',      // 512 varchars
       content: '',          // TEXT
-      updated_at: 0,        // 10 digits
-      created_at: 0,        // 10 digits
+      updated_at: NOW,        // 10 digits
+      created_at: NOW,        // 10 digits
     }
   }
 
   static initUserFriendship(): IBMUserFriendship.value {
+    const NOW = moment().format('X');
     return {
       user_keyid_1: '',
       user_keyid_2: '',
       status: -1,
-      created_at: 0,
+      created_at: NOW,
     };
   }
 
