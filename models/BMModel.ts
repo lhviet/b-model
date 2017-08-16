@@ -12,6 +12,11 @@ import {IBMConfigsValue} from './interfaces/IBMConfigs';
 import * as moment from 'moment';
 import {BMStatus} from './BMStatus';
 import {BMRole} from './BMRole';
+import {BMGender} from './BMGender';
+
+const DEFAULT_IMG_COVER = '/images/default-cover.png';
+const DEFAULT_IMG_PERSON = '/images/default-person.png';
+const DEFAULT_IMG_BOOK = '/images/default-book.png';
 
 export class BMModel {
 
@@ -61,14 +66,14 @@ export class BMModel {
       alternative_names: {en: []},
       language: 'en',
       country: 'U_N',
-      gender: 'noanswer',
+      gender: BMGender.list.noanswer.code,
       year_of_birth: 0,
       year_of_death: 0,
       description: '',
       tags: '',
       links: [''],
-      images: ['/images/default-person.png'],
-      status: '',
+      images: [DEFAULT_IMG_PERSON],
+      status: BMStatus.list.general.pending.code,
       updated_at: NOW,
       created_at: NOW,
     };
@@ -90,7 +95,7 @@ export class BMModel {
       year_of_end: 0,
       author_info: '',
       links: [''],
-      images: ['/images/default-book.png'],
+      images: [DEFAULT_IMG_BOOK],
       description: '',
       tags: '',
       status: '',
@@ -115,7 +120,7 @@ export class BMModel {
       year: null,
       status: 1,
       links: [''],
-      images: ['/images/default-book.png'],
+      images: [DEFAULT_IMG_BOOK],
       files: [''],
       isbn: '',
       tags: '',
@@ -152,7 +157,7 @@ export class BMModel {
       book_info: '',      // 125 chars
       language: 'en', // 2 chars
       content: '',        // 1,255 varchars
-      cover_url: '/images/default-cover.png', // 1,255 chars
+      cover_url: DEFAULT_IMG_COVER, // 1,255 chars
       tags: '', // 250 chars
       created_at: NOW,   // 10 digits
     };
@@ -164,7 +169,7 @@ export class BMModel {
     const value: IBMSliderValue = {
       language: 'en', // 2 chars
       content: '',    // 512 varchars
-      cover_url: '/images/default-cover.png', // 1,255 chars
+      cover_url: DEFAULT_IMG_COVER, // 1,255 chars
       link: '',       // 1,255 chars
       tags: '',       // 250 chars
       created_at: NOW,  // 10 digits
