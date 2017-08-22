@@ -14,11 +14,18 @@ import {BMStatus} from './BMStatus';
 import {BMRole} from './BMRole';
 import {BMGender} from './BMGender';
 
-const DEFAULT_IMG_COVER = '/images/default-cover.png';
-const DEFAULT_IMG_PERSON = '/images/default-person.png';
-const DEFAULT_IMG_BOOK = '/images/default-book.png';
-
 export class BMModel {
+
+  static DEFAULT_IMG = {
+    COVER: '/images/default-cover.png',
+    PERSON: '/images/default-person.png',
+    BOOK: '/images/default-book.png',
+  };
+  static AUTH_PROVIDER = {
+    LOCAL: 'local',
+    FACEBOOK: 'facebook',
+    GOOGLE: 'google'
+  };
 
   static initUser(): IBMUserValue {
     const NOW = parseInt(moment().format('X'), 10);
@@ -37,17 +44,17 @@ export class BMModel {
   static initUserBasic(): IBMUserBasicInfoValue {
     const NOW = parseInt(moment().format('X'), 10);
     const value: IBMUserBasicInfoValue = {
-      update_from_provider: '',
+      update_from_provider: BMModel.AUTH_PROVIDER.LOCAL,
       displayname: '',
       firstname: '',
       lastname: '',
       middlename: '',
-      avatar_url: '',
-      cover_url: '',
+      avatar_url: BMModel.DEFAULT_IMG.PERSON,
+      cover_url: BMModel.DEFAULT_IMG.COVER,
       home_url: '',
-      gender: '',
+      gender: BMGender.list.noanswer.code,
       birthday: '',
-      language: '',
+      language: 'en',
       country: '',
       timezone: '',
       quote: '',
@@ -72,7 +79,7 @@ export class BMModel {
       description: '',
       tags: '',
       links: [''],
-      images: [DEFAULT_IMG_PERSON],
+      images: [BMModel.DEFAULT_IMG.PERSON],
       status: BMStatus.list.general.pending.code,
       updated_at: NOW,
       created_at: NOW,
@@ -95,7 +102,7 @@ export class BMModel {
       year_of_end: 0,
       author_info: '',
       links: [''],
-      images: [DEFAULT_IMG_BOOK],
+      images: [BMModel.DEFAULT_IMG.BOOK],
       description: '',
       tags: '',
       status: '',
@@ -120,7 +127,7 @@ export class BMModel {
       year: null,
       status: 1,
       links: [''],
-      images: [DEFAULT_IMG_BOOK],
+      images: [BMModel.DEFAULT_IMG.BOOK],
       files: [''],
       isbn: '',
       tags: '',
@@ -157,7 +164,7 @@ export class BMModel {
       book_info: '',      // 125 chars
       language: 'en', // 2 chars
       content: '',        // 1,255 varchars
-      cover_url: DEFAULT_IMG_COVER, // 1,255 chars
+      cover_url: BMModel.DEFAULT_IMG.COVER, // 1,255 chars
       tags: '', // 250 chars
       created_at: NOW,   // 10 digits
     };
@@ -169,7 +176,7 @@ export class BMModel {
     const value: IBMSliderValue = {
       language: 'en', // 2 chars
       content: '',    // 512 varchars
-      cover_url: DEFAULT_IMG_COVER, // 1,255 chars
+      cover_url: BMModel.DEFAULT_IMG.COVER, // 1,255 chars
       link: '',       // 1,255 chars
       tags: '',       // 250 chars
       created_at: NOW,  // 10 digits
