@@ -5,6 +5,7 @@
   "main": "./bibooki-models",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:js": "tsc"
   },
   "repository": {
     "type": "git",
