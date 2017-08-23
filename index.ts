@@ -11,6 +11,8 @@ import {IBMSlider} from './models/interfaces/IBMSlider';
 import {IBMUser} from './models/interfaces/IBMUser';
 import {IBMUserBasicInfo} from './models/interfaces/IBMUserBasicInfo';
 import {IBMUserFriendship} from './models/interfaces/IBMUserFriendship';
+import {IBMBookCreditPerson} from './models/interfaces/IBMBookCreditPerson';
+
 import {BMModel} from './models/BMModel';
 import {BMStatus} from './models/BMStatus';
 import {BMRole} from './models/BMRole';
@@ -31,6 +33,7 @@ export {
   IBMUser,
   IBMUserBasicInfo,
   IBMUserFriendship,
+  IBMBookCreditPerson,
   BMModel,
   BMStatus,
   BMRole,
