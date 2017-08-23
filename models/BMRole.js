@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var BMRole = (function () {
     function BMRole() {
     }
@@ -52,3 +52,4 @@ BMRole.isAdminOrSuper = function (roleCode) {
     return roleCode === BMRole.user_role.admin.code || roleCode === BMRole.user_role.superAdmin.code;
 };
 exports.BMRole = BMRole;
+//# sourceMappingURL=BMRole.js.map

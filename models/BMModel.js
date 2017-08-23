@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var moment = require("moment");
 var BMStatus_1 = require("./BMStatus");
 var BMRole_1 = require("./BMRole");
@@ -16,7 +16,7 @@ var BMModel = (function () {
             status: BMStatus_1.BMStatus.list.general.verifying.code,
             role: BMRole_1.BMRole.user_role.user.code,
             updated_at: NOW,
-            created_at: NOW
+            created_at: NOW,
         };
         return value;
     };
@@ -37,7 +37,7 @@ var BMModel = (function () {
             country: '',
             timezone: '',
             quote: '',
-            updated_at: NOW
+            updated_at: NOW,
         };
         return value;
     };
@@ -60,7 +60,7 @@ var BMModel = (function () {
             images: [BMModel.DEFAULT_IMG.PERSON],
             status: BMStatus_1.BMStatus.list.general.pending.code,
             updated_at: NOW,
-            created_at: NOW
+            created_at: NOW,
         };
         return value;
     };
@@ -108,7 +108,7 @@ var BMModel = (function () {
             isbn: '',
             tags: '',
             updated_at: NOW,
-            created_at: NOW
+            created_at: NOW,
         };
         return value;
     };
@@ -125,7 +125,7 @@ var BMModel = (function () {
             links: [''],
             image_location: '',
             updated_at: NOW,
-            created_at: NOW
+            created_at: NOW,
         };
         return value;
     };
@@ -140,7 +140,7 @@ var BMModel = (function () {
             content: '',
             cover_url: BMModel.DEFAULT_IMG.COVER,
             tags: '',
-            created_at: NOW
+            created_at: NOW,
         };
         return value;
     };
@@ -152,7 +152,7 @@ var BMModel = (function () {
             cover_url: BMModel.DEFAULT_IMG.COVER,
             link: '',
             tags: '',
-            created_at: NOW
+            created_at: NOW,
         };
         return value;
     };
@@ -166,7 +166,7 @@ var BMModel = (function () {
             description: '',
             content: '',
             updated_at: NOW,
-            created_at: NOW
+            created_at: NOW,
         };
         return value;
     };
@@ -176,7 +176,7 @@ var BMModel = (function () {
             user_keyid_1: '',
             user_keyid_2: '',
             status: -1,
-            created_at: NOW
+            created_at: NOW,
         };
         return value;
     };
@@ -184,7 +184,7 @@ var BMModel = (function () {
         var value = {
             name: '',
             config_value: '',
-            description: ''
+            description: '',
         };
         return value;
     };
@@ -193,7 +193,7 @@ var BMModel = (function () {
 BMModel.DEFAULT_IMG = {
     COVER: '/images/default-cover.png',
     PERSON: '/images/default-person.png',
-    BOOK: '/images/default-book.png'
+    BOOK: '/images/default-book.png',
 };
 BMModel.AUTH_PROVIDER = {
     LOCAL: 'local',
@@ -201,3 +201,4 @@ BMModel.AUTH_PROVIDER = {
     GOOGLE: 'google'
 };
 exports.BMModel = BMModel;
+//# sourceMappingURL=BMModel.js.map

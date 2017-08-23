@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var BMStatus = (function () {
     function BMStatus() {
     }
@@ -26,7 +26,7 @@ BMStatus.list = {
         active: {
             code: 'active',
             label: 'Active'
-        }
+        },
     },
     sharing_status: {
         public_share: {
@@ -105,3 +105,4 @@ BMStatus.isFriend = function (code) { return code === 1 || code === 2; };
 BMStatus.isSharing_public = function (code) { return code === BMStatus.list.sharing_status.public_share.code; };
 BMStatus.isSharing_friend = function (code) { return code === BMStatus.list.sharing_status.friends_share.code; };
 exports.BMStatus = BMStatus;
+//# sourceMappingURL=BMStatus.js.map

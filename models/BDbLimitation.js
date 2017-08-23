@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var BDbLimitation = (function () {
     function BDbLimitation(offset, limit, sorter, direct) {
         this.offset = offset || 0;
@@ -21,3 +21,4 @@ BDbLimitation.limit150 = function (sorter, direct) {
     return new BDbLimitation(0, 150, sorter, direct);
 };
 exports.BDbLimitation = BDbLimitation;
+//# sourceMappingURL=BDbLimitation.js.map

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var BMGender = (function () {
     function BMGender() {
     }
@@ -25,3 +25,4 @@ BMGender.list = {
 };
 BMGender.getGenderLabel = function (gender_code) { return BMGender.list[gender_code].label; };
 exports.BMGender = BMGender;
+//# sourceMappingURL=BMGender.js.map
