@@ -4,7 +4,7 @@ var moment = require("moment");
 var BMStatus_1 = require("./BMStatus");
 var BMRole_1 = require("./BMRole");
 var BMGender_1 = require("./BMGender");
-var BMModel = (function () {
+var BMModel = /** @class */ (function () {
     function BMModel() {
     }
     BMModel.initUser = function () {
@@ -70,7 +70,7 @@ var BMModel = (function () {
             contributor_keyid: '',
             custom_url: '',
             native_name: '',
-            english_name: 'en',
+            english_name: '',
             alternative_names: { en: [] },
             language: '',
             countries: '',
@@ -188,17 +188,17 @@ var BMModel = (function () {
         };
         return value;
     };
+    BMModel.DEFAULT_IMG = {
+        COVER: '/images/default-cover.png',
+        PERSON: '/images/default-person.png',
+        BOOK: '/images/default-book.png',
+    };
+    BMModel.AUTH_PROVIDER = {
+        LOCAL: 'local',
+        FACEBOOK: 'facebook',
+        GOOGLE: 'google'
+    };
     return BMModel;
 }());
-BMModel.DEFAULT_IMG = {
-    COVER: '/images/default-cover.png',
-    PERSON: '/images/default-person.png',
-    BOOK: '/images/default-book.png',
-};
-BMModel.AUTH_PROVIDER = {
-    LOCAL: 'local',
-    FACEBOOK: 'facebook',
-    GOOGLE: 'google'
-};
 exports.BMModel = BMModel;
 //# sourceMappingURL=BMModel.js.map

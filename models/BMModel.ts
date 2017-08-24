@@ -93,7 +93,7 @@ export class BMModel {
       contributor_keyid: '',
       custom_url: '',
       native_name: '',
-      english_name: 'en',
+      english_name: '',
       alternative_names: {en: []},
       language: '',
       countries: '',
