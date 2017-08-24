@@ -72,7 +72,7 @@ var BMModel = /** @class */ (function () {
             native_name: '',
             english_name: '',
             alternative_names: { en: [] },
-            language: '',
+            language: 'en',
             countries: '',
             type: 'text',
             year_of_start: 0,
