@@ -1,10 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BMBookType = {
-    text: {
-        code: 'text',
-        label: 'Text',
-        description: ''
-    },
-};
+var BMBookType = /** @class */ (function () {
+    function BMBookType() {
+    }
+    BMBookType.list = {
+        text: {
+            code: 'text',
+            label: 'Text',
+            description: ''
+        },
+    };
+    return BMBookType;
+}());
+exports.BMBookType = BMBookType;
 //# sourceMappingURL=BMBookType.js.map

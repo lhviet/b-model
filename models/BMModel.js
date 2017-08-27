@@ -75,7 +75,7 @@ var BMModel = /** @class */ (function () {
             alternative_names: { en: [] },
             language: 'en',
             countries: '',
-            type: BMBookType_1.BMBookType.text.code,
+            type: BMBookType_1.BMBookType.list.text.code,
             year_of_start: 0,
             year_of_end: 0,
             author_info: '',

@@ -98,7 +98,7 @@ export class BMModel {
       alternative_names: {en: []},
       language: 'en',
       countries: '',
-      type: BMBookType.text.code,
+      type: BMBookType.list.text.code,
       year_of_start: 0,
       year_of_end: 0,
       author_info: '',
