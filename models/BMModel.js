@@ -4,6 +4,7 @@ var moment = require("moment");
 var BMStatus_1 = require("./BMStatus");
 var BMRole_1 = require("./BMRole");
 var BMGender_1 = require("./BMGender");
+var BMBookType_1 = require("./BMBookType");
 var BMModel = /** @class */ (function () {
     function BMModel() {
     }
@@ -74,7 +75,7 @@ var BMModel = /** @class */ (function () {
             alternative_names: { en: [] },
             language: 'en',
             countries: '',
-            type: 'text',
+            type: BMBookType_1.BMBookType.text.code,
             year_of_start: 0,
             year_of_end: 0,
             author_info: '',
