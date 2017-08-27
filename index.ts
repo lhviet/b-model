@@ -17,6 +17,7 @@ import {BMModel} from './models/BMModel';
 import {BMStatus} from './models/BMStatus';
 import {BMRole} from './models/BMRole';
 import {BMGender} from './models/BMGender';
+import {BMBookType} from 'BMBookType';
 import {BDbLimitation} from './models/BDbLimitation';
 
 export {
@@ -38,5 +39,6 @@ export {
   BMStatus,
   BMRole,
   BMGender,
+  BMBookType,
   BDbLimitation
 };

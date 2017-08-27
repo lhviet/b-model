@@ -13,6 +13,7 @@ import * as moment from 'moment';
 import {BMStatus} from './BMStatus';
 import {BMRole} from './BMRole';
 import {BMGender} from './BMGender';
+import {BMBookType} from './BMBookType';
 
 export class BMModel {
 
@@ -97,7 +98,7 @@ export class BMModel {
       alternative_names: {en: []},
       language: 'en',
       countries: '',
-      type: 'text',
+      type: BMBookType.text.code,
       year_of_start: 0,
       year_of_end: 0,
       author_info: '',
