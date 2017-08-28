@@ -106,7 +106,7 @@ export class BMModel {
       images: [BMModel.DEFAULT_IMG.BOOK],
       description: '',
       tags: '',
-      status: '',
+      status: BMStatus.list.general.pending.code,
       updated_at: NOW,
       created_at: NOW
     };
@@ -126,7 +126,7 @@ export class BMModel {
       book_info: '',
       description: '',
       year: null,
-      status: 1,
+      status: BMStatus.list.sharing_status.public_share.code,
       links: [''],
       images: [BMModel.DEFAULT_IMG.BOOK],
       files: [''],
@@ -205,7 +205,7 @@ export class BMModel {
     const value: IBMUserFriendshipValue = {
       user_keyid_1: '',
       user_keyid_2: '',
-      status: -1,
+      status: BMStatus.list.friendship_status.pending.code,
       created_at: NOW,
     };
     return value;

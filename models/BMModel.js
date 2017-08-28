@@ -83,7 +83,7 @@ var BMModel = /** @class */ (function () {
             images: [BMModel.DEFAULT_IMG.BOOK],
             description: '',
             tags: '',
-            status: '',
+            status: BMStatus_1.BMStatus.list.general.pending.code,
             updated_at: NOW,
             created_at: NOW
         };
@@ -102,7 +102,7 @@ var BMModel = /** @class */ (function () {
             book_info: '',
             description: '',
             year: null,
-            status: 1,
+            status: BMStatus_1.BMStatus.list.sharing_status.public_share.code,
             links: [''],
             images: [BMModel.DEFAULT_IMG.BOOK],
             files: [''],
@@ -176,7 +176,7 @@ var BMModel = /** @class */ (function () {
         var value = {
             user_keyid_1: '',
             user_keyid_2: '',
-            status: -1,
+            status: BMStatus_1.BMStatus.list.friendship_status.pending.code,
             created_at: NOW,
         };
         return value;
