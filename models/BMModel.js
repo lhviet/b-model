@@ -191,6 +191,25 @@ var BMModel = /** @class */ (function () {
         };
         return value;
     };
+    /**
+     * parse array string in format "[abc, def, xyz,...]"
+     * @param {string} input
+     * @returns {any[]}
+     */
+    BMModel.parseArray = function (input) {
+        var result = [input];
+        try {
+            var tempStr = input.replace(/{/g, '[');
+            tempStr = tempStr.replace(/}/g, ']');
+            result = JSON.parse(tempStr);
+        }
+        catch (ex) {
+            console.error('parseArray ERROR = ' + JSON.stringify(ex));
+            console.error('parseArray ERROR input = ' + JSON.stringify(input));
+            throw ex;
+        }
+        return result;
+    };
     BMModel.DEFAULT_IMG = {
         COVER: '/images/default-cover.png',
         PERSON: '/images/default-person.png',

@@ -222,7 +222,23 @@ export class BMModel {
     return value;
   }
 
-  constructor() {
+  /**
+   * parse array string in format "[abc, def, xyz,...]"
+   * @param {string} input
+   * @returns {any[]}
+   */
+  static parseArray(input: string): any[] {
+    let result = [input];
+    try {
+      let tempStr = input.replace(/{/g, '[');
+      tempStr = tempStr.replace(/}/g, ']');
+      result = JSON.parse(tempStr);
+    } catch (ex) {
+      console.error('parseArray ERROR = ' + JSON.stringify(ex));
+      console.error('parseArray ERROR input = ' + JSON.stringify(input));
+      throw ex;
+    }
+    return result;
   }
 
 }
