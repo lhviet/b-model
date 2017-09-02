@@ -12,6 +12,7 @@ export interface IBMQuoteValue {
   content: string;        // 1255 varchars
   cover_url: string; // 1;255 chars
   tags: string; // 250 chars
+  updated_at: number;   // 10 digits
   created_at: number;   // 10 digits
 
 }

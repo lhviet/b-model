@@ -141,6 +141,7 @@ var BMModel = /** @class */ (function () {
             content: '',
             cover_url: BMModel.DEFAULT_IMG.COVER,
             tags: '',
+            updated_at: NOW,
             created_at: NOW,
         };
         return value;
@@ -153,6 +154,7 @@ var BMModel = /** @class */ (function () {
             cover_url: BMModel.DEFAULT_IMG.COVER,
             link: '',
             tags: '',
+            updated_at: NOW,
             created_at: NOW,
         };
         return value;

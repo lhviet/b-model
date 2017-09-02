@@ -167,6 +167,7 @@ export class BMModel {
       content: '',        // 1,255 varchars
       cover_url: BMModel.DEFAULT_IMG.COVER, // 1,255 chars
       tags: '', // 250 chars
+      updated_at: NOW,
       created_at: NOW,   // 10 digits
     };
     return value;
@@ -180,6 +181,7 @@ export class BMModel {
       cover_url: BMModel.DEFAULT_IMG.COVER, // 1,255 chars
       link: '',       // 1,255 chars
       tags: '',       // 250 chars
+      updated_at: NOW,
       created_at: NOW,  // 10 digits
     };
     return value;
