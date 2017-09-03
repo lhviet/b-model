@@ -206,7 +206,7 @@ var BMModel = /** @class */ (function () {
         catch (ex) {
             console.error('parseArray ERROR = ' + JSON.stringify(ex));
             console.error('parseArray ERROR input = ' + JSON.stringify(input));
-            throw ex;
+            // throw ex;
         }
         return result;
     };
