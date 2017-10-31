@@ -20,6 +20,8 @@ import {BMGender} from './models/BMGender';
 import {BMBookType} from './models/BMBookType';
 import {BDbLimitation} from './models/BDbLimitation';
 
+import {BMQuery} from './query/BMQuery';
+
 export {
   IBMBook,
   IBMBookText,
@@ -40,5 +42,6 @@ export {
   BMRole,
   BMGender,
   BMBookType,
-  BDbLimitation
+  BDbLimitation,
+  BMQuery,
 };
