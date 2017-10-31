@@ -1,9 +1,11 @@
 export class BMQuery {
   static QUERY = {
-    name: 'n',
-    offset: 'o',
-    limit: 'l',
-    sorter: 's',
-    direct: 'd',
+    keyid: 'kid',
+    search: 's',
+    language: 'lang',
+    offset: 'off',
+    limit: 'lim',
+    sorter: 'sr',
+    direct: 'dir',
   };
 }
