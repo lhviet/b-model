@@ -12,4 +12,6 @@ var BMBookType_1 = require("./models/BMBookType");
 exports.BMBookType = BMBookType_1.BMBookType;
 var BDbLimitation_1 = require("./models/BDbLimitation");
 exports.BDbLimitation = BDbLimitation_1.BDbLimitation;
+var BMQuery_1 = require("./query/BMQuery");
+exports.BMQuery = BMQuery_1.BMQuery;
 //# sourceMappingURL=index.js.map
