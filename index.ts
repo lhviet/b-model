@@ -1,47 +1,23 @@
-import {IBMBook} from './models/interfaces/IBMBook';
-import {IBMBookText} from './models/interfaces/IBMBookText';
-import {IBMBookTextChapter} from './models/interfaces/IBMBookTextChapter';
-import {IBMConfigs} from './models/interfaces/IBMConfigs';
-import {IBMDbLimitation} from './models/interfaces/IBMDbLimitation';
-import {IBMEventModel} from './models/interfaces/IBMEventModel';
-import {IBMInfo} from './models/interfaces/IBMInfo';
-import {IBMPerson} from './models/interfaces/IBMPerson';
-import {IBMQuote} from './models/interfaces/IBMQuote';
-import {IBMSlider} from './models/interfaces/IBMSlider';
-import {IBMUser} from './models/interfaces/IBMUser';
-import {IBMUserBasicInfo} from './models/interfaces/IBMUserBasicInfo';
-import {IBMUserFriendship} from './models/interfaces/IBMUserFriendship';
-import {IBMBookCreditPerson} from './models/interfaces/IBMBookCreditPerson';
+export * from './models/interfaces/IBMBook';
+export * from './models/interfaces/IBMBookText';
+export * from './models/interfaces/IBMBookTextChapter';
+export * from './models/interfaces/IBMConfigs';
+export * from './models/interfaces/IBMDbLimitation';
+export * from './models/interfaces/IBMEventModel';
+export * from './models/interfaces/IBMInfo';
+export * from './models/interfaces/IBMPerson';
+export * from './models/interfaces/IBMQuote';
+export * from './models/interfaces/IBMSlider';
+export * from './models/interfaces/IBMUser';
+export * from './models/interfaces/IBMUserBasicInfo';
+export * from './models/interfaces/IBMUserFriendship';
+export * from './models/interfaces/IBMBookCreditPerson';
 
-import {BMModel} from './models/BMModel';
-import {BMStatus} from './models/BMStatus';
-import {BMRole} from './models/BMRole';
-import {BMGender} from './models/BMGender';
-import {BMBookType} from './models/BMBookType';
-import {BDbLimitation} from './models/BDbLimitation';
+export * from './models/BMModel';
+export * from './models/BMStatus';
+export * from './models/BMRole';
+export * from './models/BMGender';
+export * from './models/BMBookType';
+export * from './models/BDbLimitation';
 
-import {BMQuery} from './query/BMQuery';
-
-export {
-  IBMBook,
-  IBMBookText,
-  IBMBookTextChapter,
-  IBMConfigs,
-  IBMDbLimitation,
-  IBMEventModel,
-  IBMInfo,
-  IBMPerson,
-  IBMQuote,
-  IBMSlider,
-  IBMUser,
-  IBMUserBasicInfo,
-  IBMUserFriendship,
-  IBMBookCreditPerson,
-  BMModel,
-  BMStatus,
-  BMRole,
-  BMGender,
-  BMBookType,
-  BDbLimitation,
-  BMQuery,
-};
+export * from './query/BMQuery';
