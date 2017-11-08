@@ -220,6 +220,10 @@ var BMModel = /** @class */ (function () {
         FACEBOOK: 'facebook',
         GOOGLE: 'google'
     };
+    BMModel.CONDITION_KEY = {
+        IN_ARRAY: 'in_array',
+        NOT_IN_ARRAY: 'not_in_array',
+    };
     return BMModel;
 }());
 exports.BMModel = BMModel;

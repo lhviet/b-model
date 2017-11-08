@@ -28,6 +28,11 @@ export class BMModel {
     GOOGLE: 'google'
   };
 
+  static CONDITION_KEY = {
+    IN_ARRAY: 'in_array',
+    NOT_IN_ARRAY: 'not_in_array',
+  };
+
   static initUser(): IBMUserValue {
     const NOW = parseInt(moment().format('X'), 10);
     const value: IBMUserValue = {
