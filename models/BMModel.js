@@ -8,6 +8,21 @@ var BMBookType_1 = require("./BMBookType");
 var BMModel = /** @class */ (function () {
     function BMModel() {
     }
+    // retrieve the correct key using in SQL in PostgreSQL in backend
+    BMModel.getConditionKey = function (key) {
+        var conditionKey = key;
+        switch (key) {
+            case BMModel.CONDITION_KEY.IN_ARRAY:
+                conditionKey = ' IN ';
+                break;
+            case BMModel.CONDITION_KEY.NOT_IN_ARRAY:
+                conditionKey = ' NOT IN ';
+                break;
+            default:
+                break;
+        }
+        return conditionKey;
+    };
     BMModel.initUser = function () {
         var NOW = parseInt(moment().format('X'), 10);
         var value = {
@@ -220,6 +235,7 @@ var BMModel = /** @class */ (function () {
         FACEBOOK: 'facebook',
         GOOGLE: 'google'
     };
+    // condition key using for JSON condition format in request to convert to SQL in PostgreSQL in backend server
     BMModel.CONDITION_KEY = {
         IN_ARRAY: 'in_array',
         NOT_IN_ARRAY: 'not_in_array',
