@@ -12,7 +12,6 @@ export * from './models/interfaces/IBMUser';
 export * from './models/interfaces/IBMUserBasicInfo';
 export * from './models/interfaces/IBMUserFriendship';
 export * from './models/interfaces/IBMBookCreditPerson';
-export * from './models/interfaces/IBMExpressReq';
 
 export * from './models/BMModel';
 export * from './models/BMStatus';
