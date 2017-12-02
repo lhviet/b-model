@@ -4,6 +4,5 @@ var TBMOpenID;
 (function (TBMOpenID) {
     var ProviderFB = 'facebook';
     var ProviderGG = 'google';
-})(TBMOpenID || (TBMOpenID = {}));
-exports.default = TBMOpenID;
+})(TBMOpenID = exports.TBMOpenID || (exports.TBMOpenID = {}));
 //# sourceMappingURL=TBMOpenID.js.map
