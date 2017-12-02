@@ -13,6 +13,8 @@ export * from './models/interfaces/IBMUserBasicInfo';
 export * from './models/interfaces/IBMUserFriendship';
 export * from './models/interfaces/IBMBookCreditPerson';
 
+export * from './models/types/TBMOpenID';
+
 export * from './models/BMModel';
 export * from './models/BMStatus';
 export * from './models/BMRole';
