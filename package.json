@@ -1,6 +1,6 @@
 {
   "name": "bibooki-models",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is the mapping models used in bibooki project",
   "main": "./bibooki-models",
   "scripts": {
@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://viet_hoang_le@bitbucket.org/viet_hoang_le/b-models.git"
+    "url": "git+https://viet_hoang_le@bitbucket.org/viet_hoang_le/bibooki-models.git"
   },
   "author": "bibooki",
   "license": "ISC",
-  "homepage": "https://viet_hoang_le@bitbucket.org/viet_hoang_le/b-models#readme",
+  "homepage": "https://viet_hoang_le@bitbucket.org/viet_hoang_le/bibooki-models#readme",
   "dependencies": {
     "moment": "^2.19.1",
     "shortid": "^2.2.8"
