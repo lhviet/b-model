@@ -1,5 +1,4 @@
-export namespace TBMOpenID {
-  const ProviderFB = 'facebook';
-  const ProviderGG = 'google';
-  type TProvider = 'facebook' | 'google';
-}
+
+export const ProviderFB = 'facebook';
+export const ProviderGG = 'google';
+export type TProvider = 'facebook' | 'google';

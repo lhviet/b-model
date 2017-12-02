@@ -1,1 +1,1 @@
-{"version":3,"file":"TBMOpenID.js","sourceRoot":"","sources":["TBMOpenID.ts"],"names":[],"mappings":";;AAAA,IAAiB,SAAS,CAIzB;AAJD,WAAiB,SAAS;IACxB,IAAM,UAAU,GAAG,UAAU,CAAC;IAC9B,IAAM,UAAU,GAAG,QAAQ,CAAC;AAE9B,CAAC,EAJgB,SAAS,GAAT,iBAAS,KAAT,iBAAS,QAIzB"}
+{"version":3,"file":"TBMOpenID.js","sourceRoot":"","sources":["TBMOpenID.ts"],"names":[],"mappings":";;AACa,QAAA,UAAU,GAAG,UAAU,CAAC;AACxB,QAAA,UAAU,GAAG,QAAQ,CAAC"}

@@ -1,8 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var TBMOpenID;
-(function (TBMOpenID) {
-    var ProviderFB = 'facebook';
-    var ProviderGG = 'google';
-})(TBMOpenID = exports.TBMOpenID || (exports.TBMOpenID = {}));
+exports.ProviderFB = 'facebook';
+exports.ProviderGG = 'google';
 //# sourceMappingURL=TBMOpenID.js.map
