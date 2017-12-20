@@ -1,6 +1,6 @@
 {
   "name": "bibooki-models",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "This is the mapping models used in bibooki project",
   "main": "./bibooki-models",
   "scripts": {
