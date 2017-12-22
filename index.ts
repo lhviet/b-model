@@ -13,7 +13,7 @@ export * from './models/interfaces/IBMUserBasicInfo';
 export * from './models/interfaces/IBMUserFriendship';
 export * from './models/interfaces/IBMBookCreditPerson';
 
-export * from './models/interface_addition/IAFriend';
+export * from './models/interface_server_response/IAUser';
 
 export * from './models/types/TBMOpenID';
 
