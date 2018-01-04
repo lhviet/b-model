@@ -235,6 +235,11 @@ var BMModel = /** @class */ (function () {
         FACEBOOK: 'facebook',
         GOOGLE: 'google'
     };
+    BMModel.SUPPORT_ACTION = {
+        remindUsername: 'remind_username',
+        emailActivation: 'email_activation',
+        resetPassword: 'reset_password'
+    };
     // condition key using for JSON condition format in request to convert to SQL in PostgreSQL in backend server
     BMModel.CONDITION_KEY = {
         IN_ARRAY: 'in_array',

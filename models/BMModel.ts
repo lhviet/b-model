@@ -28,6 +28,12 @@ export class BMModel {
     GOOGLE: 'google'
   };
 
+  static SUPPORT_ACTION = {
+    remindUsername: 'remind_username',
+    emailActivation: 'email_activation',
+    resetPassword: 'reset_password'
+  };
+
   // condition key using for JSON condition format in request to convert to SQL in PostgreSQL in backend server
   static CONDITION_KEY = {
     IN_ARRAY: 'in_array',
