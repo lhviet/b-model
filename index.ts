@@ -15,6 +15,7 @@ export * from './models/interfaces/IBMBookCreditPerson';
 
 export * from './models/interface_server_response/ISUser';
 
+export * from './models/BMDbPostgres';
 export * from './models/BMModel';
 export * from './models/BMStatus';
 export * from './models/BMRole';
