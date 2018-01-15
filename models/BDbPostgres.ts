@@ -1,5 +1,5 @@
 
-export class BMDbPostgres {
+export class BDbPostgres {
 
   // condition key using for JSON condition format in request to convert to SQL in PostgreSQL in backend server
   static CONDITION_KEY = {
@@ -11,10 +11,10 @@ export class BMDbPostgres {
   static getConditionKey(key: string): string {
     let conditionKey = key;
     switch (key) {
-      case BMDbPostgres.CONDITION_KEY.IN_ARRAY:
+      case BDbPostgres.CONDITION_KEY.IN_ARRAY:
         conditionKey = ' IN ';
         break;
-      case BMDbPostgres.CONDITION_KEY.NOT_IN_ARRAY:
+      case BDbPostgres.CONDITION_KEY.NOT_IN_ARRAY:
         conditionKey = ' NOT IN ';
         break;
       default:

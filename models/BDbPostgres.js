@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var BMDbPostgres = /** @class */ (function () {
-    function BMDbPostgres() {
+var BDbPostgres = /** @class */ (function () {
+    function BDbPostgres() {
     }
     // retrieve the correct key using in SQL in PostgreSQL in backend
-    BMDbPostgres.getConditionKey = function (key) {
+    BDbPostgres.getConditionKey = function (key) {
         var conditionKey = key;
         switch (key) {
-            case BMDbPostgres.CONDITION_KEY.IN_ARRAY:
+            case BDbPostgres.CONDITION_KEY.IN_ARRAY:
                 conditionKey = ' IN ';
                 break;
-            case BMDbPostgres.CONDITION_KEY.NOT_IN_ARRAY:
+            case BDbPostgres.CONDITION_KEY.NOT_IN_ARRAY:
                 conditionKey = ' NOT IN ';
                 break;
             default:
@@ -23,7 +23,7 @@ var BMDbPostgres = /** @class */ (function () {
      * @param {string} input
      * @returns {any[]}
      */
-    BMDbPostgres.parseArray = function (input) {
+    BDbPostgres.parseArray = function (input) {
         var result = [input];
         try {
             var tempStr = input.replace(/{/g, '[');
@@ -38,11 +38,11 @@ var BMDbPostgres = /** @class */ (function () {
         return result;
     };
     // condition key using for JSON condition format in request to convert to SQL in PostgreSQL in backend server
-    BMDbPostgres.CONDITION_KEY = {
+    BDbPostgres.CONDITION_KEY = {
         IN_ARRAY: 'in_array',
         NOT_IN_ARRAY: 'not_in_array',
     };
-    return BMDbPostgres;
+    return BDbPostgres;
 }());
-exports.BMDbPostgres = BMDbPostgres;
-//# sourceMappingURL=BMDbPostgres.js.map
+exports.BDbPostgres = BDbPostgres;
+//# sourceMappingURL=BDbPostgres.js.map
