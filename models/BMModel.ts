@@ -14,6 +14,7 @@ import {BMStatus} from './BMStatus';
 import {BMRole} from './BMRole';
 import {BMGender} from './BMGender';
 import {BMBookType} from './BMBookType';
+import {IBMUserActivityValue} from '../index';
 
 export class BMModel {
 
@@ -217,6 +218,17 @@ export class BMModel {
       created_at: NOW,
     };
     return value;
+  }
+
+  static initUserActivity(): IBMUserActivityValue {
+    const NOW = parseInt(moment().format('X'), 10);
+    return {
+      subject: '',
+      verb: '',
+      object: '',
+      tags: '',
+      created_at: NOW,
+    };
   }
 
   static initConfig(): IBMConfigsValue {

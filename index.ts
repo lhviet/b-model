@@ -12,6 +12,7 @@ export * from './models/interfaces/IBMUser';
 export * from './models/interfaces/IBMUserBasicInfo';
 export * from './models/interfaces/IBMUserFriendship';
 export * from './models/interfaces/IBMBookCreditPerson';
+export * from './models/interfaces/IBMUserActivity';
 
 export * from './models/interface_server_response/ISUser';
 

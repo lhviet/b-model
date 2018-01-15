@@ -183,6 +183,16 @@ var BMModel = /** @class */ (function () {
         };
         return value;
     };
+    BMModel.initUserActivity = function () {
+        var NOW = parseInt(moment().format('X'), 10);
+        return {
+            subject: '',
+            verb: '',
+            object: '',
+            tags: '',
+            created_at: NOW,
+        };
+    };
     BMModel.initConfig = function () {
         var value = {
             name: '',
