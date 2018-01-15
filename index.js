@@ -11,4 +11,5 @@ __export(require("./models/BMGender"));
 __export(require("./models/BMBookType"));
 __export(require("./models/BDbLimitation"));
 __export(require("./query/BMQuery"));
+__export(require("./ErrorDefinition"));
 //# sourceMappingURL=index.js.map

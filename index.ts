@@ -24,3 +24,5 @@ export * from './models/BMBookType';
 export * from './models/BDbLimitation';
 
 export * from './query/BMQuery';
+
+export * from './ErrorDefinition';
