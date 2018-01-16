@@ -3,7 +3,6 @@ export * from './models/interfaces/IBMBookText';
 export * from './models/interfaces/IBMBookTextChapter';
 export * from './models/interfaces/IBMConfigs';
 export * from './models/interfaces/IBMDbLimitation';
-export * from './models/interfaces/IBMEventModel';
 export * from './models/interfaces/IBMInfo';
 export * from './models/interfaces/IBMPerson';
 export * from './models/interfaces/IBMQuote';
