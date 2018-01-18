@@ -15,6 +15,7 @@ import {BMRole} from './BMRole';
 import {BMGender} from './BMGender';
 import {BMBookType} from './BMBookType';
 import {IBMUserActivityValue} from '../index';
+import {IBMUserActivityExtractedValue} from './interfaces/IBMUserActivity';
 
 export class BMModel {
 
@@ -228,6 +229,18 @@ export class BMModel {
       object: '',
       tags: '',
       created_at: NOW,
+    };
+  }
+
+  static initUserActivityExtracted(): IBMUserActivityExtractedValue {
+    const NOW = parseInt(moment().format('X'), 10);
+    return {
+      sbj: {keyid: '', username: '', displayname: '', avatar_url: ''},
+      obj: {keyid: '', custom_url: '', cover_url: '', title: '', description: ''},
+      type: '',
+      obj_url: '',
+      description: '',
+      created_at: NOW
     };
   }
 
