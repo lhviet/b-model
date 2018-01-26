@@ -224,9 +224,9 @@ export class BMModel {
   static initUserActivity(): IBMUserActivityValue {
     const NOW = parseInt(moment().format('X'), 10);
     return {
-      subject: '',
+      sbj: '',
       verb: '',
-      object: '',
+      obj: '',
       tags: '',
       created_at: NOW,
     };

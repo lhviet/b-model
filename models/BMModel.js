@@ -186,9 +186,9 @@ var BMModel = /** @class */ (function () {
     BMModel.initUserActivity = function () {
         var NOW = parseInt(moment().format('X'), 10);
         return {
-            subject: '',
+            sbj: '',
             verb: '',
-            object: '',
+            obj: '',
             tags: '',
             created_at: NOW,
         };

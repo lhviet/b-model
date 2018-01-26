@@ -3,9 +3,9 @@ export interface IBMUserActivity {
   value: IBMUserActivityValue;
 }
 export interface IBMUserActivityValue {
-  subject: string;
+  sbj: string;
   verb: string;
-  object: string;
+  obj: string;
   tags?: string;
   created_at: number;
 }
