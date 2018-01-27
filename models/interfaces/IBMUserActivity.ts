@@ -11,6 +11,10 @@ export interface IBMUserActivityValue {
 }
 
 // the extracted model of UserActivity
+export interface IBMUserActivityExtracted {
+  keyid: string;
+  value: IBMUserActivityExtractedValue;
+}
 export interface IBMUserActivityExtractedValue {
   sbj: {
     keyid: string,
