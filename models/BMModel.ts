@@ -3,8 +3,8 @@ import { IMeaningExampleValue } from './interfaces/IMeaningExample';
 import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
 import { IPronunciationValue } from './interfaces/IPronunciation';
 import { IWordValue } from './interfaces/IWord';
+import MPDStatus from 'core/MPDStatus';
 import * as moment from 'moment';
-import {TYPE_STATUS_PENDING} from './types/TStatus';
 
 export class BMModel {
 
@@ -13,7 +13,7 @@ export class BMModel {
     const value: IWordValue = {
       word: '',
       custom_url: '',
-      status: TYPE_STATUS_PENDING,
+      status: MPDStatus.EnumStatus.Pending,
       created_at: NOW,
       updated_at: NOW,
     };

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var MPDStatus_1 = require("core/MPDStatus");
 var moment = require("moment");
-var TStatus_1 = require("./types/TStatus");
 var BMModel = /** @class */ (function () {
     function BMModel() {
     }
@@ -10,7 +10,7 @@ var BMModel = /** @class */ (function () {
         var value = {
             word: '',
             custom_url: '',
-            status: TStatus_1.TYPE_STATUS_PENDING,
+            status: MPDStatus_1.default.EnumStatus.Pending,
             created_at: NOW,
             updated_at: NOW,
         };
