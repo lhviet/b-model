@@ -2,8 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var DbLimitation = /** @class */ (function () {
     function DbLimitation(offset, limit, sorter, direct) {
-        if (offset === void 0) { offset = 0; }
-        if (limit === void 0) { limit = 25; }
         this.offset = offset;
         this.limit = limit;
         this.sorter = sorter;
