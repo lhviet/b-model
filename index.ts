@@ -1,3 +1,4 @@
+export * from './models/interfaces/IDbLimitation';
 export * from './models/interfaces/IMeaning';
 export * from './models/interfaces/IMeaningExample';
 export * from './models/interfaces/IMeaningUsage';
