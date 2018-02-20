@@ -13,4 +13,5 @@ export interface IPronunciationValue {
   system: BPronunciationSystem.EnumSystem;     // pronunciation transcript system, i.e. IPA
   local: BLocal.EnumLocal;      // i.e., US, GB, AU
   transcript: string;
+  description?: string;
 }
