@@ -1,10 +1,10 @@
+import * as moment from 'moment';
 import { IMeaningValue } from './interfaces/IMeaning';
 import { IMeaningExampleValue } from './interfaces/IMeaningExample';
 import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
 import { IPronunciationValue } from './interfaces/IPronunciation';
 import { IWordValue } from './interfaces/IWord';
-import BStatus from 'core/BStatus';
-import * as moment from 'moment';
+import BStatus from './core/BStatus';
 import BWordClass from './core/BWordClass';
 import BPronunciationSystem from './core/BPronunciationSystem';
 import BLocal from './core/BLocal';
