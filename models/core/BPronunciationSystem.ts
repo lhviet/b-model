@@ -1,10 +1,9 @@
-enum EnumSystem {
-  IPA = 1,
+module BPronunciationSystem {
+  export enum EnumSystem {
+    IPA = 1,
+  }
+
+  export const isIPA = (statusType: EnumSystem): boolean => statusType === EnumSystem.IPA;
 }
 
-const isIPA = (statusType: EnumSystem): boolean => statusType === EnumSystem.IPA;
-
-export default {
-  EnumSystem,
-  isIPA,
-}
+export default BPronunciationSystem;

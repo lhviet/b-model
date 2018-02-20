@@ -1,22 +1,18 @@
-enum EnumStatus {
-  Pending = 1,
-  Processing,
-  Rejected,
-  Active,
-  Disabled,
+module BStatus {
+  export enum EnumStatus {
+    Pending = 1,
+    Processing,
+    Rejected,
+    Active,
+    Disabled,
+  }
+
+  export const isPending = (statusType: EnumStatus): boolean => statusType === EnumStatus.Pending;
+  export const isProcessing = (statusType: EnumStatus): boolean => statusType === EnumStatus.Processing;
+  export const isRejected = (statusType: EnumStatus): boolean => statusType === EnumStatus.Rejected;
+  export const isActive = (statusType: EnumStatus): boolean => statusType === EnumStatus.Active;
+  export const isDisabled = (statusType: EnumStatus): boolean => statusType === EnumStatus.Disabled;
 }
 
-const isPending = (statusType: EnumStatus): boolean => statusType === EnumStatus.Pending;
-const isProcessing = (statusType: EnumStatus): boolean => statusType === EnumStatus.Processing;
-const isRejected = (statusType: EnumStatus): boolean => statusType === EnumStatus.Rejected;
-const isActive = (statusType: EnumStatus): boolean => statusType === EnumStatus.Active;
-const isDisabled = (statusType: EnumStatus): boolean => statusType === EnumStatus.Disabled;
 
-export default {
-  EnumStatus,
-  isPending,
-  isActive,
-  isDisabled,
-  isProcessing,
-  isRejected,
-}
+export default BStatus;
