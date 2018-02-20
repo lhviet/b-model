@@ -1,3 +1,3 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//# sourceMappingURL=IBMBookCreditPerson.js.map
+//# sourceMappingURL=IMeaningExample.js.map

@@ -1,3 +1,3 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//# sourceMappingURL=IBMSlider.js.map
+//# sourceMappingURL=IMeaning.js.map
