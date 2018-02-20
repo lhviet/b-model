@@ -5,7 +5,7 @@ export interface IMeaning {
 
 export interface IMeaningValue {
   word_keyid: string;   // max 16 chars, reference to Word (keyid)
-  word_class: string;
+  word_class: number;
   mean: string;
   tags: string;
 }

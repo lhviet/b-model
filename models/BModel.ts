@@ -3,8 +3,11 @@ import { IMeaningExampleValue } from './interfaces/IMeaningExample';
 import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
 import { IPronunciationValue } from './interfaces/IPronunciation';
 import { IWordValue } from './interfaces/IWord';
-import MPDStatus from 'core/BStatus';
+import BStatus from 'core/BStatus';
 import * as moment from 'moment';
+import BWordClass from './core/BWordClass';
+import BPronunciationSystem from './core/BPronunciationSystem';
+import BLocal from './core/BLocal';
 
 export class BModel {
 
@@ -13,7 +16,7 @@ export class BModel {
     const value: IWordValue = {
       word: '',
       custom_url: '',
-      status: MPDStatus.EnumStatus.Pending,
+      status: BStatus.EnumStatus.Pending,
       created_at: NOW,
       updated_at: NOW,
     };
@@ -23,9 +26,9 @@ export class BModel {
   static initPronunciation(): IPronunciationValue {
     const value: IPronunciationValue = {
       word_keyid: '',
-      word_class: 1,  // i.e., 1 = all, 2 = noun, 3 = verb, 4 = adjective, 5 = ...
-      system: 1,     // i.e., 1 = IPA
-      local: 1,      // i.e., 1 = US
+      word_class: BWordClass.EnumWordClass.all,  // i.e., 1 = all, 2 = noun, 3 = verb, 4 = adjective, 5 = ...
+      system: BPronunciationSystem.EnumSystem.IPA,     // i.e., 1 = IPA
+      local: BLocal.EnumLocal.US,      // i.e., 1 = US
       transcript: '',
     };
     return value;
@@ -34,7 +37,7 @@ export class BModel {
   static initMeaning(): IMeaningValue {
     const value: IMeaningValue = {
       word_keyid: '',
-      word_class: '',
+      word_class: BWordClass.EnumWordClass.all,
       mean: '',
       tags: '',
     };

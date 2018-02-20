@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var BStatus_1 = require("core/BStatus");
 var moment = require("moment");
+var BWordClass_1 = require("./core/BWordClass");
+var BPronunciationSystem_1 = require("./core/BPronunciationSystem");
+var BLocal_1 = require("./core/BLocal");
 var BModel = /** @class */ (function () {
     function BModel() {
     }
@@ -19,9 +22,9 @@ var BModel = /** @class */ (function () {
     BModel.initPronunciation = function () {
         var value = {
             word_keyid: '',
-            word_class: 1,
-            system: 1,
-            local: 1,
+            word_class: BWordClass_1.default.EnumWordClass.all,
+            system: BPronunciationSystem_1.default.EnumSystem.IPA,
+            local: BLocal_1.default.EnumLocal.US,
             transcript: '',
         };
         return value;
@@ -29,7 +32,7 @@ var BModel = /** @class */ (function () {
     BModel.initMeaning = function () {
         var value = {
             word_keyid: '',
-            word_class: '',
+            word_class: BWordClass_1.default.EnumWordClass.all,
             mean: '',
             tags: '',
         };

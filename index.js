@@ -5,6 +5,9 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./models/core/BRole"));
 __export(require("./models/core/BStatus"));
+__export(require("./models/core/BWordClass"));
+__export(require("./models/core/BPronunciationSystem"));
+__export(require("./models/core/BLocal"));
 __export(require("./models/DbLimitation"));
 __export(require("./models/DbPostgres"));
 __export(require("./models/BModel"));
