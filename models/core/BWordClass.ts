@@ -4,6 +4,15 @@ module BWordClass {
     noun,
     verb,
     adjective,
+    adverb,
+    pronoun,
+    abbreviation,
+    interjection,
+    conjunction,
+    prefix,
+    preposition,
+    article,  // DEFINITE AND INDEFINITE ARTICLES: a, an, the
+    unclassified,
   }
 
   export const isAll = (statusType: EnumWordClass): boolean => statusType === EnumWordClass.all;
