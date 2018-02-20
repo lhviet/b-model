@@ -1,4 +1,4 @@
-export interface IBMDbLimitation {
+export interface IDbLimitation {
   offset: number;
   limit: number;
   sorter: string;

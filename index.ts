@@ -6,12 +6,12 @@ export * from './models/interfaces/IWord';
 
 export * from './models/interface_server_response/ISUser';
 
-export * from './models/BDbLimitation';
-export * from './models/BDbPostgres';
-export * from './models/BMModel';
+export * from './models/DbLimitation';
+export * from './models/DbPostgres';
+export * from './models/BModel';
 
-export * from './models/core/MPDStatus';
+export * from './models/core/BStatus';
 
-export * from './query/BMQuery';
+export * from './query/BQuery';
 
 export * from './ErrorDefinition';

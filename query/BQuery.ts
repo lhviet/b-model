@@ -1,4 +1,4 @@
-export class BMQuery {
+export class BQuery {
 
   static REGEX_SEARCH_SPLIT = /('.*?'|".*?"|\S+)/g;
 
@@ -20,7 +20,7 @@ export class BMQuery {
    * @returns {string}
    */
   static getOrderedQuerySearchString(searchText: string): string {
-    const phrases = searchText.split(BMQuery.REGEX_SEARCH_SPLIT);
+    const phrases = searchText.split(BQuery.REGEX_SEARCH_SPLIT);
     let queryString = '';
     phrases.map(item => {
       item = item.trim();
@@ -46,7 +46,7 @@ export class BMQuery {
    * @returns {string[]}
    */
   static getQuerySearchArray(searchText: string): string[] {
-    const phrases = searchText.split(BMQuery.REGEX_SEARCH_SPLIT);
+    const phrases = searchText.split(BQuery.REGEX_SEARCH_SPLIT);
     const queryArray: string[] = [];
     phrases.map(item => {
       item = item.trim();

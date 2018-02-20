@@ -3,10 +3,10 @@ import { IMeaningExampleValue } from './interfaces/IMeaningExample';
 import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
 import { IPronunciationValue } from './interfaces/IPronunciation';
 import { IWordValue } from './interfaces/IWord';
-import MPDStatus from 'core/MPDStatus';
+import MPDStatus from 'core/BStatus';
 import * as moment from 'moment';
 
-export class BMModel {
+export class BModel {
 
   static initWord(): IWordValue {
     const NOW = parseInt(moment().format('X'), 10);

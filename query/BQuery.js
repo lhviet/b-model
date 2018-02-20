@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var BMQuery = /** @class */ (function () {
-    function BMQuery() {
+var BQuery = /** @class */ (function () {
+    function BQuery() {
     }
     /**
      * Return a search string to use in SQL search
@@ -10,8 +10,8 @@ var BMQuery = /** @class */ (function () {
      * @param {string} searchText
      * @returns {string}
      */
-    BMQuery.getOrderedQuerySearchString = function (searchText) {
-        var phrases = searchText.split(BMQuery.REGEX_SEARCH_SPLIT);
+    BQuery.getOrderedQuerySearchString = function (searchText) {
+        var phrases = searchText.split(BQuery.REGEX_SEARCH_SPLIT);
         var queryString = '';
         phrases.map(function (item) {
             item = item.trim();
@@ -35,8 +35,8 @@ var BMQuery = /** @class */ (function () {
      * @param {string} searchText
      * @returns {string[]}
      */
-    BMQuery.getQuerySearchArray = function (searchText) {
-        var phrases = searchText.split(BMQuery.REGEX_SEARCH_SPLIT);
+    BQuery.getQuerySearchArray = function (searchText) {
+        var phrases = searchText.split(BQuery.REGEX_SEARCH_SPLIT);
         var queryArray = [];
         phrases.map(function (item) {
             item = item.trim();
@@ -50,8 +50,8 @@ var BMQuery = /** @class */ (function () {
         });
         return queryArray;
     };
-    BMQuery.REGEX_SEARCH_SPLIT = /('.*?'|".*?"|\S+)/g;
-    BMQuery.QUERY = {
+    BQuery.REGEX_SEARCH_SPLIT = /('.*?'|".*?"|\S+)/g;
+    BQuery.QUERY = {
         keyid: 'kid',
         search: 's',
         language: 'lang',
@@ -60,7 +60,7 @@ var BMQuery = /** @class */ (function () {
         sorter: 'sr',
         direct: 'dir',
     };
-    return BMQuery;
+    return BQuery;
 }());
-exports.BMQuery = BMQuery;
-//# sourceMappingURL=BMQuery.js.map
+exports.BQuery = BQuery;
+//# sourceMappingURL=BQuery.js.map
