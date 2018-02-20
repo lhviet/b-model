@@ -2,12 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var BDbLimitation = /** @class */ (function () {
     function BDbLimitation(offset, limit, sorter, direct) {
-        this.offset = offset || 0;
-        this.limit = limit || 25;
-        this.sorter = sorter || '';
-        this.direct = direct || '';
+        if (offset === void 0) { offset = 0; }
+        if (limit === void 0) { limit = 25; }
+        this.offset = offset;
+        this.limit = limit;
+        this.sorter = sorter;
+        this.direct = direct;
     }
-    BDbLimitation.limit0 = function (sorter, direct) { return new BDbLimitation(0, 0, sorter, direct); };
     BDbLimitation.limit25 = function (sorter, direct) {
         if (sorter === void 0) { sorter = 'created_at'; }
         if (direct === void 0) { direct = 'desc'; }
