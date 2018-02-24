@@ -1,6 +1,4 @@
-import BWordClass from '../core/BWordClass';
-import BPronunciationSystem from '../core/BPronunciationSystem';
-import BLocal from '../core/BLocal';
+import {EPLocal, EPSystem, EWClass} from '../enums';
 
 export interface IPronunciation {
   keyid: string;
@@ -9,9 +7,9 @@ export interface IPronunciation {
 
 export interface IPronunciationValue {
   word_keyid: string;   // max 16 chars, reference to Word (keyid)
-  word_class: BWordClass.EnumWordClass; // class of word, i.e. noun, verb, adjective
-  system: BPronunciationSystem.EnumSystem;     // pronunciation transcript system, i.e. IPA
-  local: BLocal.EnumLocal;      // i.e., US, GB, AU
+  word_class: EWClass; // class of word, i.e. noun, verb, adjective
+  system: EPSystem;     // pronunciation transcript system, i.e. IPA
+  local: EPLocal;      // i.e., US, GB, AU
   transcript: string;
   description?: string;
 }

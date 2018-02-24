@@ -1,80 +1,62 @@
-module BWordClass {
-  export const enum EnumWordClass {
-    all = 1,
-    noun,
-    verb,
-    adjective,
-    adverb,
-    pronoun,
-    abbreviation,
-    interjection,
-    conjunction,
-    prefix,
-    preposition,
-    article,  // DEFINITE AND INDEFINITE ARTICLES: a, an, the
-    unclassified,
-  }
+import {EWClass} from '../enums';
 
-  export function isAll(statusType: EnumWordClass): boolean {
-    return statusType === EnumWordClass.all;
-  }
-  export function isNoun(statusType: EnumWordClass): boolean {
-    return statusType === EnumWordClass.noun;
-  }
-  export function isVerb(statusType: EnumWordClass): boolean {
-    return statusType === EnumWordClass.verb;
-  }
-  export function isAdj(statusType: EnumWordClass): boolean {
-    return statusType === EnumWordClass.adjective;
-  }
-
-  export function getEString(e: EnumWordClass): string {
-    let wordClass: string;
-    switch (e) {
-      case EnumWordClass.all:
-        wordClass = 'all';
-        break;
-      case EnumWordClass.noun:
-        wordClass = 'noun';
-        break;
-      case EnumWordClass.verb:
-        wordClass = 'verb';
-        break;
-      case EnumWordClass.adjective:
-        wordClass = 'adjective';
-        break;
-      case EnumWordClass.adverb:
-        wordClass = 'adverb';
-        break;
-      case EnumWordClass.pronoun:
-        wordClass = 'pronoun';
-        break;
-      case EnumWordClass.abbreviation:
-        wordClass = 'abbreviation';
-        break;
-      case EnumWordClass.interjection:
-        wordClass = 'interjection';
-        break;
-      case EnumWordClass.conjunction:
-        wordClass = 'conjunction';
-        break;
-      case EnumWordClass.prefix:
-        wordClass = 'prefix';
-        break;
-      case EnumWordClass.preposition:
-        wordClass = 'preposition';
-        break;
-      case EnumWordClass.article:
-        wordClass = 'article';
-        break;
-      case EnumWordClass.unclassified:
-        wordClass = 'unclassified';
-        break;
-      default:
-        return '';
-    }
-    return wordClass.substr(0, 4);
-  }
+export function isAll(statusType: EWClass): boolean {
+  return statusType === EWClass.all;
+}
+export function isNoun(statusType: EWClass): boolean {
+  return statusType === EWClass.noun;
+}
+export function isVerb(statusType: EWClass): boolean {
+  return statusType === EWClass.verb;
+}
+export function isAdj(statusType: EWClass): boolean {
+  return statusType === EWClass.adjective;
 }
 
-export default BWordClass;
+export function getEWordClassString(e: EWClass): string {
+  let wordClass: string;
+  switch (e) {
+    case EWClass.all:
+      wordClass = 'all';
+      break;
+    case EWClass.noun:
+      wordClass = 'noun';
+      break;
+    case EWClass.verb:
+      wordClass = 'verb';
+      break;
+    case EWClass.adjective:
+      wordClass = 'adjective';
+      break;
+    case EWClass.adverb:
+      wordClass = 'adverb';
+      break;
+    case EWClass.pronoun:
+      wordClass = 'pronoun';
+      break;
+    case EWClass.abbreviation:
+      wordClass = 'abbreviation';
+      break;
+    case EWClass.interjection:
+      wordClass = 'interjection';
+      break;
+    case EWClass.conjunction:
+      wordClass = 'conjunction';
+      break;
+    case EWClass.prefix:
+      wordClass = 'prefix';
+      break;
+    case EWClass.preposition:
+      wordClass = 'preposition';
+      break;
+    case EWClass.article:
+      wordClass = 'article';
+      break;
+    case EWClass.unclassified:
+      wordClass = 'unclassified';
+      break;
+    default:
+      return '';
+  }
+  return wordClass.substr(0, 4);
+}

@@ -1,9 +1,8 @@
-import BPronunciationSystem from '../core/BPronunciationSystem';
-import BLocal from '../core/BLocal';
-import BWordClass from '../core/BWordClass';
+import {EPLocal, EPSystem, EWClass} from '../enums';
+import {getEPLocalString, getEPSystemString} from '../core';
 
 interface IPronunciationClass {
-  c: BWordClass.EnumWordClass;  // word_class of the pronunciation
+  c: EWClass;  // word_class of the pronunciation
   p: string;  // pronunciation
   d: string;  // description
 }
@@ -30,13 +29,13 @@ export class MWord {
     this.system = {};
   }
 
-  addPronunciation(system: BPronunciationSystem.EnumSystem,
-                   local: BLocal.EnumLocal,
-                   wordClass: BWordClass.EnumWordClass,
+  addPronunciation(system: EPSystem,
+                   local: EPLocal,
+                   wordClass: EWClass,
                    pronunciation: string,
                    description: string) {
-    const systemString = BPronunciationSystem.getEString(system);
-    const localString = BLocal.getEString(local);
+    const systemString = getEPSystemString(system);
+    const localString = getEPLocalString(local);
     const pClass: IPronunciationClass = {
       c: wordClass,
       p: pronunciation,

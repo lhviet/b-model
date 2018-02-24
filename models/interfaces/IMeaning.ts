@@ -1,4 +1,4 @@
-import BWordClass from '../core/BWordClass';
+import {EWClass} from '../enums';
 
 export interface IMeaning {
   keyid: string;
@@ -7,7 +7,7 @@ export interface IMeaning {
 
 export interface IMeaningValue {
   word_keyid: string;   // max 16 chars, reference to Word (keyid)
-  word_class: BWordClass.EnumWordClass;
+  word_class: EWClass;
   mean: string;
   tags: string;
 }

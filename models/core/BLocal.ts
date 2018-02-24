@@ -1,34 +1,24 @@
-module BLocal {
-  export const enum EnumLocal {
-    US = 1,
-    GB,
-    AU,
-  }
+import {EPLocal} from '../enums';
 
-  export function isUS(statusType: EnumLocal): boolean {
-    return statusType === EnumLocal.US;
-  }
-  export function isGB(statusType: EnumLocal): boolean {
-    return statusType === EnumLocal.GB;
-  }
-  export function isAU(statusType: EnumLocal): boolean {
-    return statusType === EnumLocal.AU;
-  }
-
-  export function getEString(e: EnumLocal): string {
-    switch (e) {
-      case EnumLocal.US:
-        return 'US';
-      case EnumLocal.GB:
-        return 'GB';
-      case EnumLocal.AU:
-        return 'AU';
-      default:
-        return '';
-    }
-  };
-
+export function isUS(statusType: EPLocal): boolean {
+  return statusType === EPLocal.US;
+}
+export function isGB(statusType: EPLocal): boolean {
+  return statusType === EPLocal.GB;
+}
+export function isAU(statusType: EPLocal): boolean {
+  return statusType === EPLocal.AU;
 }
 
-
-export default BLocal;
+export function getEPLocalString(e: EPLocal): string {
+  switch (e) {
+    case EPLocal.US:
+      return 'US';
+    case EPLocal.GB:
+      return 'GB';
+    case EPLocal.AU:
+      return 'AU';
+    default:
+      return '';
+  }
+}

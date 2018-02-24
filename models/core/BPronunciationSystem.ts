@@ -1,22 +1,14 @@
-module BPronunciationSystem {
+import {EPSystem} from '../enums';
 
-  export const enum EnumSystem {
-    IPA = 1,
-  }
-
-  export function isIPA(statusType: EnumSystem): boolean {
-    return statusType === EnumSystem.IPA;
-  }
-
-  export function getEString(e: EnumSystem): string {
-    switch (e) {
-      case EnumSystem.IPA:
-        return 'IPA';
-      default:
-        return '';
-    }
-  };
-
+export function isIPA(statusType: EPSystem): boolean {
+  return statusType === EPSystem.IPA;
 }
 
-export default BPronunciationSystem;
+export function getEPSystemString(e: EPSystem): string {
+  switch (e) {
+    case EPSystem.IPA:
+      return 'IPA';
+    default:
+      return '';
+  }
+}

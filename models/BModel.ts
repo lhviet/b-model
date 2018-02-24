@@ -4,10 +4,7 @@ import { IMeaningExampleValue } from './interfaces/IMeaningExample';
 import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
 import { IPronunciationValue } from './interfaces/IPronunciation';
 import { IWordValue } from './interfaces/IWord';
-import BStatus from './core/BStatus';
-import BWordClass from './core/BWordClass';
-import BPronunciationSystem from './core/BPronunciationSystem';
-import BLocal from './core/BLocal';
+import {EPLocal, EPSystem, EStatus, EWClass} from './enums';
 
 export class BModel {
 
@@ -16,7 +13,7 @@ export class BModel {
     const value: IWordValue = {
       word: '',
       custom_url: '',
-      status: BStatus.EnumStatus.Pending,
+      status: EStatus.Pending,
       created_at: NOW,
       updated_at: NOW,
     };
@@ -26,9 +23,9 @@ export class BModel {
   static initPronunciation(): IPronunciationValue {
     const value: IPronunciationValue = {
       word_keyid: '',
-      word_class: BWordClass.EnumWordClass.all,  // i.e., 1 = all, 2 = noun, 3 = verb, 4 = adjective, 5 = ...
-      system: BPronunciationSystem.EnumSystem.IPA,     // i.e., 1 = IPA
-      local: BLocal.EnumLocal.US,      // i.e., 1 = US
+      word_class: EWClass.all,  // i.e., 1 = all, 2 = noun, 3 = verb, 4 = adjective, 5 = ...
+      system: EPSystem.IPA,     // i.e., 1 = IPA
+      local: EPLocal.US,      // i.e., 1 = US
       transcript: '',
     };
     return value;
@@ -37,7 +34,7 @@ export class BModel {
   static initMeaning(): IMeaningValue {
     const value: IMeaningValue = {
       word_keyid: '',
-      word_class: BWordClass.EnumWordClass.all,
+      word_class: EWClass.all,
       mean: '',
       tags: '',
     };
