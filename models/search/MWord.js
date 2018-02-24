@@ -30,7 +30,7 @@ var MWord = /** @class */ (function () {
                 this.system[systemString][localString] = [pClass];
             }
             else {
-                var foundSamePronunciation = pArr.find(function (pItem) { return pItem.p === pronunciation; });
+                var foundSamePronunciation = pArr.find(function (pItem) { return (pItem.p === pronunciation && pItem.c === wordClass); });
                 if (!foundSamePronunciation) {
                     pArr.push(pClass);
                 }

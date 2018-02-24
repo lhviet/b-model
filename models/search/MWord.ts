@@ -53,12 +53,11 @@ export class MWord {
         this.system[systemString][localString] = [pClass]
       }
       else {
-        const foundSamePronunciation = pArr.find(pItem => pItem.p === pronunciation);
+        const foundSamePronunciation = pArr.find(pItem => (pItem.p === pronunciation && pItem.c === wordClass));
         if (!foundSamePronunciation) {
           pArr.push(pClass);
         }
       }
     }
   }
-
 }
