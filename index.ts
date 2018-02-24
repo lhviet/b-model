@@ -1,8 +1,4 @@
-export * from './models/core/BRole';
-export * from './models/core/BStatus';
-export * from './models/core/BWordClass';
-export * from './models/core/BPronunciationSystem';
-export * from './models/core/BLocal';
+export * from './models/core';
 
 export * from './models/interfaces/IDbLimitation';
 export * from './models/interfaces/IMeaning';
