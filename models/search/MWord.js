@@ -14,24 +14,26 @@ var MWord = /** @class */ (function () {
     MWord.prototype.addPronunciation = function (system, local, wordClass, pronunciation, description) {
         var systemString = BPronunciationSystem_1.default.getEString(system);
         var localString = BLocal_1.default.getEString(local);
+        var pClass = {
+            c: wordClass,
+            p: pronunciation,
+            d: description
+        };
         if (!this.system[systemString]) {
             this.system[systemString] = (_a = {},
-                _a[localString] = [{
-                        c: wordClass,
-                        p: pronunciation,
-                        d: description
-                    }],
+                _a[localString] = [pClass],
                 _a);
         }
         else {
             var pArr = this.system[systemString][localString];
-            var foundSamePronunciation = pArr.find(function (pItem) { return pItem.p === pronunciation; });
-            if (!foundSamePronunciation) {
-                pArr.push({
-                    c: wordClass,
-                    p: pronunciation,
-                    d: description
-                });
+            if (!pArr) {
+                this.system[systemString][localString] = [pClass];
+            }
+            else {
+                var foundSamePronunciation = pArr.find(function (pItem) { return pItem.p === pronunciation; });
+                if (!foundSamePronunciation) {
+                    pArr.push(pClass);
+                }
             }
         }
         var _a;

@@ -37,24 +37,26 @@ export class MWord {
                    description: string) {
     const systemString = BPronunciationSystem.getEString(system);
     const localString = BLocal.getEString(local);
+    const pClass: IPronunciationClass = {
+      c: wordClass,
+      p: pronunciation,
+      d: description
+    };
     if (!this.system[systemString]) {
       this.system[systemString] = {
-        [localString]: [{
-          c: wordClass,
-          p: pronunciation,
-          d: description
-        }]
+        [localString]: [pClass]
       };
     }
     else {
       const pArr = this.system[systemString][localString];
-      const foundSamePronunciation = pArr.find(pItem => pItem.p === pronunciation);
-      if (!foundSamePronunciation) {
-        pArr.push({
-          c: wordClass,
-          p: pronunciation,
-          d: description
-        });
+      if (!pArr) {
+        this.system[systemString][localString] = [pClass]
+      }
+      else {
+        const foundSamePronunciation = pArr.find(pItem => pItem.p === pronunciation);
+        if (!foundSamePronunciation) {
+          pArr.push(pClass);
+        }
       }
     }
   }
