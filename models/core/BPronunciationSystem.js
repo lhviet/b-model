@@ -1,13 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var BPronunciationSystem;
-(function (BPronunciationSystem) {
-    var EnumSystem;
-    (function (EnumSystem) {
-        EnumSystem[EnumSystem["IPA"] = 1] = "IPA";
-    })(EnumSystem = BPronunciationSystem.EnumSystem || (BPronunciationSystem.EnumSystem = {}));
-    BPronunciationSystem.isIPA = function (statusType) { return statusType === EnumSystem.IPA; };
-    BPronunciationSystem.getEString = function (eSystem) { return EnumSystem[eSystem]; };
-})(BPronunciationSystem || (BPronunciationSystem = {}));
-exports.default = BPronunciationSystem;
+var EnumSystem;
+(function (EnumSystem) {
+    EnumSystem[EnumSystem["IPA"] = 1] = "IPA";
+})(EnumSystem = exports.EnumSystem || (exports.EnumSystem = {}));
+exports.isIPA = function (statusType) { return statusType === EnumSystem.IPA; };
+exports.getEString = function (eSystem) { return EnumSystem[eSystem]; };
 //# sourceMappingURL=BPronunciationSystem.js.map
