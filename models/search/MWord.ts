@@ -5,6 +5,7 @@ import BWordClass from '../core/BWordClass';
 interface IPronunciationClass {
   c: BWordClass.EnumWordClass;  // word_class of the pronunciation
   p: string;  // pronunciation
+  d: string;  // description
 }
 
 export class MWord {
@@ -32,14 +33,16 @@ export class MWord {
   addPronunciation(system: BPronunciationSystem.EnumSystem,
                    local: BLocal.EnumLocal,
                    wordClass: BWordClass.EnumWordClass,
-                   pronunciation: string) {
+                   pronunciation: string,
+                   description: string) {
     const systemString = BPronunciationSystem.getEString(system);
     const localString = BLocal.getEString(local);
     if (!this.system[systemString]) {
       this.system[systemString] = {
         [localString]: [{
           c: wordClass,
-          p: pronunciation
+          p: pronunciation,
+          d: description
         }]
       };
     }
@@ -49,7 +52,8 @@ export class MWord {
       if (!foundSamePronunciation) {
         pArr.push({
           c: wordClass,
-          p: pronunciation
+          p: pronunciation,
+          d: description
         });
       }
     }

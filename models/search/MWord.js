@@ -11,14 +11,15 @@ var MWord = /** @class */ (function () {
         this.updated_at = updated_at;
         this.system = {};
     }
-    MWord.prototype.addPronunciation = function (system, local, wordClass, pronunciation) {
+    MWord.prototype.addPronunciation = function (system, local, wordClass, pronunciation, description) {
         var systemString = BPronunciationSystem_1.default.getEString(system);
         var localString = BLocal_1.default.getEString(local);
         if (!this.system[systemString]) {
             this.system[systemString] = (_a = {},
                 _a[localString] = [{
                         c: wordClass,
-                        p: pronunciation
+                        p: pronunciation,
+                        d: description
                     }],
                 _a);
         }
@@ -28,7 +29,8 @@ var MWord = /** @class */ (function () {
             if (!foundSamePronunciation) {
                 pArr.push({
                     c: wordClass,
-                    p: pronunciation
+                    p: pronunciation,
+                    d: description
                 });
             }
         }
