@@ -22,6 +22,7 @@ var BWordClass;
     BWordClass.isNoun = function (statusType) { return statusType === EnumWordClass.noun; };
     BWordClass.isVerb = function (statusType) { return statusType === EnumWordClass.verb; };
     BWordClass.isAdj = function (statusType) { return statusType === EnumWordClass.adjective; };
+    BWordClass.getEString = function (eLocal) { return EnumWordClass[eLocal].substr(0, 4); };
 })(BWordClass || (BWordClass = {}));
 exports.default = BWordClass;
 //# sourceMappingURL=BWordClass.js.map

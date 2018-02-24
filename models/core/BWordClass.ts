@@ -1,3 +1,4 @@
+
 module BWordClass {
   export enum EnumWordClass {
     all = 1,
@@ -19,6 +20,8 @@ module BWordClass {
   export const isNoun = (statusType: EnumWordClass): boolean => statusType === EnumWordClass.noun;
   export const isVerb = (statusType: EnumWordClass): boolean => statusType === EnumWordClass.verb;
   export const isAdj = (statusType: EnumWordClass): boolean => statusType === EnumWordClass.adjective;
+
+  export const getEString = (eLocal: EnumWordClass): string => EnumWordClass[eLocal].substr(0, 4);
 }
 
 export default BWordClass;

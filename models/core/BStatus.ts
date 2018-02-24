@@ -1,3 +1,4 @@
+
 module BStatus {
   export enum EnumStatus {
     Pending = 1,
@@ -12,6 +13,8 @@ module BStatus {
   export const isRejected = (statusType: EnumStatus): boolean => statusType === EnumStatus.Rejected;
   export const isActive = (statusType: EnumStatus): boolean => statusType === EnumStatus.Active;
   export const isDisabled = (statusType: EnumStatus): boolean => statusType === EnumStatus.Disabled;
+
+  export const getEString = (eLocal: EnumStatus): string => EnumStatus[eLocal];
 }
 
 

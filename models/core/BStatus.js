@@ -15,6 +15,7 @@ var BStatus;
     BStatus.isRejected = function (statusType) { return statusType === EnumStatus.Rejected; };
     BStatus.isActive = function (statusType) { return statusType === EnumStatus.Active; };
     BStatus.isDisabled = function (statusType) { return statusType === EnumStatus.Disabled; };
+    BStatus.getEString = function (eLocal) { return EnumStatus[eLocal]; };
 })(BStatus || (BStatus = {}));
 exports.default = BStatus;
 //# sourceMappingURL=BStatus.js.map

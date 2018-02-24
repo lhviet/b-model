@@ -19,4 +19,5 @@ export class BRole {
   static isAdminSuper = (roleCode: string): boolean => roleCode === BRole.user_role.superAdmin.code;
   static isAdminOrSuper = (roleCode: string): boolean =>
     roleCode === BRole.user_role.admin.code || roleCode === BRole.user_role.superAdmin.code;
+
 }
