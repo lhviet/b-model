@@ -1,6 +1,6 @@
-import * as BPronunciationSystem from '../core/BPronunciationSystem';
-import * as BLocal from '../core/BLocal';
-import * as BWordClass from '../core/BWordClass';
+import BPronunciationSystem from '../core/BPronunciationSystem';
+import BLocal from '../core/BLocal';
+import BWordClass from '../core/BWordClass';
 
 interface IPronunciationClass {
   c: BWordClass.EnumWordClass;  // word_class of the pronunciation

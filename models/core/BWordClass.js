@@ -1,24 +1,58 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var EnumWordClass;
-(function (EnumWordClass) {
-    EnumWordClass[EnumWordClass["all"] = 1] = "all";
-    EnumWordClass[EnumWordClass["noun"] = 2] = "noun";
-    EnumWordClass[EnumWordClass["verb"] = 3] = "verb";
-    EnumWordClass[EnumWordClass["adjective"] = 4] = "adjective";
-    EnumWordClass[EnumWordClass["adverb"] = 5] = "adverb";
-    EnumWordClass[EnumWordClass["pronoun"] = 6] = "pronoun";
-    EnumWordClass[EnumWordClass["abbreviation"] = 7] = "abbreviation";
-    EnumWordClass[EnumWordClass["interjection"] = 8] = "interjection";
-    EnumWordClass[EnumWordClass["conjunction"] = 9] = "conjunction";
-    EnumWordClass[EnumWordClass["prefix"] = 10] = "prefix";
-    EnumWordClass[EnumWordClass["preposition"] = 11] = "preposition";
-    EnumWordClass[EnumWordClass["article"] = 12] = "article";
-    EnumWordClass[EnumWordClass["unclassified"] = 13] = "unclassified";
-})(EnumWordClass = exports.EnumWordClass || (exports.EnumWordClass = {}));
-exports.isAll = function (statusType) { return statusType === EnumWordClass.all; };
-exports.isNoun = function (statusType) { return statusType === EnumWordClass.noun; };
-exports.isVerb = function (statusType) { return statusType === EnumWordClass.verb; };
-exports.isAdj = function (statusType) { return statusType === EnumWordClass.adjective; };
-exports.getEString = function (eLocal) { return EnumWordClass[eLocal].substr(0, 4); };
+var BWordClass;
+(function (BWordClass) {
+    BWordClass.isAll = function (statusType) { return statusType === 1 /* all */; };
+    BWordClass.isNoun = function (statusType) { return statusType === 2 /* noun */; };
+    BWordClass.isVerb = function (statusType) { return statusType === 3 /* verb */; };
+    BWordClass.isAdj = function (statusType) { return statusType === 4 /* adjective */; };
+    BWordClass.getEString = function (e) {
+        var wordClass;
+        switch (e) {
+            case 1 /* all */:
+                wordClass = 'all';
+                break;
+            case 2 /* noun */:
+                wordClass = 'noun';
+                break;
+            case 3 /* verb */:
+                wordClass = 'verb';
+                break;
+            case 4 /* adjective */:
+                wordClass = 'adjective';
+                break;
+            case 5 /* adverb */:
+                wordClass = 'adverb';
+                break;
+            case 6 /* pronoun */:
+                wordClass = 'pronoun';
+                break;
+            case 7 /* abbreviation */:
+                wordClass = 'abbreviation';
+                break;
+            case 8 /* interjection */:
+                wordClass = 'interjection';
+                break;
+            case 9 /* conjunction */:
+                wordClass = 'conjunction';
+                break;
+            case 10 /* prefix */:
+                wordClass = 'prefix';
+                break;
+            case 11 /* preposition */:
+                wordClass = 'preposition';
+                break;
+            case 12 /* article */:
+                wordClass = 'article';
+                break;
+            case 13 /* unclassified */:
+                wordClass = 'unclassified';
+                break;
+            default:
+                return null;
+        }
+        return wordClass.substr(0, 4);
+    };
+})(BWordClass || (BWordClass = {}));
+exports.default = BWordClass;
 //# sourceMappingURL=BWordClass.js.map

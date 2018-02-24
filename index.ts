@@ -1,3 +1,4 @@
+export * from './models/core';
 
 export * from './models/interfaces/IDbLimitation';
 export * from './models/interfaces/IMeaning';

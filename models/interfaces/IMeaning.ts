@@ -1,4 +1,4 @@
-import * as BWordClass from '../core/BWordClass';
+import BWordClass from '../core/BWordClass';
 
 export interface IMeaning {
   keyid: string;

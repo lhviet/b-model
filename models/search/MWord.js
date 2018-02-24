@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var BPronunciationSystem = require("../core/BPronunciationSystem");
-var BLocal = require("../core/BLocal");
+var BPronunciationSystem_1 = require("../core/BPronunciationSystem");
+var BLocal_1 = require("../core/BLocal");
 var MWord = /** @class */ (function () {
     function MWord(keyid, word, custom_url, created_at, updated_at) {
         this.keyid = keyid;
@@ -12,8 +12,8 @@ var MWord = /** @class */ (function () {
         this.system = {};
     }
     MWord.prototype.addPronunciation = function (system, local, wordClass, pronunciation, description) {
-        var systemString = BPronunciationSystem.getEString(system);
-        var localString = BLocal.getEString(local);
+        var systemString = BPronunciationSystem_1.default.getEString(system);
+        var localString = BLocal_1.default.getEString(local);
         var pClass = {
             c: wordClass,
             p: pronunciation,

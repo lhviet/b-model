@@ -4,10 +4,10 @@ import { IMeaningExampleValue } from './interfaces/IMeaningExample';
 import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
 import { IPronunciationValue } from './interfaces/IPronunciation';
 import { IWordValue } from './interfaces/IWord';
-import * as BStatus from './core/BStatus';
-import * as BWordClass from './core/BWordClass';
-import * as BPronunciationSystem from './core/BPronunciationSystem';
-import * as BLocal from './core/BLocal';
+import BStatus from './core/BStatus';
+import BWordClass from './core/BWordClass';
+import BPronunciationSystem from './core/BPronunciationSystem';
+import BLocal from './core/BLocal';
 
 export class BModel {
 

@@ -1,4 +1,4 @@
-import * as BStatus from '../core/BStatus';
+import BStatus from '../core/BStatus';
 
 export interface IWord {
   keyid: string;

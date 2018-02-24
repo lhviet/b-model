@@ -1,8 +1,20 @@
+module BPronunciationSystem {
 
-export enum EnumSystem {
-  IPA = 1,
+  export const enum EnumSystem {
+    IPA = 1,
+  }
+
+  export const isIPA = (statusType: EnumSystem): boolean => statusType === EnumSystem.IPA;
+
+  export const getEString = (e: EnumSystem): string => {
+    switch (e) {
+      case EnumSystem.IPA:
+        return 'IPA';
+      default:
+        return null;
+    }
+  };
+
 }
 
-export const isIPA = (statusType: EnumSystem): boolean => statusType === EnumSystem.IPA;
-
-export const getEString = (eSystem: EnumSystem): string => EnumSystem[eSystem];
+export default BPronunciationSystem;
