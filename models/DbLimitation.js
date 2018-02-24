@@ -2,10 +2,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var DbLimitation = /** @class */ (function () {
     function DbLimitation(offset, limit, sorter, direct) {
-        this.offset = offset;
-        this.limit = limit;
-        this.sorter = sorter;
-        this.direct = direct;
+        if (offset) {
+            this.offset = offset;
+        }
+        if (limit) {
+            this.limit = limit;
+        }
+        if (sorter) {
+            this.sorter = sorter;
+        }
+        if (direct) {
+            this.direct = direct;
+        }
     }
     DbLimitation.limit25 = function (sorter, direct) {
         if (sorter === void 0) { sorter = 'created_at'; }
