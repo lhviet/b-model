@@ -2,12 +2,27 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var BStatus;
 (function (BStatus) {
-    BStatus.isPending = function (statusType) { return statusType === 1 /* Pending */; };
-    BStatus.isProcessing = function (statusType) { return statusType === 2 /* Processing */; };
-    BStatus.isRejected = function (statusType) { return statusType === 3 /* Rejected */; };
-    BStatus.isActive = function (statusType) { return statusType === 4 /* Active */; };
-    BStatus.isDisabled = function (statusType) { return statusType === 5 /* Disabled */; };
-    BStatus.getEString = function (e) {
+    function isPending(statusType) {
+        return statusType === 1 /* Pending */;
+    }
+    BStatus.isPending = isPending;
+    function isProcessing(statusType) {
+        return statusType === 2 /* Processing */;
+    }
+    BStatus.isProcessing = isProcessing;
+    function isRejected(statusType) {
+        return statusType === 3 /* Rejected */;
+    }
+    BStatus.isRejected = isRejected;
+    function isActive(statusType) {
+        return statusType === 4 /* Active */;
+    }
+    BStatus.isActive = isActive;
+    function isDisabled(statusType) {
+        return statusType === 5 /* Disabled */;
+    }
+    BStatus.isDisabled = isDisabled;
+    function getEString(e) {
         switch (e) {
             case 1 /* Pending */:
                 return 'Pending';
@@ -22,7 +37,9 @@ var BStatus;
             default:
                 return '';
         }
-    };
+    }
+    BStatus.getEString = getEString;
+    ;
 })(BStatus || (BStatus = {}));
 exports.default = BStatus;
 //# sourceMappingURL=BStatus.js.map

@@ -5,11 +5,17 @@ module BLocal {
     AU,
   }
 
-  export const isUS = (statusType: EnumLocal): boolean => statusType === EnumLocal.US;
-  export const isGB = (statusType: EnumLocal): boolean => statusType === EnumLocal.GB;
-  export const isAU = (statusType: EnumLocal): boolean => statusType === EnumLocal.AU;
+  export function isUS(statusType: EnumLocal): boolean {
+    return statusType === EnumLocal.US;
+  }
+  export function isGB(statusType: EnumLocal): boolean {
+    return statusType === EnumLocal.GB;
+  }
+  export function isAU(statusType: EnumLocal): boolean {
+    return statusType === EnumLocal.AU;
+  }
 
-  export const getEString = (e: EnumLocal): string => {
+  export function getEString(e: EnumLocal): string {
     switch (e) {
       case EnumLocal.US:
         return 'US';

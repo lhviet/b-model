@@ -1,10 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var moment = require("moment");
-var BStatus_1 = require("./core/BStatus");
-var BWordClass_1 = require("./core/BWordClass");
-var BPronunciationSystem_1 = require("./core/BPronunciationSystem");
-var BLocal_1 = require("./core/BLocal");
 var BModel = /** @class */ (function () {
     function BModel() {
     }

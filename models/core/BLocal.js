@@ -2,10 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var BLocal;
 (function (BLocal) {
-    BLocal.isUS = function (statusType) { return statusType === 1 /* US */; };
-    BLocal.isGB = function (statusType) { return statusType === 2 /* GB */; };
-    BLocal.isAU = function (statusType) { return statusType === 3 /* AU */; };
-    BLocal.getEString = function (e) {
+    function isUS(statusType) {
+        return statusType === 1 /* US */;
+    }
+    BLocal.isUS = isUS;
+    function isGB(statusType) {
+        return statusType === 2 /* GB */;
+    }
+    BLocal.isGB = isGB;
+    function isAU(statusType) {
+        return statusType === 3 /* AU */;
+    }
+    BLocal.isAU = isAU;
+    function getEString(e) {
         switch (e) {
             case 1 /* US */:
                 return 'US';
@@ -16,7 +25,9 @@ var BLocal;
             default:
                 return '';
         }
-    };
+    }
+    BLocal.getEString = getEString;
+    ;
 })(BLocal || (BLocal = {}));
 exports.default = BLocal;
 //# sourceMappingURL=BLocal.js.map

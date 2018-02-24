@@ -2,11 +2,23 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var BWordClass;
 (function (BWordClass) {
-    BWordClass.isAll = function (statusType) { return statusType === 1 /* all */; };
-    BWordClass.isNoun = function (statusType) { return statusType === 2 /* noun */; };
-    BWordClass.isVerb = function (statusType) { return statusType === 3 /* verb */; };
-    BWordClass.isAdj = function (statusType) { return statusType === 4 /* adjective */; };
-    BWordClass.getEString = function (e) {
+    function isAll(statusType) {
+        return statusType === 1 /* all */;
+    }
+    BWordClass.isAll = isAll;
+    function isNoun(statusType) {
+        return statusType === 2 /* noun */;
+    }
+    BWordClass.isNoun = isNoun;
+    function isVerb(statusType) {
+        return statusType === 3 /* verb */;
+    }
+    BWordClass.isVerb = isVerb;
+    function isAdj(statusType) {
+        return statusType === 4 /* adjective */;
+    }
+    BWordClass.isAdj = isAdj;
+    function getEString(e) {
         var wordClass;
         switch (e) {
             case 1 /* all */:
@@ -52,7 +64,8 @@ var BWordClass;
                 return '';
         }
         return wordClass.substr(0, 4);
-    };
+    }
+    BWordClass.getEString = getEString;
 })(BWordClass || (BWordClass = {}));
 exports.default = BWordClass;
 //# sourceMappingURL=BWordClass.js.map

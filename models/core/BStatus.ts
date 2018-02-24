@@ -8,13 +8,23 @@ module BStatus {
     Disabled,
   }
 
-  export const isPending = (statusType: EnumStatus): boolean => statusType === EnumStatus.Pending;
-  export const isProcessing = (statusType: EnumStatus): boolean => statusType === EnumStatus.Processing;
-  export const isRejected = (statusType: EnumStatus): boolean => statusType === EnumStatus.Rejected;
-  export const isActive = (statusType: EnumStatus): boolean => statusType === EnumStatus.Active;
-  export const isDisabled = (statusType: EnumStatus): boolean => statusType === EnumStatus.Disabled;
+  export function isPending(statusType: EnumStatus): boolean {
+    return statusType === EnumStatus.Pending;
+  }
+  export function isProcessing(statusType: EnumStatus): boolean {
+    return statusType === EnumStatus.Processing;
+  }
+  export function isRejected(statusType: EnumStatus): boolean {
+    return statusType === EnumStatus.Rejected;
+  }
+  export function isActive(statusType: EnumStatus): boolean {
+    return statusType === EnumStatus.Active;
+  }
+  export function isDisabled(statusType: EnumStatus): boolean {
+    return statusType === EnumStatus.Disabled;
+  }
 
-  export const getEString = (e: EnumStatus): string => {
+  export function getEString(e: EnumStatus): string {
     switch (e) {
       case EnumStatus.Pending:
         return 'Pending';

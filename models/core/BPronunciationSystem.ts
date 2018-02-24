@@ -4,9 +4,11 @@ module BPronunciationSystem {
     IPA = 1,
   }
 
-  export const isIPA = (statusType: EnumSystem): boolean => statusType === EnumSystem.IPA;
+  export function isIPA(statusType: EnumSystem): boolean {
+    return statusType === EnumSystem.IPA;
+  }
 
-  export const getEString = (e: EnumSystem): string => {
+  export function getEString(e: EnumSystem): string {
     switch (e) {
       case EnumSystem.IPA:
         return 'IPA';
