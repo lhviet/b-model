@@ -8,7 +8,7 @@ var BPronunciationSystem;
             case 1 /* IPA */:
                 return 'IPA';
             default:
-                return null;
+                return '';
         }
     };
 })(BPronunciationSystem || (BPronunciationSystem = {}));

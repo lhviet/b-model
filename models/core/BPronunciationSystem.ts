@@ -11,7 +11,7 @@ module BPronunciationSystem {
       case EnumSystem.IPA:
         return 'IPA';
       default:
-        return null;
+        return '';
     }
   };
 

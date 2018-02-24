@@ -18,7 +18,7 @@ module BLocal {
       case EnumLocal.AU:
         return 'AU';
       default:
-        return null;
+        return '';
     }
   };
 

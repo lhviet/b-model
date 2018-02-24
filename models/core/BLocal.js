@@ -14,7 +14,7 @@ var BLocal;
             case 3 /* AU */:
                 return 'AU';
             default:
-                return null;
+                return '';
         }
     };
 })(BLocal || (BLocal = {}));

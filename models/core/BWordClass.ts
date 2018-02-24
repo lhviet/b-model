@@ -63,7 +63,7 @@ module BWordClass {
         wordClass = 'unclassified';
         break;
       default:
-        return null;
+        return '';
     }
     return wordClass.substr(0, 4);
   };

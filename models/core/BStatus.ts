@@ -27,7 +27,7 @@ module BStatus {
       case EnumStatus.Disabled:
         return 'Disabled';
       default:
-        return null;
+        return '';
     }
   };
 }

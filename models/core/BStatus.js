@@ -20,7 +20,7 @@ var BStatus;
             case 5 /* Disabled */:
                 return 'Disabled';
             default:
-                return null;
+                return '';
         }
     };
 })(BStatus || (BStatus = {}));
