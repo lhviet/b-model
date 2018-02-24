@@ -17,6 +17,8 @@ export * from './models/DbLimitation';
 export * from './models/DbPostgres';
 export * from './models/BModel';
 
+export * from './models/search';
+
 export * from './query/BQuery';
 
 export * from './ErrorDefinition';

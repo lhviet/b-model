@@ -11,6 +11,7 @@ var BLocal;
     BLocal.isUS = function (statusType) { return statusType === EnumLocal.US; };
     BLocal.isGB = function (statusType) { return statusType === EnumLocal.GB; };
     BLocal.isAU = function (statusType) { return statusType === EnumLocal.AU; };
+    BLocal.getEString = function (eLocal) { return EnumLocal[eLocal]; };
 })(BLocal || (BLocal = {}));
 exports.default = BLocal;
 //# sourceMappingURL=BLocal.js.map

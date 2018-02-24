@@ -7,6 +7,7 @@ var BPronunciationSystem;
         EnumSystem[EnumSystem["IPA"] = 1] = "IPA";
     })(EnumSystem = BPronunciationSystem.EnumSystem || (BPronunciationSystem.EnumSystem = {}));
     BPronunciationSystem.isIPA = function (statusType) { return statusType === EnumSystem.IPA; };
+    BPronunciationSystem.getEString = function (eSystem) { return EnumSystem[eSystem]; };
 })(BPronunciationSystem || (BPronunciationSystem = {}));
 exports.default = BPronunciationSystem;
 //# sourceMappingURL=BPronunciationSystem.js.map

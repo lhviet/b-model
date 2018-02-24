@@ -11,6 +11,7 @@ __export(require("./models/core/BLocal"));
 __export(require("./models/DbLimitation"));
 __export(require("./models/DbPostgres"));
 __export(require("./models/BModel"));
+__export(require("./models/search"));
 __export(require("./query/BQuery"));
 __export(require("./ErrorDefinition"));
 //# sourceMappingURL=index.js.map
