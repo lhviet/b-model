@@ -4,13 +4,12 @@ function isIPA(statusType) {
     return statusType === 1 /* IPA */;
 }
 exports.isIPA = isIPA;
-function getEPSystemString(e) {
+exports.getEPSystemString = function (e) {
     switch (e) {
         case 1 /* IPA */:
             return 'IPA';
         default:
             return '';
     }
-}
-exports.getEPSystemString = getEPSystemString;
+};
 //# sourceMappingURL=BPronunciationSystem.js.map
