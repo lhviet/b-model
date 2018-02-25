@@ -4,7 +4,7 @@ exports.ERROR = {
     code400: {
         code: 400,
         title: 'Invalid Query Parameter',
-        detail: 'The resource does not have an `auther` relationship path.'
+        detail: ''
     },
     code401: {
         code: 401,
