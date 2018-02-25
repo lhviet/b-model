@@ -6,7 +6,8 @@ const path = require('path');
 const env = require('yargs').argv.env; // use --env with webpack 2
 const pkg = require('./package.json');
 
-let libraryName = pkg.name;
+// let libraryName = pkg.name;
+let libraryName = 'index';
 
 let plugins = [], outputFile;
 
@@ -21,7 +22,7 @@ const config = {
     entry: __dirname + '/src/index.js',
     devtool: 'source-map',
     output: {
-        path: __dirname + '/lib',
+        path: __dirname + '/dist',
         filename: outputFile,
         library: libraryName,
         libraryTarget: 'umd',

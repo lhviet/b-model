@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("myprodict-model", [], factory);
+		define("index", [], factory);
 	else if(typeof exports === 'object')
-		exports["myprodict-model"] = factory();
+		exports["index"] = factory();
 	else
-		root["myprodict-model"] = factory();
+		root["index"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -1921,7 +1921,7 @@ function loadLocale(name) {
         try {
             oldLocale = globalLocale._abbr;
             var aliasedRequire = require;
-            __webpack_require__(131)("./" + name);
+            __webpack_require__(138)("./" + name);
             getSetGlobalLocale(oldLocale);
         } catch (e) {}
     }
@@ -4613,7 +4613,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(130)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(137)(module)))
 
 /***/ }),
 /* 1 */
@@ -16311,11 +16311,12 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(1));
 __export(__webpack_require__(127));
-__export(__webpack_require__(128));
-__export(__webpack_require__(129));
 __export(__webpack_require__(132));
 __export(__webpack_require__(134));
 __export(__webpack_require__(135));
+__export(__webpack_require__(136));
+__export(__webpack_require__(139));
+__export(__webpack_require__(140));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -16545,6 +16546,129 @@ exports.getEPLocalString = getEPLocalString;
 "use strict";
 
 
+function __export(m) {
+    for (var p in m) {
+        if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    }
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(128));
+__export(__webpack_require__(129));
+__export(__webpack_require__(130));
+__export(__webpack_require__(131));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=EStatus.js.map
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=EWClass.js.map
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=EPSystem.js.map
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", { value: true });
+//# sourceMappingURL=EPLocal.js.map
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function __export(m) {
+    for (var p in m) {
+        if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    }
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(133));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(1);
+var MWord = /** @class */function () {
+    function MWord(keyid, word, custom_url, created_at, updated_at) {
+        this.keyid = keyid;
+        this.word = word;
+        this.custom_url = custom_url;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.system = {};
+    }
+    MWord.prototype.addPronunciation = function (system, local, wordClass, pronunciation, description) {
+        var systemString = core_1.getEPSystemString(system);
+        var localString = core_1.getEPLocalString(local);
+        var pClass = {
+            c: wordClass,
+            p: pronunciation,
+            d: description
+        };
+        if (!this.system[systemString]) {
+            this.system[systemString] = (_a = {}, _a[localString] = [pClass], _a);
+        } else {
+            var pArr = this.system[systemString][localString];
+            if (!pArr) {
+                this.system[systemString][localString] = [pClass];
+            } else {
+                var foundSamePronunciation = pArr.find(function (pItem) {
+                    return pItem.p === pronunciation && pItem.c === wordClass;
+                });
+                if (!foundSamePronunciation) {
+                    pArr.push(pClass);
+                }
+            }
+        }
+        var _a;
+    };
+    return MWord;
+}();
+exports.MWord = MWord;
+//# sourceMappingURL=MWord.js.map
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var DbLimitation = /** @class */function () {
     function DbLimitation(offset, limit, sorter, direct) {
@@ -16585,7 +16709,7 @@ exports.DbLimitation = DbLimitation;
 //# sourceMappingURL=DbLimitation.js.map
 
 /***/ }),
-/* 128 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16638,7 +16762,7 @@ exports.DbPostgres = DbPostgres;
 //# sourceMappingURL=DbPostgres.js.map
 
 /***/ }),
-/* 129 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16699,7 +16823,7 @@ exports.BModel = BModel;
 //# sourceMappingURL=BModel.js.map
 
 /***/ }),
-/* 130 */
+/* 137 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -16727,7 +16851,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 131 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -16984,74 +17108,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 131;
+webpackContext.id = 138;
 
 /***/ }),
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function __export(m) {
-    for (var p in m) {
-        if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-    }
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(133));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(1);
-var MWord = /** @class */function () {
-    function MWord(keyid, word, custom_url, created_at, updated_at) {
-        this.keyid = keyid;
-        this.word = word;
-        this.custom_url = custom_url;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.system = {};
-    }
-    MWord.prototype.addPronunciation = function (system, local, wordClass, pronunciation, description) {
-        var systemString = core_1.getEPSystemString(system);
-        var localString = core_1.getEPLocalString(local);
-        var pClass = {
-            c: wordClass,
-            p: pronunciation,
-            d: description
-        };
-        if (!this.system[systemString]) {
-            this.system[systemString] = (_a = {}, _a[localString] = [pClass], _a);
-        } else {
-            var pArr = this.system[systemString][localString];
-            if (!pArr) {
-                this.system[systemString][localString] = [pClass];
-            } else {
-                var foundSamePronunciation = pArr.find(function (pItem) {
-                    return pItem.p === pronunciation && pItem.c === wordClass;
-                });
-                if (!foundSamePronunciation) {
-                    pArr.push(pClass);
-                }
-            }
-        }
-        var _a;
-    };
-    return MWord;
-}();
-exports.MWord = MWord;
-//# sourceMappingURL=MWord.js.map
-
-/***/ }),
-/* 134 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17121,7 +17181,7 @@ exports.BQuery = BQuery;
 //# sourceMappingURL=BQuery.js.map
 
 /***/ }),
-/* 135 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17155,4 +17215,4 @@ exports.ERROR = {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=myprodict-model.js.map
+//# sourceMappingURL=index.js.map
