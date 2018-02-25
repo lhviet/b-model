@@ -1,7 +1,7 @@
 import {EPLocal, EPSystem, EWClass} from '../enums';
 import {getEPLocalString, getEPSystemString} from '../core';
 
-interface IPronunciationClass {
+export interface IPronunciationClass {
   c: EWClass;  // word_class of the pronunciation
   p: string;  // pronunciation
   d: string;  // description
