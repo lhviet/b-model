@@ -2,7 +2,7 @@
   "name": "myprodict-model",
   "version": "0.0.11",
   "description": "Produce universal library with webpack and es6",
-  "main": "lib/library.js",
+  "main": "lib/index.js",
   "scripts": {
     "ts:c": "tsc -p tsconfig.json",
     "build": "webpack --env dev && webpack --env build && npm run test",
@@ -12,14 +12,8 @@
     "moment": "^2.20.1"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^4.13.1",
-    "eslint-loader": "^1.9.0",
-    "mocha": "^4.0.1",
     "tslint": "^5.9.1",
     "tslint-eslint-rules": "^5.1.0",
-    "typescript": "^2.7.2",
-    "webpack": "^3.10.0",
-    "yargs": "^10.0.3"
+    "typescript": "^2.7.2"
   }
 }
