@@ -1,6 +1,6 @@
 {
   "name": "myprodict-model",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Produce universal library with webpack and es6",
   "main": "lib/library.js",
   "scripts": {
