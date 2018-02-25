@@ -1,11 +1,6 @@
-"use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(require("./BRole"));
-__export(require("./BStatus"));
-__export(require("./BWordClass"));
-__export(require("./BPronunciationSystem"));
-__export(require("./BLocal"));
+export * from './BRole';
+export * from './BStatus';
+export * from './BWordClass';
+export * from './BPronunciationSystem';
+export * from './BLocal';
 //# sourceMappingURL=index.js.map

@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ERROR = {
+export var ERROR = {
     code400: {
         code: 400,
         title: 'Invalid Query Parameter',

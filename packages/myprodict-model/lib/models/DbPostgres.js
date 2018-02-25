@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var DbPostgres = /** @class */ (function () {
     function DbPostgres() {
     }
@@ -44,5 +42,5 @@ var DbPostgres = /** @class */ (function () {
     };
     return DbPostgres;
 }());
-exports.DbPostgres = DbPostgres;
+export { DbPostgres };
 //# sourceMappingURL=DbPostgres.js.map

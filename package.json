@@ -1,4 +1,7 @@
 {
+	"scripts": {
+		"p:prodict": "yarn lerna publish --registry=https://registry.npmjs.org/ --scope=\"myprodict-model\""
+	},
 	"devDependencies": {
 		"lerna": "^2.5.1"
 	}

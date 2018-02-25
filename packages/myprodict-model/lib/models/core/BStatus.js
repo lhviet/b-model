@@ -1,26 +1,19 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function isPending(statusType) {
+export function isPending(statusType) {
     return statusType === 1 /* Pending */;
 }
-exports.isPending = isPending;
-function isProcessing(statusType) {
+export function isProcessing(statusType) {
     return statusType === 2 /* Processing */;
 }
-exports.isProcessing = isProcessing;
-function isRejected(statusType) {
+export function isRejected(statusType) {
     return statusType === 3 /* Rejected */;
 }
-exports.isRejected = isRejected;
-function isActive(statusType) {
+export function isActive(statusType) {
     return statusType === 4 /* Active */;
 }
-exports.isActive = isActive;
-function isDisabled(statusType) {
+export function isDisabled(statusType) {
     return statusType === 5 /* Disabled */;
 }
-exports.isDisabled = isDisabled;
-function getEStatusString(e) {
+export function getEStatusString(e) {
     switch (e) {
         case 1 /* Pending */:
             return 'Pending';
@@ -36,5 +29,4 @@ function getEStatusString(e) {
             return '';
     }
 }
-exports.getEStatusString = getEStatusString;
 //# sourceMappingURL=BStatus.js.map

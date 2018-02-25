@@ -1,10 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function isIPA(statusType) {
+export function isIPA(statusType) {
     return statusType === 1 /* IPA */;
 }
-exports.isIPA = isIPA;
-function getEPSystemString(e) {
+export function getEPSystemString(e) {
     switch (e) {
         case 1 /* IPA */:
             return 'IPA';
@@ -12,5 +9,4 @@ function getEPSystemString(e) {
             return '';
     }
 }
-exports.getEPSystemString = getEPSystemString;
 //# sourceMappingURL=BPronunciationSystem.js.map

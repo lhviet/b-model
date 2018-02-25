@@ -1,18 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function isUS(statusType) {
+export function isUS(statusType) {
     return statusType === 1 /* US */;
 }
-exports.isUS = isUS;
-function isGB(statusType) {
+export function isGB(statusType) {
     return statusType === 2 /* GB */;
 }
-exports.isGB = isGB;
-function isAU(statusType) {
+export function isAU(statusType) {
     return statusType === 3 /* AU */;
 }
-exports.isAU = isAU;
-function getEPLocalString(e) {
+export function getEPLocalString(e) {
     switch (e) {
         case 1 /* US */:
             return 'US';
@@ -24,5 +19,4 @@ function getEPLocalString(e) {
             return '';
     }
 }
-exports.getEPLocalString = getEPLocalString;
 //# sourceMappingURL=BLocal.js.map

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var BQuery = /** @class */ (function () {
     function BQuery() {
     }
@@ -62,5 +60,5 @@ var BQuery = /** @class */ (function () {
     };
     return BQuery;
 }());
-exports.BQuery = BQuery;
+export { BQuery };
 //# sourceMappingURL=BQuery.js.map

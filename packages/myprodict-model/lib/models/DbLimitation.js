@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var DbLimitation = /** @class */ (function () {
     function DbLimitation(offset, limit, sorter, direct) {
         if (offset) {
@@ -27,5 +25,5 @@ var DbLimitation = /** @class */ (function () {
     };
     return DbLimitation;
 }());
-exports.DbLimitation = DbLimitation;
+export { DbLimitation };
 //# sourceMappingURL=DbLimitation.js.map

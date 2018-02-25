@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("../core");
+import { getEPLocalString, getEPSystemString } from '../core';
 var MWord = /** @class */ (function () {
     function MWord(keyid, word, custom_url, created_at, updated_at) {
         this.keyid = keyid;
@@ -11,8 +9,8 @@ var MWord = /** @class */ (function () {
         this.system = {};
     }
     MWord.prototype.addPronunciation = function (system, local, wordClass, pronunciation, description) {
-        var systemString = core_1.getEPSystemString(system);
-        var localString = core_1.getEPLocalString(local);
+        var systemString = getEPSystemString(system);
+        var localString = getEPLocalString(local);
         var pClass = {
             c: wordClass,
             p: pronunciation,
@@ -39,5 +37,5 @@ var MWord = /** @class */ (function () {
     };
     return MWord;
 }());
-exports.MWord = MWord;
+export { MWord };
 //# sourceMappingURL=MWord.js.map

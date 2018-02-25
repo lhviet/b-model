@@ -1,1 +1,0 @@
-{"version":3,"file":"BPronunciationSystem.js","sourceRoot":"","sources":["BPronunciationSystem.ts"],"names":[],"mappings":";;AAEA,eAAsB,UAAoB;IACxC,MAAM,CAAC,UAAU,gBAAiB,CAAC;AACrC,CAAC;AAFD,sBAEC;AAEY,QAAA,iBAAiB,GAAG,UAAC,CAAW;IAC3C,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;QACV;YACE,MAAM,CAAC,KAAK,CAAC;QACf;YACE,MAAM,CAAC,EAAE,CAAC;IACd,CAAC;AACH,CAAC,CAAC"}

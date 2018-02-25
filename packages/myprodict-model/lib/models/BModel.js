@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var moment = require("moment");
+import * as moment from 'moment';
 var BModel = /** @class */ (function () {
     function BModel() {
     }
@@ -51,5 +49,5 @@ var BModel = /** @class */ (function () {
     };
     return BModel;
 }());
-exports.BModel = BModel;
+export { BModel };
 //# sourceMappingURL=BModel.js.map

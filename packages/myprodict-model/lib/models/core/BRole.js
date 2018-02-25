@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var BRole = /** @class */ (function () {
     function BRole() {
     }
@@ -25,5 +23,5 @@ var BRole = /** @class */ (function () {
     };
     return BRole;
 }());
-exports.BRole = BRole;
+export { BRole };
 //# sourceMappingURL=BRole.js.map
