@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var BDbPostgres = /** @class */ (function () {
     function BDbPostgres() {
     }
@@ -42,5 +44,5 @@ var BDbPostgres = /** @class */ (function () {
     };
     return BDbPostgres;
 }());
-export { BDbPostgres };
+exports.BDbPostgres = BDbPostgres;
 //# sourceMappingURL=BDbPostgres.js.map

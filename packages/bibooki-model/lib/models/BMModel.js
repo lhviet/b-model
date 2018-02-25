@@ -1,8 +1,10 @@
-import * as moment from 'moment';
-import { BMStatus } from './BMStatus';
-import { BMRole } from './BMRole';
-import { BMGender } from './BMGender';
-import { BMBookType } from './BMBookType';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var moment = require("moment");
+var BMStatus_1 = require("./BMStatus");
+var BMRole_1 = require("./BMRole");
+var BMGender_1 = require("./BMGender");
+var BMBookType_1 = require("./BMBookType");
 var BMModel = /** @class */ (function () {
     function BMModel() {
     }
@@ -12,8 +14,8 @@ var BMModel = /** @class */ (function () {
             username: '',
             email: '',
             password: '',
-            status: BMStatus.list.general.verifying.code,
-            role: BMRole.user_role.user.code,
+            status: BMStatus_1.BMStatus.list.general.verifying.code,
+            role: BMRole_1.BMRole.user_role.user.code,
             updated_at: NOW,
             created_at: NOW,
         };
@@ -30,7 +32,7 @@ var BMModel = /** @class */ (function () {
             avatar_url: BMModel.DEFAULT_IMG.PERSON,
             cover_url: BMModel.DEFAULT_IMG.COVER,
             home_url: '',
-            gender: BMGender.list.noanswer.code,
+            gender: BMGender_1.BMGender.list.noanswer.code,
             birthday: '',
             language: 'en',
             country: '',
@@ -50,14 +52,14 @@ var BMModel = /** @class */ (function () {
             alternative_names: { en: [] },
             language: 'en',
             country: 'U_N',
-            gender: BMGender.list.noanswer.code,
+            gender: BMGender_1.BMGender.list.noanswer.code,
             year_of_birth: 0,
             year_of_death: 0,
             description: '',
             tags: '',
             links: [''],
             images: [BMModel.DEFAULT_IMG.PERSON],
-            status: BMStatus.list.general.pending.code,
+            status: BMStatus_1.BMStatus.list.general.pending.code,
             updated_at: NOW,
             created_at: NOW,
         };
@@ -73,7 +75,7 @@ var BMModel = /** @class */ (function () {
             alternative_names: { en: [] },
             language: 'en',
             countries: '',
-            type: BMBookType.list.text.code,
+            type: BMBookType_1.BMBookType.list.text.code,
             year_of_start: 0,
             year_of_end: 0,
             author_info: '',
@@ -81,7 +83,7 @@ var BMModel = /** @class */ (function () {
             images: [BMModel.DEFAULT_IMG.BOOK],
             description: '',
             tags: '',
-            status: BMStatus.list.general.pending.code,
+            status: BMStatus_1.BMStatus.list.general.pending.code,
             updated_at: NOW,
             created_at: NOW
         };
@@ -100,7 +102,7 @@ var BMModel = /** @class */ (function () {
             book_info: '',
             description: '',
             year: null,
-            status: BMStatus.list.sharing_status.public_share.code,
+            status: BMStatus_1.BMStatus.list.sharing_status.public_share.code,
             links: [''],
             images: [BMModel.DEFAULT_IMG.BOOK],
             files: [''],
@@ -176,7 +178,7 @@ var BMModel = /** @class */ (function () {
         var value = {
             user_keyid_1: '',
             user_keyid_2: '',
-            status: BMStatus.list.friendship_status.pending.code,
+            status: BMStatus_1.BMStatus.list.friendship_status.pending.code,
             created_at: NOW,
         };
         return value;
@@ -227,5 +229,5 @@ var BMModel = /** @class */ (function () {
     };
     return BMModel;
 }());
-export { BMModel };
+exports.BMModel = BMModel;
 //# sourceMappingURL=BMModel.js.map

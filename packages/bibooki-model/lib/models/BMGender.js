@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var BMGender = /** @class */ (function () {
     function BMGender() {
     }
@@ -22,5 +24,5 @@ var BMGender = /** @class */ (function () {
     BMGender.getGenderLabel = function (gender_code) { return BMGender.list[gender_code].label; };
     return BMGender;
 }());
-export { BMGender };
+exports.BMGender = BMGender;
 //# sourceMappingURL=BMGender.js.map

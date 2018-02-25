@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var BMRole = /** @class */ (function () {
     function BMRole() {
     }
@@ -49,5 +51,5 @@ var BMRole = /** @class */ (function () {
     };
     return BMRole;
 }());
-export { BMRole };
+exports.BMRole = BMRole;
 //# sourceMappingURL=BMRole.js.map

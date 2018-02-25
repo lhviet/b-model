@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This class is used to support UserActivity
  * BMActivity.list defines all types of activities of a UserActivity
@@ -66,5 +68,5 @@ var BMActivity = /** @class */ (function () {
     };
     return BMActivity;
 }());
-export { BMActivity };
+exports.BMActivity = BMActivity;
 //# sourceMappingURL=BMActivity.js.map

@@ -1,16 +1,22 @@
-export function isAll(statusType) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function isAll(statusType) {
     return statusType === 1 /* all */;
 }
-export function isNoun(statusType) {
+exports.isAll = isAll;
+function isNoun(statusType) {
     return statusType === 2 /* noun */;
 }
-export function isVerb(statusType) {
+exports.isNoun = isNoun;
+function isVerb(statusType) {
     return statusType === 3 /* verb */;
 }
-export function isAdj(statusType) {
+exports.isVerb = isVerb;
+function isAdj(statusType) {
     return statusType === 4 /* adjective */;
 }
-export function getEWordClassString(e) {
+exports.isAdj = isAdj;
+function getEWordClassString(e) {
     var wordClass;
     switch (e) {
         case 1 /* all */:
@@ -57,4 +63,5 @@ export function getEWordClassString(e) {
     }
     return wordClass.substr(0, 4);
 }
+exports.getEWordClassString = getEWordClassString;
 //# sourceMappingURL=BWordClass.js.map

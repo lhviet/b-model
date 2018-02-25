@@ -1,13 +1,18 @@
-export function isUS(statusType) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function isUS(statusType) {
     return statusType === 1 /* US */;
 }
-export function isGB(statusType) {
+exports.isUS = isUS;
+function isGB(statusType) {
     return statusType === 2 /* GB */;
 }
-export function isAU(statusType) {
+exports.isGB = isGB;
+function isAU(statusType) {
     return statusType === 3 /* AU */;
 }
-export function getEPLocalString(e) {
+exports.isAU = isAU;
+function getEPLocalString(e) {
     switch (e) {
         case 1 /* US */:
             return 'US';
@@ -19,4 +24,5 @@ export function getEPLocalString(e) {
             return '';
     }
 }
+exports.getEPLocalString = getEPLocalString;
 //# sourceMappingURL=BLocal.js.map

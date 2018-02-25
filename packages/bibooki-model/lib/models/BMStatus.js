@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var BMStatus = /** @class */ (function () {
     function BMStatus() {
     }
@@ -102,5 +104,5 @@ var BMStatus = /** @class */ (function () {
     BMStatus.isSharing_friend = function (code) { return code === BMStatus.list.sharing_status.friends_share.code; };
     return BMStatus;
 }());
-export { BMStatus };
+exports.BMStatus = BMStatus;
 //# sourceMappingURL=BMStatus.js.map
