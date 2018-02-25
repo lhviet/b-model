@@ -1,0 +1,26 @@
+{
+  "name": "bibooki-models",
+  "version": "1.1.5",
+  "description": "This is the mapping models used in bibooki project",
+  "main": "./bibooki-models",
+  "scripts": {
+    "ts:c": "tsc -p tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://viet_hoang_le@bitbucket.org/viet_hoang_le/bibooki-models.git"
+  },
+  "author": "bibooki",
+  "license": "ISC",
+  "homepage": "https://viet_hoang_le@bitbucket.org/viet_hoang_le/bibooki-models#readme",
+  "dependencies": {
+    "moment": "^2.19.1",
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.4.2"
+  }
+}
