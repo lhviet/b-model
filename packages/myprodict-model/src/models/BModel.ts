@@ -1,11 +1,14 @@
 import * as moment from 'moment';
-import { IMeaningValue } from './interfaces/IMeaning';
-import { IMeaningExampleValue } from './interfaces/IMeaningExample';
-import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
-import { IPronunciationValue } from './interfaces/IPronunciation';
-import { IWordValue } from './interfaces/IWord';
+import {
+  IMeaningValue,
+  IMeaningExampleValue,
+  IMeaningUsageValue,
+  IPronunciationValue,
+  IWordValue,
+  IUserValue,
+  IUserBasicInfoValue
+} from './interfaces';
 import {EGender, EPLocal, EPSystem, EStatus, EUserProvider, EUserRole, EWClass} from './enums';
-import {IUserBasicInfoValue, IUserValue} from "./interfaces";
 
 const DEFAULT_IMG = {
   COVER: '/images/default-cover.png',
