@@ -1,10 +1,14 @@
-import { IMeaningValue } from './interfaces/IMeaning';
-import { IMeaningExampleValue } from './interfaces/IMeaningExample';
-import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
-import { IPronunciationValue } from './interfaces/IPronunciation';
-import { IWordValue } from './interfaces/IWord';
-import { IUserBasicInfoValue, IUserValue } from "./interfaces";
+import { IMeaningValue, IMeaningExampleValue, IMeaningUsageValue, IPronunciationValue, IWordValue, IUserValue, IUserBasicInfoValue } from './interfaces';
 export declare class BModel {
+    static DEFAULT_IMG: {
+        COVER: string;
+        PERSON: string;
+    };
+    static SUPPORT_ACTION: {
+        remindUsername: string;
+        emailActivation: string;
+        resetPassword: string;
+    };
     static initWord(): IWordValue;
     static initPronunciation(): IPronunciationValue;
     static initMeaning(): IMeaningValue;

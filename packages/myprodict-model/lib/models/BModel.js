@@ -79,6 +79,16 @@ var BModel = /** @class */ (function () {
             update_from_provider: 1 /* Local */,
         };
     };
+    BModel.DEFAULT_IMG = {
+        COVER: '/images/default-cover.png',
+        PERSON: '/images/default-person.png',
+    };
+    // using for email-helper
+    BModel.SUPPORT_ACTION = {
+        remindUsername: 'remind_username',
+        emailActivation: 'email_activation',
+        resetPassword: 'reset_password'
+    };
     return BModel;
 }());
 exports.BModel = BModel;

@@ -19,6 +19,18 @@ const now = () => parseInt(moment().format('X'), 10);
 
 export class BModel {
 
+  static DEFAULT_IMG = {
+    COVER: '/images/default-cover.png',
+    PERSON: '/images/default-person.png',
+  };
+
+  // using for email-helper
+  static SUPPORT_ACTION = {
+    remindUsername: 'remind_username',
+    emailActivation: 'email_activation',
+    resetPassword: 'reset_password'
+  };
+
   static initWord(): IWordValue {
     return {
       word: '',
