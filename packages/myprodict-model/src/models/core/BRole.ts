@@ -1,22 +1,23 @@
-export class BRole {
-  static user_role = {
-    user: {
-      code: 'user',
-      label: 'User'
-    },
-    admin: {
-      code: 'admin',
-      label: 'Administrator'
-    },
-    superAdmin: {
-      code: 'super_admin',
-      label: 'Super Administrator'
-    }
-  };
+import {EUserRole} from '../enums';
 
-  static isUser = (roleCode: string): boolean => roleCode === BRole.user_role.user.code;
-  static isAdmin = (roleCode: string): boolean => roleCode === BRole.user_role.admin.code;
-  static isAdminSuper = (roleCode: string): boolean => roleCode === BRole.user_role.superAdmin.code;
-  static isAdminOrSuper = (roleCode: string): boolean =>
-    roleCode === BRole.user_role.admin.code || roleCode === BRole.user_role.superAdmin.code;
+export function isUser(role: EUserRole): boolean {
+  return role === EUserRole.User;
+}
+export function isAdmin(role: EUserRole): boolean {
+  return role === EUserRole.Admin;
+}
+export function isSuperAdmin(role: EUserRole): boolean {
+  return role === EUserRole.SuperAdmin;
+}
+
+export function getEUserRoleString(role: EUserRole): string {
+  switch (role) {
+    case EUserRole.Admin:
+      return 'Admin';
+    case EUserRole.SuperAdmin:
+      return 'SuperAdmin';
+    case EUserRole.User:
+    default:
+      return 'User';
+  }
 }

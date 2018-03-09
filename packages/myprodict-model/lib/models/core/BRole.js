@@ -1,29 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var BRole = /** @class */ (function () {
-    function BRole() {
+function isUser(role) {
+    return role === 1 /* User */;
+}
+exports.isUser = isUser;
+function isAdmin(role) {
+    return role === 2 /* Admin */;
+}
+exports.isAdmin = isAdmin;
+function isSuperAdmin(role) {
+    return role === 3 /* SuperAdmin */;
+}
+exports.isSuperAdmin = isSuperAdmin;
+function getEUserRoleString(role) {
+    switch (role) {
+        case 2 /* Admin */:
+            return 'Admin';
+        case 3 /* SuperAdmin */:
+            return 'SuperAdmin';
+        case 1 /* User */:
+        default:
+            return 'User';
     }
-    BRole.user_role = {
-        user: {
-            code: 'user',
-            label: 'User'
-        },
-        admin: {
-            code: 'admin',
-            label: 'Administrator'
-        },
-        superAdmin: {
-            code: 'super_admin',
-            label: 'Super Administrator'
-        }
-    };
-    BRole.isUser = function (roleCode) { return roleCode === BRole.user_role.user.code; };
-    BRole.isAdmin = function (roleCode) { return roleCode === BRole.user_role.admin.code; };
-    BRole.isAdminSuper = function (roleCode) { return roleCode === BRole.user_role.superAdmin.code; };
-    BRole.isAdminOrSuper = function (roleCode) {
-        return roleCode === BRole.user_role.admin.code || roleCode === BRole.user_role.superAdmin.code;
-    };
-    return BRole;
-}());
-exports.BRole = BRole;
+}
+exports.getEUserRoleString = getEUserRoleString;
 //# sourceMappingURL=BRole.js.map

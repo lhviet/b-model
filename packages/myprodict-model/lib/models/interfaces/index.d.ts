@@ -4,3 +4,5 @@ export * from './IMeaningExample';
 export * from './IMeaningUsage';
 export * from './IPronunciation';
 export * from './IWord';
+export * from './IUser';
+export * from './IUserBasicInfo';

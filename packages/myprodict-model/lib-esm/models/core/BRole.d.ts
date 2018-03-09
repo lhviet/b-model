@@ -1,20 +1,5 @@
-export declare class BRole {
-    static user_role: {
-        user: {
-            code: string;
-            label: string;
-        };
-        admin: {
-            code: string;
-            label: string;
-        };
-        superAdmin: {
-            code: string;
-            label: string;
-        };
-    };
-    static isUser: (roleCode: string) => boolean;
-    static isAdmin: (roleCode: string) => boolean;
-    static isAdminSuper: (roleCode: string) => boolean;
-    static isAdminOrSuper: (roleCode: string) => boolean;
-}
+import { EUserRole } from '../enums';
+export declare function isUser(role: EUserRole): boolean;
+export declare function isAdmin(role: EUserRole): boolean;
+export declare function isSuperAdmin(role: EUserRole): boolean;
+export declare function getEUserRoleString(role: EUserRole): string;

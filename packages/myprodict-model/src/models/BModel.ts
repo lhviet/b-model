@@ -4,58 +4,94 @@ import { IMeaningExampleValue } from './interfaces/IMeaningExample';
 import { IMeaningUsageValue } from './interfaces/IMeaningUsage';
 import { IPronunciationValue } from './interfaces/IPronunciation';
 import { IWordValue } from './interfaces/IWord';
-import {EPLocal, EPSystem, EStatus, EWClass} from './enums';
+import {EGender, EPLocal, EPSystem, EStatus, EUserProvider, EUserRole, EWClass} from './enums';
+import {IUserBasicInfoValue, IUserValue} from "./interfaces";
+
+const DEFAULT_IMG = {
+  COVER: '/images/default-cover.png',
+  PERSON: '/images/default-person.png',
+};
+
+const now = () => parseInt(moment().format('X'), 10);
 
 export class BModel {
 
   static initWord(): IWordValue {
-    const NOW = parseInt(moment().format('X'), 10);
-    const value: IWordValue = {
+    return {
       word: '',
       custom_url: '',
       status: EStatus.Pending,
-      created_at: NOW,
-      updated_at: NOW,
+      created_at: now(),
+      updated_at: now(),
     };
-    return value;
   }
 
   static initPronunciation(): IPronunciationValue {
-    const value: IPronunciationValue = {
+    return {
       word_keyid: '',
       word_class: EWClass.all,  // i.e., 1 = all, 2 = noun, 3 = verb, 4 = adjective, 5 = ...
       system: EPSystem.IPA,     // i.e., 1 = IPA
       local: EPLocal.US,      // i.e., 1 = US
       transcript: '',
     };
-    return value;
   }
 
   static initMeaning(): IMeaningValue {
-    const value: IMeaningValue = {
+    return {
       word_keyid: '',
       word_class: EWClass.all,
       mean: '',
       tags: '',
     };
-    return value;
   }
 
   static initMeaningUsage(): IMeaningUsageValue {
-    const value: IMeaningUsageValue = {
+    return {
       meaning_keyid: '',
       usage: '',
       explanation: '',
     };
-    return value;
   }
 
   static initMeaningExample(): IMeaningExampleValue {
-    const value: IMeaningExampleValue = {
+    return {
       meaning_usage_keyid: '',
       sentence: '',
     };
-    return value;
   }
 
+  // Authentication
+  static initUser(): IUserValue {
+    return {
+      username: '',
+      email: '',
+      password: '',
+      updated_at: now(),
+      created_at: now(),
+      status: EStatus.Pending, // 15 chars,
+      role: EUserRole.User,   // 15 chars
+    };
+  }
+
+  static initUserBasic(): IUserBasicInfoValue {
+    return {
+      displayname: '',
+      firstname: '',
+      lastname: '',
+      middlename: '',
+      avatar_url: DEFAULT_IMG.PERSON,
+      cover_url: DEFAULT_IMG.COVER,
+      home_url: '',
+      birthday: '',
+      language: 'en',
+      country: '',
+      timezone: '',
+      quote: '',
+
+      updated_at: now(),
+
+      gender: EGender.NA,
+      update_from_provider: EUserProvider.Local,
+    };
+  }
 }
