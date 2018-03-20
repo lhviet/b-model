@@ -1,11 +1,7 @@
 import {EPLocal, EPSystem, EWClass} from '../enums';
-import {getEPLocalString, getEPSystemString} from '../core';
+import {IWordPSystem} from "./IWordPSystem";
+import {IPronunciationClass} from "./IPronunciationClass";
 
-export interface IPronunciationClass {
-  c: EWClass;  // word_class of the pronunciation
-  p: string;  // pronunciation
-  d: string;  // description
-}
 
 export class MWord {
 
@@ -14,11 +10,7 @@ export class MWord {
   custom_url: string;
   created_at: number;
   updated_at: number;
-  system: {
-    [system: string]: { // system is string from BPronunciation.getEString(EnumSystem)
-      [local: string]: IPronunciationClass[] // local is string from Blocal.getEString(EnumLocal)
-    }
-  };
+  systems: IWordPSystem[];
 
   constructor(keyid: string, word: string, custom_url: string, created_at: number, updated_at: number) {
     this.keyid = keyid;
@@ -26,39 +18,43 @@ export class MWord {
     this.custom_url = custom_url;
     this.created_at = created_at;
     this.updated_at = updated_at;
-    this.system = {};
+    this.systems = [];
   }
 
-  addPronunciation(system: EPSystem,
+  addPronunciation(keyid: string,
+                   system: EPSystem,
                    local: EPLocal,
                    wordClass: EWClass,
                    pronunciation: string,
                    description: string) {
-    const systemString = getEPSystemString(system);
-    const localString = getEPLocalString(local);
     const pClass: IPronunciationClass = {
+      k: keyid,
       c: wordClass,
       p: pronunciation,
       d: description
     };
-    if (!this.system[systemString]) {
-      this.system[systemString] = {
-        [localString]: [pClass]
-      };
+    const foundSystem = this.systems.find(s => s.system === system);
+    if (!foundSystem) {
+      this.systems.push({
+        system,
+        locals: [{
+          local,
+          pArr: [pClass],
+        }],
+      });
     }
     else {
-      const pArr = this.system[systemString][localString];
-      if (!pArr) {
-        this.system[systemString][localString] = [pClass]
+      const foundLocal = foundSystem.locals.find(l => l.local === local);
+      if (!foundLocal) {
+        foundSystem.locals.push({
+          local,
+          pArr: [pClass],
+        });
       }
       else {
-        const foundSamePronunciation = pArr.find(pItem => (pItem.p === pronunciation
-          && (pItem.c === wordClass
-            || pItem.c === EWClass.all && wordClass === EWClass.noun
-            || pItem.c === EWClass.noun && wordClass === EWClass.all)
-        ));
-        if (!foundSamePronunciation) {
-          pArr.push(pClass);
+        const foundPro = foundLocal.pArr.find(p => p.c === pClass.c && p.p === pClass.p);
+        if (!foundPro) {
+          foundLocal.pArr.push(pClass);
         }
       }
     }
