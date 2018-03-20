@@ -10,6 +10,7 @@ export function isAU(statusType: EPLocal): boolean {
   return statusType === EPLocal.AU;
 }
 
+// enum EPLocal helper
 export function getEPLocalString(e: EPLocal): string {
   switch (e) {
     case EPLocal.US:
@@ -22,3 +23,4 @@ export function getEPLocalString(e: EPLocal): string {
       return '';
   }
 }
+export const getEPLocalMap = (): EPLocal[] => [EPLocal.US, EPLocal.GB, EPLocal.AU];

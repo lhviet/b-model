@@ -16,6 +16,7 @@ export function isDisabled(statusType: EStatus): boolean {
   return statusType === EStatus.Disabled;
 }
 
+// enum EStatus helper
 export function getEStatusString(e: EStatus): string {
   switch (e) {
     case EStatus.Pending:
@@ -32,3 +33,4 @@ export function getEStatusString(e: EStatus): string {
       return '';
   }
 }
+export const getEStatusMap = (): EStatus[] => [EStatus.Pending, EStatus.Processing, EStatus.Rejected, EStatus.Active, EStatus.Disabled];

@@ -10,6 +10,7 @@ export function isFacebook(role: EUserProvider): boolean {
   return role === EUserProvider.Facebook;
 }
 
+// enum EUserProvider helper
 export function getEUserProviderString(role: EUserProvider): string {
   switch (role) {
     case EUserProvider.Google:
@@ -21,3 +22,4 @@ export function getEUserProviderString(role: EUserProvider): string {
       return 'Local';
   }
 }
+export const getEUserProviderMap = (): EUserProvider[] => [EUserProvider.Google, EUserProvider.Facebook, EUserProvider.Local];

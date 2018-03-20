@@ -13,6 +13,7 @@ export function isLGBT(gender: EGender): boolean {
   return gender === EGender.LGBT;
 }
 
+// enum EGender helper
 export function getEGenderString(gender: EGender): string {
   switch (gender) {
     case EGender.Male:
@@ -26,3 +27,4 @@ export function getEGenderString(gender: EGender): string {
       return 'User';
   }
 }
+export const getEGenderMap = (): EGender[] => [EGender.Male, EGender.Female, EGender.LGBT, EGender.NA];

@@ -9,7 +9,11 @@ export function isAdmin(role: EUserRole): boolean {
 export function isSuperAdmin(role: EUserRole): boolean {
   return role === EUserRole.SuperAdmin;
 }
+export function isAdminOrSuperAdmin(role: EUserRole): boolean {
+  return role === EUserRole.Admin || role === EUserRole.SuperAdmin;
+}
 
+// enum EUserRole helper
 export function getEUserRoleString(role: EUserRole): string {
   switch (role) {
     case EUserRole.Admin:
@@ -21,3 +25,4 @@ export function getEUserRoleString(role: EUserRole): string {
       return 'User';
   }
 }
+export const getEUserRoleMap = (): EUserRole[] => [EUserRole.Admin, EUserRole.SuperAdmin, EUserRole.User];

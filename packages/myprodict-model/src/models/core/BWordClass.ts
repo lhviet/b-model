@@ -3,16 +3,20 @@ import {EWClass} from '../enums';
 export function isAll(statusType: EWClass): boolean {
   return statusType === EWClass.all;
 }
+
 export function isNoun(statusType: EWClass): boolean {
   return statusType === EWClass.noun;
 }
+
 export function isVerb(statusType: EWClass): boolean {
   return statusType === EWClass.verb;
 }
+
 export function isAdj(statusType: EWClass): boolean {
   return statusType === EWClass.adjective;
 }
 
+// enum EWClass helper
 export function getEWordClassString(e: EWClass): string {
   let wordClass: string;
   switch (e) {
@@ -60,3 +64,19 @@ export function getEWordClassString(e: EWClass): string {
   }
   return wordClass.substr(0, 4);
 }
+
+export const getEWClassMap = (): EWClass[] => [
+  EWClass.all,
+  EWClass.noun,
+  EWClass.verb,
+  EWClass.adjective,
+  EWClass.adverb,
+  EWClass.pronoun,
+  EWClass.abbreviation,
+  EWClass.interjection,
+  EWClass.conjunction,
+  EWClass.prefix,
+  EWClass.preposition,
+  EWClass.article,
+  EWClass.unclassified,
+];
