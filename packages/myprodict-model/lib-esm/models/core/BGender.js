@@ -10,6 +10,7 @@ export function isFemale(gender) {
 export function isLGBT(gender) {
     return gender === 4 /* LGBT */;
 }
+// enum EGender helper
 export function getEGenderString(gender) {
     switch (gender) {
         case 2 /* Male */:
@@ -23,4 +24,5 @@ export function getEGenderString(gender) {
             return 'User';
     }
 }
+export var getEGenderMap = function () { return [2 /* Male */, 3 /* Female */, 4 /* LGBT */, 1 /* NA */]; };
 //# sourceMappingURL=BGender.js.map

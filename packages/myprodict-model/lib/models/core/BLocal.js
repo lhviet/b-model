@@ -12,6 +12,7 @@ function isAU(statusType) {
     return statusType === 3 /* AU */;
 }
 exports.isAU = isAU;
+// enum EPLocal helper
 function getEPLocalString(e) {
     switch (e) {
         case 1 /* US */:
@@ -25,4 +26,5 @@ function getEPLocalString(e) {
     }
 }
 exports.getEPLocalString = getEPLocalString;
+exports.getEPLocalMap = function () { return [1 /* US */, 2 /* GB */, 3 /* AU */]; };
 //# sourceMappingURL=BLocal.js.map

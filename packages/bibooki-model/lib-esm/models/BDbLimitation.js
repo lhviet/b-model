@@ -1,9 +1,15 @@
 var BDbLimitation = /** @class */ (function () {
     function BDbLimitation(offset, limit, sorter, direct) {
         this.offset = offset || 0;
-        this.limit = limit || 25;
-        this.sorter = sorter || '';
-        this.direct = direct || '';
+        if (limit) {
+            this.limit = limit;
+        }
+        if (sorter) {
+            this.sorter = sorter;
+        }
+        if (direct) {
+            this.direct = direct;
+        }
     }
     BDbLimitation.limit0 = function (sorter, direct) { return new BDbLimitation(0, 0, sorter, direct); };
     BDbLimitation.limit25 = function (sorter, direct) {

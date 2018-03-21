@@ -11,9 +11,7 @@ export class DbLimitation implements IDbLimitation {
   static limit150 = (sorter = 'created_at', direct = 'desc') => new DbLimitation(0, 150, sorter, direct);
 
   constructor(offset?: number, limit?: number, sorter?: string, direct?: string) {
-    if (offset) {
-      this.offset = offset;
-    }
+    this.offset = offset || 0;
     if (limit) {
       this.limit = limit;
     }

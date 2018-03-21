@@ -12,6 +12,11 @@ function isSuperAdmin(role) {
     return role === 3 /* SuperAdmin */;
 }
 exports.isSuperAdmin = isSuperAdmin;
+function isAdminOrSuperAdmin(role) {
+    return role === 2 /* Admin */ || role === 3 /* SuperAdmin */;
+}
+exports.isAdminOrSuperAdmin = isAdminOrSuperAdmin;
+// enum EUserRole helper
 function getEUserRoleString(role) {
     switch (role) {
         case 2 /* Admin */:
@@ -24,4 +29,5 @@ function getEUserRoleString(role) {
     }
 }
 exports.getEUserRoleString = getEUserRoleString;
+exports.getEUserRoleMap = function () { return [2 /* Admin */, 3 /* SuperAdmin */, 1 /* User */]; };
 //# sourceMappingURL=BRole.js.map

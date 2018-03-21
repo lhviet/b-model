@@ -1,8 +1,6 @@
 var DbLimitation = /** @class */ (function () {
     function DbLimitation(offset, limit, sorter, direct) {
-        if (offset) {
-            this.offset = offset;
-        }
+        this.offset = offset || 0;
         if (limit) {
             this.limit = limit;
         }

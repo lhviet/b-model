@@ -13,6 +13,7 @@ export function isActive(statusType) {
 export function isDisabled(statusType) {
     return statusType === 5 /* Disabled */;
 }
+// enum EStatus helper
 export function getEStatusString(e) {
     switch (e) {
         case 1 /* Pending */:
@@ -29,4 +30,5 @@ export function getEStatusString(e) {
             return '';
     }
 }
+export var getEStatusMap = function () { return [1 /* Pending */, 2 /* Processing */, 3 /* Rejected */, 4 /* Active */, 5 /* Disabled */]; };
 //# sourceMappingURL=BStatus.js.map

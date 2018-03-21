@@ -10,6 +10,7 @@ export function isVerb(statusType) {
 export function isAdj(statusType) {
     return statusType === 4 /* adjective */;
 }
+// enum EWClass helper
 export function getEWordClassString(e) {
     var wordClass;
     switch (e) {
@@ -57,4 +58,19 @@ export function getEWordClassString(e) {
     }
     return wordClass.substr(0, 4);
 }
+export var getEWClassMap = function () { return [
+    1 /* all */,
+    2 /* noun */,
+    3 /* verb */,
+    4 /* adjective */,
+    5 /* adverb */,
+    6 /* pronoun */,
+    7 /* abbreviation */,
+    8 /* interjection */,
+    9 /* conjunction */,
+    10 /* prefix */,
+    11 /* preposition */,
+    12 /* article */,
+    13 /* unclassified */,
+]; };
 //# sourceMappingURL=BWordClass.js.map

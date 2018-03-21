@@ -7,6 +7,7 @@ export function isGoogle(role) {
 export function isFacebook(role) {
     return role === 3 /* Facebook */;
 }
+// enum EUserProvider helper
 export function getEUserProviderString(role) {
     switch (role) {
         case 2 /* Google */:
@@ -18,4 +19,5 @@ export function getEUserProviderString(role) {
             return 'Local';
     }
 }
+export var getEUserProviderMap = function () { return [2 /* Google */, 3 /* Facebook */, 1 /* Local */]; };
 //# sourceMappingURL=BUserProvider.js.map

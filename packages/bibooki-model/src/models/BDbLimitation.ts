@@ -13,8 +13,14 @@ export class BDbLimitation implements IBMDbLimitation {
 
   constructor(offset?: number, limit?: number, sorter?: string, direct?: string) {
     this.offset = offset || 0;
-    this.limit = limit || 25;
-    this.sorter = sorter || '';
-    this.direct = direct || '';
+    if (limit) {
+      this.limit = limit;
+    }
+    if (sorter) {
+      this.sorter = sorter;
+    }
+    if (direct) {
+      this.direct = direct;
+    }
   }
 }
