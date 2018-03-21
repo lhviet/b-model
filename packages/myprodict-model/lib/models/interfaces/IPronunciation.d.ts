@@ -9,5 +9,8 @@ export interface IPronunciationValue {
     system: EPSystem;
     local: EPLocal;
     transcript: string;
-    description?: string;
+    description: string;
+    soundUrl: string;
+    created_at: number;
+    updated_at: number;
 }

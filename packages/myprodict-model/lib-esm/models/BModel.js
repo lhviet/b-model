@@ -23,6 +23,10 @@ var BModel = /** @class */ (function () {
             system: 1 /* IPA */,
             local: 1 /* US */,
             transcript: '',
+            description: '',
+            soundUrl: '',
+            created_at: now(),
+            updated_at: now(),
         };
     };
     BModel.initMeaning = function () {

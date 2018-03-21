@@ -48,6 +48,10 @@ export class BModel {
       system: EPSystem.IPA,     // i.e., 1 = IPA
       local: EPLocal.US,      // i.e., 1 = US
       transcript: '',
+      description: '',
+      soundUrl: '',
+      created_at: now(),
+      updated_at: now(),
     };
   }
 

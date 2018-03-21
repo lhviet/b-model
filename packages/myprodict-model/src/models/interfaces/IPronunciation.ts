@@ -11,5 +11,8 @@ export interface IPronunciationValue {
   system: EPSystem;     // pronunciation transcript system, i.e. IPA
   local: EPLocal;      // i.e., US, GB, AU
   transcript: string;
-  description?: string;
+  description: string;
+  soundUrl: string;
+  created_at: number;   // 11 digits
+  updated_at: number;   // 11 digits
 }
