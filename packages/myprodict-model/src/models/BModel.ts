@@ -49,9 +49,9 @@ export class BModel {
       local: EPLocal.US,      // i.e., 1 = US
       transcript: '',
       description: '',
-      soundUrl: '',
-      created_at: now(),
+      sound_url: '',
       updated_at: now(),
+      created_at: now(),
     };
   }
 

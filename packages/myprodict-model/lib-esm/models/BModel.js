@@ -24,7 +24,7 @@ var BModel = /** @class */ (function () {
             local: 1 /* US */,
             transcript: '',
             description: '',
-            soundUrl: '',
+            sound_url: '',
             created_at: now(),
             updated_at: now(),
         };

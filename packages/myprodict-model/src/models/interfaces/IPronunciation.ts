@@ -12,7 +12,7 @@ export interface IPronunciationValue {
   local: EPLocal;      // i.e., US, GB, AU
   transcript: string;
   description: string;
-  soundUrl: string;
+  sound_url: string;
   created_at: number;   // 11 digits
   updated_at: number;   // 11 digits
 }

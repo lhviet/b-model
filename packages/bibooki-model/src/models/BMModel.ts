@@ -38,7 +38,7 @@ export class BMModel {
 
   static initUser(): IBMUserValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMUserValue = {
+    return {
       username: '',
       email: '',
       password: '',
@@ -47,12 +47,11 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,
     };
-    return value;
   }
 
   static initUserBasic(): IBMUserBasicInfoValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMUserBasicInfoValue = {
+    return {
       update_from_provider: BMModel.AUTH_PROVIDER.LOCAL,
       displayname: '',
       firstname: '',
@@ -69,12 +68,11 @@ export class BMModel {
       quote: '',
       updated_at: NOW,
     };
-    return value;
   }
 
   static initPerson(): IBMPersonValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMPersonValue = {
+    return {
       contributor_keyid: '',
       custom_url: '',
       native_name: '',
@@ -93,12 +91,11 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,
     };
-    return value;
   }
 
   static initBook(): IBMBookValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMBookValue = {
+    return {
       contributor_keyid: '',
       custom_url: '',
       native_name: '',
@@ -118,12 +115,11 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW
     };
-    return value;
   }
 
   static initBookText(): IBMBookTextValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMBookTextValue = {
+    return {
       contributor_keyid: '',
       book_keyid: '',
       custom_url: '',
@@ -143,12 +139,11 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,
     };
-    return value;
   }
 
   static initBookTextChapter(): IBMBookTextChapterValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMBookTextChapterValue = {
+    return {
       booktext_keyid: '', // 36 varchars
       custom_url: '',     // 125 varchars
       chapter_order: 1,           // 4 digits
@@ -161,12 +156,11 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,
     };
-    return value;
   }
 
   static initQuote(): IBMQuoteValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMQuoteValue = {
+    return {
       person_keyid: '',   // 36 chars
       book_keyid: '',     // 36 chars
       person_info: '',    // 125 chars
@@ -178,12 +172,11 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,   // 10 digits
     };
-    return value;
   }
 
   static initSlider(): IBMSliderValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMSliderValue = {
+    return {
       language: 'en', // 2 chars
       content: '',    // 512 varchars
       cover_url: BMModel.DEFAULT_IMG.COVER, // 1,255 chars
@@ -192,33 +185,31 @@ export class BMModel {
       updated_at: NOW,
       created_at: NOW,  // 10 digits
     };
-    return value;
   }
 
   static initInfo(): IBMInfoValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMInfoValue = {
-      contributor_keyid: '', // 36 varchars
-      custom_url: '',       // 125 varchars
-      language: 'en',       // 2 chars
-      title: '',            // 125 varchars
-      description: '',      // 512 varchars
-      content: '',          // TEXT
+    return {
+      contributor_keyid: '',  // 36 varchars
+      custom_url: '',         // 125 varchars
+      language: 'en',         // 2 chars
+      title: '',              // 125 varchars
+      description: '',        // 512 varchars
+      content: '',            // TEXT
+      cover_url: '',          // 1024 varchars
       updated_at: NOW,        // 10 digits
       created_at: NOW,        // 10 digits
     };
-    return value;
   }
 
   static initUserFriendship(): IBMUserFriendshipValue {
     const NOW = parseInt(moment().format('X'), 10);
-    const value: IBMUserFriendshipValue = {
+    return {
       user_keyid_1: '',
       user_keyid_2: '',
       status: BMStatus.list.friendship_status.pending.code,
       created_at: NOW,
     };
-    return value;
   }
 
   static initUserActivity(): IBMUserActivityValue {
@@ -245,12 +236,11 @@ export class BMModel {
   }
 
   static initConfig(): IBMConfigsValue {
-    const value: IBMConfigsValue = {
+    return {
       name: '',
       config_value: '',
       description: '',
     };
-    return value;
   }
 
 }
