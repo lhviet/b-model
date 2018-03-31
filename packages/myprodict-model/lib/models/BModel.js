@@ -27,8 +27,8 @@ var BModel = /** @class */ (function () {
             transcript: '',
             description: '',
             sound_url: '',
-            created_at: now(),
             updated_at: now(),
+            created_at: now(),
         };
     };
     BModel.initMeaning = function () {
@@ -41,6 +41,7 @@ var BModel = /** @class */ (function () {
     };
     BModel.initMeaningUsage = function () {
         return {
+            word_keyid: '',
             meaning_keyid: '',
             usage: '',
             explanation: '',
