@@ -9,6 +9,7 @@ export interface IBMInfoValue {
     title: string;
     description: string;
     content: string;
+    cover_url: string;
     updated_at: number;
     created_at: number;
 }

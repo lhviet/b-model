@@ -4,7 +4,8 @@ export interface IMeaningUsage {
 }
 
 export interface IMeaningUsageValue {
-  meaning_keyid: string;   // max 16 chars, reference to Meaning (keyid)
+  word_keyid: string;       // max 16 chars, reference to Word (keyid)
+  meaning_keyid: string;    // max 16 chars, reference to Meaning (keyid)
   usage: string;
   explanation: string;
 }

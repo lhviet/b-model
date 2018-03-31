@@ -66,6 +66,7 @@ export class BModel {
 
   static initMeaningUsage(): IMeaningUsageValue {
     return {
+      word_keyid: '',
       meaning_keyid: '',
       usage: '',
       explanation: '',

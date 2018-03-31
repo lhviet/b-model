@@ -8,7 +8,7 @@ var BMModel = /** @class */ (function () {
     }
     BMModel.initUser = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             username: '',
             email: '',
             password: '',
@@ -17,11 +17,10 @@ var BMModel = /** @class */ (function () {
             updated_at: NOW,
             created_at: NOW,
         };
-        return value;
     };
     BMModel.initUserBasic = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             update_from_provider: BMModel.AUTH_PROVIDER.LOCAL,
             displayname: '',
             firstname: '',
@@ -38,11 +37,10 @@ var BMModel = /** @class */ (function () {
             quote: '',
             updated_at: NOW,
         };
-        return value;
     };
     BMModel.initPerson = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             contributor_keyid: '',
             custom_url: '',
             native_name: '',
@@ -61,11 +59,10 @@ var BMModel = /** @class */ (function () {
             updated_at: NOW,
             created_at: NOW,
         };
-        return value;
     };
     BMModel.initBook = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             contributor_keyid: '',
             custom_url: '',
             native_name: '',
@@ -85,11 +82,10 @@ var BMModel = /** @class */ (function () {
             updated_at: NOW,
             created_at: NOW
         };
-        return value;
     };
     BMModel.initBookText = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             contributor_keyid: '',
             book_keyid: '',
             custom_url: '',
@@ -109,11 +105,10 @@ var BMModel = /** @class */ (function () {
             updated_at: NOW,
             created_at: NOW,
         };
-        return value;
     };
     BMModel.initBookTextChapter = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             booktext_keyid: '',
             custom_url: '',
             chapter_order: 1,
@@ -126,11 +121,10 @@ var BMModel = /** @class */ (function () {
             updated_at: NOW,
             created_at: NOW,
         };
-        return value;
     };
     BMModel.initQuote = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             person_keyid: '',
             book_keyid: '',
             person_info: '',
@@ -142,11 +136,10 @@ var BMModel = /** @class */ (function () {
             updated_at: NOW,
             created_at: NOW,
         };
-        return value;
     };
     BMModel.initSlider = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             language: 'en',
             content: '',
             cover_url: BMModel.DEFAULT_IMG.COVER,
@@ -155,31 +148,29 @@ var BMModel = /** @class */ (function () {
             updated_at: NOW,
             created_at: NOW,
         };
-        return value;
     };
     BMModel.initInfo = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             contributor_keyid: '',
             custom_url: '',
             language: 'en',
             title: '',
             description: '',
             content: '',
+            cover_url: '',
             updated_at: NOW,
             created_at: NOW,
         };
-        return value;
     };
     BMModel.initUserFriendship = function () {
         var NOW = parseInt(moment().format('X'), 10);
-        var value = {
+        return {
             user_keyid_1: '',
             user_keyid_2: '',
             status: BMStatus.list.friendship_status.pending.code,
             created_at: NOW,
         };
-        return value;
     };
     BMModel.initUserActivity = function () {
         var NOW = parseInt(moment().format('X'), 10);
@@ -203,12 +194,11 @@ var BMModel = /** @class */ (function () {
         };
     };
     BMModel.initConfig = function () {
-        var value = {
+        return {
             name: '',
             config_value: '',
             description: '',
         };
-        return value;
     };
     BMModel.DEFAULT_IMG = {
         COVER: '/images/default-cover.png',
