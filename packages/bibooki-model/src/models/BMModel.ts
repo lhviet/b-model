@@ -199,6 +199,7 @@ export class BMModel {
       cover_url: '',          // 1024 varchars
       updated_at: NOW,        // 10 digits
       created_at: NOW,        // 10 digits
+      tags: ''                // 512 varchars
     };
   }
 

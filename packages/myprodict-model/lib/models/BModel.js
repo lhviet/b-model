@@ -42,6 +42,7 @@ var BModel = /** @class */ (function () {
     BModel.initMeaningUsage = function () {
         return {
             word_keyid: '',
+            word_class: 1 /* all */,
             meaning_keyid: '',
             usage: '',
             explanation: '',
