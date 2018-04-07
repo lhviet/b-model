@@ -1,6 +1,6 @@
 {
   "name": "bibooki-model",
-  "version": "0.0.28",
+  "version": "0.0.31",
   "description": "This is the mapping models used in bibooki project",
   "main": "lib/index.js",
   "scripts": {
