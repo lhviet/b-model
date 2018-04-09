@@ -12,4 +12,5 @@ export interface IBMInfoValue {
     cover_url: string;
     updated_at: number;
     created_at: number;
+    tags: string;
 }

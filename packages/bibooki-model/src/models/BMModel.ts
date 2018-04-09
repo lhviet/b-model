@@ -16,6 +16,7 @@ import {BMGender} from './BMGender';
 import {BMBookType} from './BMBookType';
 import {IBMUserActivityValue} from '../index';
 import {IBMUserActivityExtractedValue} from './interfaces/IBMUserActivity';
+import {IBMRatePersonValue} from "./interfaces/IBMRatePerson";
 
 export class BMModel {
 
@@ -76,18 +77,20 @@ export class BMModel {
       contributor_keyid: '',
       custom_url: '',
       native_name: '',
-      english_name: '',
+      english_name: undefined,
       alternative_names: {en: []},
       language: 'en',
       country: 'U_N',
       gender: BMGender.list.noanswer.code,
-      year_of_birth: 0,
-      year_of_death: 0,
-      description: '',
-      tags: '',
+      year_of_birth: undefined,
+      year_of_death: undefined,
+      description: undefined,
+      tags: undefined,
       links: [''],
       images: [BMModel.DEFAULT_IMG.PERSON],
       status: BMStatus.list.general.pending.code,
+      view_count: undefined,
+      avg_rate: undefined,
       updated_at: NOW,
       created_at: NOW,
     };
@@ -244,4 +247,14 @@ export class BMModel {
     };
   }
 
+  static initRatePerson(): IBMRatePersonValue {
+    const NOW = parseInt(moment().format('X'), 10);
+    return {
+      person_keyid: undefined,
+      user_keyid: undefined,
+      rate: 3,
+      updated_at: NOW,
+      created_at: NOW,
+    };
+  }
 }

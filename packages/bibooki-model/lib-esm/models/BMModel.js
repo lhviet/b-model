@@ -44,18 +44,20 @@ var BMModel = /** @class */ (function () {
             contributor_keyid: '',
             custom_url: '',
             native_name: '',
-            english_name: '',
+            english_name: undefined,
             alternative_names: { en: [] },
             language: 'en',
             country: 'U_N',
             gender: BMGender.list.noanswer.code,
-            year_of_birth: 0,
-            year_of_death: 0,
-            description: '',
-            tags: '',
+            year_of_birth: undefined,
+            year_of_death: undefined,
+            description: undefined,
+            tags: undefined,
             links: [''],
             images: [BMModel.DEFAULT_IMG.PERSON],
             status: BMStatus.list.general.pending.code,
+            view_count: undefined,
+            avg_rate: undefined,
             updated_at: NOW,
             created_at: NOW,
         };
@@ -161,6 +163,7 @@ var BMModel = /** @class */ (function () {
             cover_url: '',
             updated_at: NOW,
             created_at: NOW,
+            tags: '' // 512 varchars
         };
     };
     BMModel.initUserFriendship = function () {
@@ -198,6 +201,16 @@ var BMModel = /** @class */ (function () {
             name: '',
             config_value: '',
             description: '',
+        };
+    };
+    BMModel.initRatePerson = function () {
+        var NOW = parseInt(moment().format('X'), 10);
+        return {
+            person_keyid: undefined,
+            user_keyid: undefined,
+            rate: 3,
+            updated_at: NOW,
+            created_at: NOW,
         };
     };
     BMModel.DEFAULT_IMG = {
