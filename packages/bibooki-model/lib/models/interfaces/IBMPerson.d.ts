@@ -19,7 +19,8 @@ export interface IBMPersonValue {
     images: string[];
     status: string;
     view_count: number;
-    avg_rate: number;
+    rate_avg: number;
+    rate_count: number;
     updated_at: number;
     created_at: number;
 }

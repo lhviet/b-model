@@ -90,7 +90,8 @@ export class BMModel {
       images: [BMModel.DEFAULT_IMG.PERSON],
       status: BMStatus.list.general.pending.code,
       view_count: undefined,
-      avg_rate: undefined,
+      rate_avg: undefined,
+      rate_count: 0,
       updated_at: NOW,
       created_at: NOW,
     };
