@@ -12,6 +12,9 @@ import { IBMConfigsValue } from './interfaces/IBMConfigs';
 import { IBMUserActivityValue } from '../index';
 import { IBMUserActivityExtractedValue } from './interfaces/IBMUserActivity';
 import { IBMRatePersonValue } from "./interfaces/IBMRatePerson";
+import { IBMRateBookValue } from "./interfaces/IBMRateBook";
+import { IBMRateBooktextValue } from "./interfaces/IBMRateBookText";
+import { IBMRateInfoValue } from "./interfaces/IBMRateInfo";
 export declare class BMModel {
     static DEFAULT_IMG: {
         COVER: string;
@@ -42,4 +45,7 @@ export declare class BMModel {
     static initUserActivityExtracted(): IBMUserActivityExtractedValue;
     static initConfig(): IBMConfigsValue;
     static initRatePerson(): IBMRatePersonValue;
+    static initRateBook(): IBMRateBookValue;
+    static initRateBooktext(): IBMRateBooktextValue;
+    static initRateInfo(): IBMRateInfoValue;
 }

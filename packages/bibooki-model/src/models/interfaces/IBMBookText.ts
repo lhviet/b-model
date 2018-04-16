@@ -20,6 +20,9 @@ export interface IBMBookTextValue {
   files: string[];
   isbn: string;
   tags: string;
+  view_count: number;
+  rate_avg: number;
+  rate_count: number;
   updated_at: number;
   created_at: number;
 }

@@ -84,6 +84,9 @@ var BMModel = /** @class */ (function () {
             description: '',
             tags: '',
             status: BMStatus_1.BMStatus.list.general.pending.code,
+            view_count: undefined,
+            rate_avg: undefined,
+            rate_count: 0,
             updated_at: NOW,
             created_at: NOW
         };
@@ -107,6 +110,9 @@ var BMModel = /** @class */ (function () {
             files: [''],
             isbn: '',
             tags: '',
+            view_count: undefined,
+            rate_avg: undefined,
+            rate_count: 0,
             updated_at: NOW,
             created_at: NOW,
         };
@@ -164,9 +170,12 @@ var BMModel = /** @class */ (function () {
             description: '',
             content: '',
             cover_url: '',
+            tags: '',
+            view_count: undefined,
+            rate_avg: undefined,
+            rate_count: 0,
             updated_at: NOW,
             created_at: NOW,
-            tags: '' // 512 varchars
         };
     };
     BMModel.initUserFriendship = function () {
@@ -210,6 +219,36 @@ var BMModel = /** @class */ (function () {
         var NOW = parseInt(moment().format('X'), 10);
         return {
             person_keyid: undefined,
+            user_keyid: undefined,
+            rate: 3,
+            updated_at: NOW,
+            created_at: NOW,
+        };
+    };
+    BMModel.initRateBook = function () {
+        var NOW = parseInt(moment().format('X'), 10);
+        return {
+            book_keyid: undefined,
+            user_keyid: undefined,
+            rate: 3,
+            updated_at: NOW,
+            created_at: NOW,
+        };
+    };
+    BMModel.initRateBooktext = function () {
+        var NOW = parseInt(moment().format('X'), 10);
+        return {
+            booktext_keyid: undefined,
+            user_keyid: undefined,
+            rate: 3,
+            updated_at: NOW,
+            created_at: NOW,
+        };
+    };
+    BMModel.initRateInfo = function () {
+        var NOW = parseInt(moment().format('X'), 10);
+        return {
+            info_keyid: undefined,
             user_keyid: undefined,
             rate: 3,
             updated_at: NOW,

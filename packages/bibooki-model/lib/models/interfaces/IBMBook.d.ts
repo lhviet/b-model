@@ -16,9 +16,12 @@ export interface IBMBookValue {
     author_info: string;
     links: string[];
     images: string[];
-    updated_at: number;
-    created_at: number;
     status: string;
     description: string;
     tags: string;
+    view_count: number;
+    rate_avg: number;
+    rate_count: number;
+    updated_at: number;
+    created_at: number;
 }

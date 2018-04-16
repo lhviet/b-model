@@ -17,6 +17,9 @@ import {BMBookType} from './BMBookType';
 import {IBMUserActivityValue} from '../index';
 import {IBMUserActivityExtractedValue} from './interfaces/IBMUserActivity';
 import {IBMRatePersonValue} from "./interfaces/IBMRatePerson";
+import {IBMRateBookValue} from "./interfaces/IBMRateBook";
+import {IBMRateBooktextValue} from "./interfaces/IBMRateBookText";
+import {IBMRateInfoValue} from "./interfaces/IBMRateInfo";
 
 export class BMModel {
 
@@ -116,6 +119,9 @@ export class BMModel {
       description: '',
       tags: '',
       status: BMStatus.list.general.pending.code,
+      view_count: undefined,
+      rate_avg: undefined,
+      rate_count: 0,
       updated_at: NOW,
       created_at: NOW
     };
@@ -140,6 +146,9 @@ export class BMModel {
       files: [''],
       isbn: '',
       tags: '',
+      view_count: undefined,
+      rate_avg: undefined,
+      rate_count: 0,
       updated_at: NOW,
       created_at: NOW,
     };
@@ -201,9 +210,12 @@ export class BMModel {
       description: '',        // 512 varchars
       content: '',            // TEXT
       cover_url: '',          // 1024 varchars
+      tags: '',               // 512 varchars
+      view_count: undefined,
+      rate_avg: undefined,
+      rate_count: 0,
       updated_at: NOW,        // 10 digits
       created_at: NOW,        // 10 digits
-      tags: ''                // 512 varchars
     };
   }
 
@@ -252,6 +264,39 @@ export class BMModel {
     const NOW = parseInt(moment().format('X'), 10);
     return {
       person_keyid: undefined,
+      user_keyid: undefined,
+      rate: 3,
+      updated_at: NOW,
+      created_at: NOW,
+    };
+  }
+
+  static initRateBook(): IBMRateBookValue {
+    const NOW = parseInt(moment().format('X'), 10);
+    return {
+      book_keyid: undefined,
+      user_keyid: undefined,
+      rate: 3,
+      updated_at: NOW,
+      created_at: NOW,
+    };
+  }
+
+  static initRateBooktext(): IBMRateBooktextValue {
+    const NOW = parseInt(moment().format('X'), 10);
+    return {
+      booktext_keyid: undefined,
+      user_keyid: undefined,
+      rate: 3,
+      updated_at: NOW,
+      created_at: NOW,
+    };
+  }
+
+  static initRateInfo(): IBMRateInfoValue {
+    const NOW = parseInt(moment().format('X'), 10);
+    return {
+      info_keyid: undefined,
       user_keyid: undefined,
       rate: 3,
       updated_at: NOW,

@@ -1,10 +1,10 @@
-export interface IBMRatePerson {
+export interface IBMRateInfo {
   keyid: string;
-  value: IBMRatePersonValue;
+  value: IBMRateInfoValue;
 }
 
-export interface IBMRatePersonValue {
-  person_keyid: string;
+export interface IBMRateInfoValue {
+  info_keyid: string;
   user_keyid: string;
   rate: number;
   updated_at: number,

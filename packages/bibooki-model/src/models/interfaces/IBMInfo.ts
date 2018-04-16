@@ -13,5 +13,8 @@ export interface IBMInfoValue {
   cover_url: string;              // 1024 varchars
   updated_at: number;         // 10 digits
   created_at: number;         // 10 digits
+  view_count: number;
+  rate_avg: number;
+  rate_count: number;
   tags: string;               // 512 varchars
 }
