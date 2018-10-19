@@ -1,35 +1,36 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var enums_1 = require("../enums");
 function isNoAnwser(gender) {
-    return gender === 1 /* NA */;
+    return gender === enums_1.EGender.NA;
 }
 exports.isNoAnwser = isNoAnwser;
 function isMale(gender) {
-    return gender === 2 /* Male */;
+    return gender === enums_1.EGender.Male;
 }
 exports.isMale = isMale;
 function isFemale(gender) {
-    return gender === 3 /* Female */;
+    return gender === enums_1.EGender.Female;
 }
 exports.isFemale = isFemale;
 function isLGBT(gender) {
-    return gender === 4 /* LGBT */;
+    return gender === enums_1.EGender.LGBT;
 }
 exports.isLGBT = isLGBT;
 // enum EGender helper
 function getEGenderString(gender) {
     switch (gender) {
-        case 2 /* Male */:
+        case enums_1.EGender.Male:
             return 'Male';
-        case 3 /* Female */:
+        case enums_1.EGender.Female:
             return 'Female';
-        case 4 /* LGBT */:
+        case enums_1.EGender.LGBT:
             return 'LGBT';
-        case 1 /* NA */:
+        case enums_1.EGender.NA:
         default:
             return 'User';
     }
 }
 exports.getEGenderString = getEGenderString;
-exports.getEGenderMap = function () { return [2 /* Male */, 3 /* Female */, 4 /* LGBT */, 1 /* NA */]; };
+exports.getEGenderMap = function () { return [enums_1.EGender.Male, enums_1.EGender.Female, enums_1.EGender.LGBT, enums_1.EGender.NA]; };
 //# sourceMappingURL=BGender.js.map

@@ -1,62 +1,63 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var enums_1 = require("../enums");
 function isAll(statusType) {
-    return statusType === 1 /* all */;
+    return statusType === enums_1.EWClass.all;
 }
 exports.isAll = isAll;
 function isNoun(statusType) {
-    return statusType === 2 /* noun */;
+    return statusType === enums_1.EWClass.noun;
 }
 exports.isNoun = isNoun;
 function isVerb(statusType) {
-    return statusType === 3 /* verb */;
+    return statusType === enums_1.EWClass.verb;
 }
 exports.isVerb = isVerb;
 function isAdj(statusType) {
-    return statusType === 4 /* adjective */;
+    return statusType === enums_1.EWClass.adjective;
 }
 exports.isAdj = isAdj;
 // enum EWClass helper
 function getEWordClassString(e) {
     var wordClass;
     switch (e) {
-        case 1 /* all */:
+        case enums_1.EWClass.all:
             wordClass = 'all';
             break;
-        case 2 /* noun */:
+        case enums_1.EWClass.noun:
             wordClass = 'noun';
             break;
-        case 3 /* verb */:
+        case enums_1.EWClass.verb:
             wordClass = 'verb';
             break;
-        case 4 /* adjective */:
+        case enums_1.EWClass.adjective:
             wordClass = 'adjective';
             break;
-        case 5 /* adverb */:
+        case enums_1.EWClass.adverb:
             wordClass = 'adverb';
             break;
-        case 6 /* pronoun */:
+        case enums_1.EWClass.pronoun:
             wordClass = 'pronoun';
             break;
-        case 7 /* abbreviation */:
+        case enums_1.EWClass.abbreviation:
             wordClass = 'abbreviation';
             break;
-        case 8 /* interjection */:
+        case enums_1.EWClass.interjection:
             wordClass = 'interjection';
             break;
-        case 9 /* conjunction */:
+        case enums_1.EWClass.conjunction:
             wordClass = 'conjunction';
             break;
-        case 10 /* prefix */:
+        case enums_1.EWClass.prefix:
             wordClass = 'prefix';
             break;
-        case 11 /* preposition */:
+        case enums_1.EWClass.preposition:
             wordClass = 'preposition';
             break;
-        case 12 /* article */:
+        case enums_1.EWClass.article:
             wordClass = 'article';
             break;
-        case 13 /* unclassified */:
+        case enums_1.EWClass.unclassified:
             wordClass = 'unclassified';
             break;
         default:
@@ -66,18 +67,18 @@ function getEWordClassString(e) {
 }
 exports.getEWordClassString = getEWordClassString;
 exports.getEWClassMap = function () { return [
-    1 /* all */,
-    2 /* noun */,
-    3 /* verb */,
-    4 /* adjective */,
-    5 /* adverb */,
-    6 /* pronoun */,
-    7 /* abbreviation */,
-    8 /* interjection */,
-    9 /* conjunction */,
-    10 /* prefix */,
-    11 /* preposition */,
-    12 /* article */,
-    13 /* unclassified */,
+    enums_1.EWClass.all,
+    enums_1.EWClass.noun,
+    enums_1.EWClass.verb,
+    enums_1.EWClass.adjective,
+    enums_1.EWClass.adverb,
+    enums_1.EWClass.pronoun,
+    enums_1.EWClass.abbreviation,
+    enums_1.EWClass.interjection,
+    enums_1.EWClass.conjunction,
+    enums_1.EWClass.prefix,
+    enums_1.EWClass.preposition,
+    enums_1.EWClass.article,
+    enums_1.EWClass.unclassified,
 ]; };
 //# sourceMappingURL=BWordClass.js.map

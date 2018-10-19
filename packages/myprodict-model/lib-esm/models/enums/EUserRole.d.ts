@@ -1,5 +1,5 @@
-export declare const enum EUserRole {
+export declare enum EUserRole {
     User = 1,
     Admin = 2,
-    SuperAdmin = 3,
+    SuperAdmin = 3
 }

@@ -1,4 +1,4 @@
-export const enum EUserProvider {
+export enum EUserProvider {
   Local = 1,
   Google,
   Facebook,

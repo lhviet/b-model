@@ -1,3 +1,3 @@
-export declare const enum EPSystem {
-    IPA = 1,
+export declare enum EPSystem {
+    IPA = 1
 }

@@ -1,28 +1,29 @@
+import { EGender } from '../enums';
 export function isNoAnwser(gender) {
-    return gender === 1 /* NA */;
+    return gender === EGender.NA;
 }
 export function isMale(gender) {
-    return gender === 2 /* Male */;
+    return gender === EGender.Male;
 }
 export function isFemale(gender) {
-    return gender === 3 /* Female */;
+    return gender === EGender.Female;
 }
 export function isLGBT(gender) {
-    return gender === 4 /* LGBT */;
+    return gender === EGender.LGBT;
 }
 // enum EGender helper
 export function getEGenderString(gender) {
     switch (gender) {
-        case 2 /* Male */:
+        case EGender.Male:
             return 'Male';
-        case 3 /* Female */:
+        case EGender.Female:
             return 'Female';
-        case 4 /* LGBT */:
+        case EGender.LGBT:
             return 'LGBT';
-        case 1 /* NA */:
+        case EGender.NA:
         default:
             return 'User';
     }
 }
-export var getEGenderMap = function () { return [2 /* Male */, 3 /* Female */, 4 /* LGBT */, 1 /* NA */]; };
+export var getEGenderMap = function () { return [EGender.Male, EGender.Female, EGender.LGBT, EGender.NA]; };
 //# sourceMappingURL=BGender.js.map

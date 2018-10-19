@@ -1,6 +1,6 @@
 
 // Dictionary word class
-export const enum EWClass {
+export enum EWClass {
   all = 1,
   noun,
   verb,

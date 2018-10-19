@@ -1,4 +1,5 @@
 import * as moment from 'moment';
+import { EGender, EPLocal, EPSystem, EStatus, EUserProvider, EUserRole, EWClass } from './enums';
 var DEFAULT_IMG = {
     COVER: '/images/default-cover.png',
     PERSON: '/images/default-person.png',
@@ -11,7 +12,7 @@ var BModel = /** @class */ (function () {
         return {
             word: '',
             custom_url: '',
-            status: 1 /* Pending */,
+            status: EStatus.Pending,
             created_at: now(),
             updated_at: now(),
         };
@@ -19,9 +20,9 @@ var BModel = /** @class */ (function () {
     BModel.initPronunciation = function () {
         return {
             word_keyid: '',
-            word_class: 1 /* all */,
-            system: 1 /* IPA */,
-            local: 1 /* US */,
+            word_class: EWClass.all,
+            system: EPSystem.IPA,
+            local: EPLocal.US,
             transcript: '',
             description: '',
             sound_url: '',
@@ -32,7 +33,7 @@ var BModel = /** @class */ (function () {
     BModel.initMeaning = function () {
         return {
             word_keyid: '',
-            word_class: 1 /* all */,
+            word_class: EWClass.all,
             mean: '',
             tags: '',
         };
@@ -40,7 +41,7 @@ var BModel = /** @class */ (function () {
     BModel.initMeaningUsage = function () {
         return {
             word_keyid: '',
-            word_class: 1 /* all */,
+            word_class: EWClass.all,
             meaning_keyid: '',
             usage: '',
             explanation: '',
@@ -60,8 +61,8 @@ var BModel = /** @class */ (function () {
             password: '',
             updated_at: now(),
             created_at: now(),
-            status: 1 /* Pending */,
-            role: 1 /* User */,
+            status: EStatus.Pending,
+            role: EUserRole.User,
         };
     };
     BModel.initUserBasic = function () {
@@ -79,8 +80,8 @@ var BModel = /** @class */ (function () {
             timezone: '',
             quote: '',
             updated_at: now(),
-            gender: 1 /* NA */,
-            update_from_provider: 1 /* Local */,
+            gender: EGender.NA,
+            update_from_provider: EUserProvider.Local,
         };
     };
     BModel.DEFAULT_IMG = {

@@ -1,23 +1,24 @@
+import { EUserProvider } from '../enums';
 export function isLocal(role) {
-    return role === 1 /* Local */;
+    return role === EUserProvider.Local;
 }
 export function isGoogle(role) {
-    return role === 2 /* Google */;
+    return role === EUserProvider.Google;
 }
 export function isFacebook(role) {
-    return role === 3 /* Facebook */;
+    return role === EUserProvider.Facebook;
 }
 // enum EUserProvider helper
 export function getEUserProviderString(role) {
     switch (role) {
-        case 2 /* Google */:
+        case EUserProvider.Google:
             return 'Google';
-        case 3 /* Facebook */:
+        case EUserProvider.Facebook:
             return 'Facebook';
-        case 1 /* Local */:
+        case EUserProvider.Local:
         default:
             return 'Local';
     }
 }
-export var getEUserProviderMap = function () { return [2 /* Google */, 3 /* Facebook */, 1 /* Local */]; };
+export var getEUserProviderMap = function () { return [EUserProvider.Google, EUserProvider.Facebook, EUserProvider.Local]; };
 //# sourceMappingURL=BUserProvider.js.map

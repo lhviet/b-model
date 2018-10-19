@@ -1,42 +1,43 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var enums_1 = require("../enums");
 function isPending(statusType) {
-    return statusType === 1 /* Pending */;
+    return statusType === enums_1.EStatus.Pending;
 }
 exports.isPending = isPending;
 function isProcessing(statusType) {
-    return statusType === 2 /* Processing */;
+    return statusType === enums_1.EStatus.Processing;
 }
 exports.isProcessing = isProcessing;
 function isRejected(statusType) {
-    return statusType === 3 /* Rejected */;
+    return statusType === enums_1.EStatus.Rejected;
 }
 exports.isRejected = isRejected;
 function isActive(statusType) {
-    return statusType === 4 /* Active */;
+    return statusType === enums_1.EStatus.Active;
 }
 exports.isActive = isActive;
 function isDisabled(statusType) {
-    return statusType === 5 /* Disabled */;
+    return statusType === enums_1.EStatus.Disabled;
 }
 exports.isDisabled = isDisabled;
 // enum EStatus helper
 function getEStatusString(e) {
     switch (e) {
-        case 1 /* Pending */:
+        case enums_1.EStatus.Pending:
             return 'Pending';
-        case 2 /* Processing */:
+        case enums_1.EStatus.Processing:
             return 'Processing';
-        case 3 /* Rejected */:
+        case enums_1.EStatus.Rejected:
             return 'Rejected';
-        case 4 /* Active */:
+        case enums_1.EStatus.Active:
             return 'Active';
-        case 5 /* Disabled */:
+        case enums_1.EStatus.Disabled:
             return 'Disabled';
         default:
             return '';
     }
 }
 exports.getEStatusString = getEStatusString;
-exports.getEStatusMap = function () { return [1 /* Pending */, 2 /* Processing */, 3 /* Rejected */, 4 /* Active */, 5 /* Disabled */]; };
+exports.getEStatusMap = function () { return [enums_1.EStatus.Pending, enums_1.EStatus.Processing, enums_1.EStatus.Rejected, enums_1.EStatus.Active, enums_1.EStatus.Disabled]; };
 //# sourceMappingURL=BStatus.js.map

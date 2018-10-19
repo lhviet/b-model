@@ -1,4 +1,4 @@
 // Pronunciation system
-export const enum EPSystem {
+export enum EPSystem {
   IPA = 1,
 }

@@ -1,5 +1,4 @@
-
-export const enum EStatus {
+export enum EStatus {
   Pending = 1,
   Processing,
   Rejected,

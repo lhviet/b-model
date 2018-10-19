@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var moment = require("moment");
+var enums_1 = require("./enums");
 var DEFAULT_IMG = {
     COVER: '/images/default-cover.png',
     PERSON: '/images/default-person.png',
@@ -13,7 +14,7 @@ var BModel = /** @class */ (function () {
         return {
             word: '',
             custom_url: '',
-            status: 1 /* Pending */,
+            status: enums_1.EStatus.Pending,
             created_at: now(),
             updated_at: now(),
         };
@@ -21,9 +22,9 @@ var BModel = /** @class */ (function () {
     BModel.initPronunciation = function () {
         return {
             word_keyid: '',
-            word_class: 1 /* all */,
-            system: 1 /* IPA */,
-            local: 1 /* US */,
+            word_class: enums_1.EWClass.all,
+            system: enums_1.EPSystem.IPA,
+            local: enums_1.EPLocal.US,
             transcript: '',
             description: '',
             sound_url: '',
@@ -34,7 +35,7 @@ var BModel = /** @class */ (function () {
     BModel.initMeaning = function () {
         return {
             word_keyid: '',
-            word_class: 1 /* all */,
+            word_class: enums_1.EWClass.all,
             mean: '',
             tags: '',
         };
@@ -42,7 +43,7 @@ var BModel = /** @class */ (function () {
     BModel.initMeaningUsage = function () {
         return {
             word_keyid: '',
-            word_class: 1 /* all */,
+            word_class: enums_1.EWClass.all,
             meaning_keyid: '',
             usage: '',
             explanation: '',
@@ -62,8 +63,8 @@ var BModel = /** @class */ (function () {
             password: '',
             updated_at: now(),
             created_at: now(),
-            status: 1 /* Pending */,
-            role: 1 /* User */,
+            status: enums_1.EStatus.Pending,
+            role: enums_1.EUserRole.User,
         };
     };
     BModel.initUserBasic = function () {
@@ -81,8 +82,8 @@ var BModel = /** @class */ (function () {
             timezone: '',
             quote: '',
             updated_at: now(),
-            gender: 1 /* NA */,
-            update_from_provider: 1 /* Local */,
+            gender: enums_1.EGender.NA,
+            update_from_provider: enums_1.EUserProvider.Local,
         };
     };
     BModel.DEFAULT_IMG = {

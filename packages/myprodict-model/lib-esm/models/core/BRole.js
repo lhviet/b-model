@@ -1,26 +1,27 @@
+import { EUserRole } from '../enums';
 export function isUser(role) {
-    return role === 1 /* User */;
+    return role === EUserRole.User;
 }
 export function isAdmin(role) {
-    return role === 2 /* Admin */;
+    return role === EUserRole.Admin;
 }
 export function isSuperAdmin(role) {
-    return role === 3 /* SuperAdmin */;
+    return role === EUserRole.SuperAdmin;
 }
 export function isAdminOrSuperAdmin(role) {
-    return role === 2 /* Admin */ || role === 3 /* SuperAdmin */;
+    return role === EUserRole.Admin || role === EUserRole.SuperAdmin;
 }
 // enum EUserRole helper
 export function getEUserRoleString(role) {
     switch (role) {
-        case 2 /* Admin */:
+        case EUserRole.Admin:
             return 'Admin';
-        case 3 /* SuperAdmin */:
+        case EUserRole.SuperAdmin:
             return 'SuperAdmin';
-        case 1 /* User */:
+        case EUserRole.User:
         default:
             return 'User';
     }
 }
-export var getEUserRoleMap = function () { return [2 /* Admin */, 3 /* SuperAdmin */, 1 /* User */]; };
+export var getEUserRoleMap = function () { return [EUserRole.Admin, EUserRole.SuperAdmin, EUserRole.User]; };
 //# sourceMappingURL=BRole.js.map

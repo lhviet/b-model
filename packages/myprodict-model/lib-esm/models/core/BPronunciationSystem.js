@@ -1,14 +1,15 @@
+import { EPSystem } from '../enums';
 export function isIPA(statusType) {
-    return statusType === 1 /* IPA */;
+    return statusType === EPSystem.IPA;
 }
 // enum EPSystem helper
 export function getEPSystemString(e) {
     switch (e) {
-        case 1 /* IPA */:
+        case EPSystem.IPA:
             return 'IPA';
         default:
             return '';
     }
 }
-export var getEPSystemMap = function () { return [1 /* IPA */]; };
+export var getEPSystemMap = function () { return [EPSystem.IPA]; };
 //# sourceMappingURL=BPronunciationSystem.js.map

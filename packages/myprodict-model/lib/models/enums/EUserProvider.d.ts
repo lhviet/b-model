@@ -1,5 +1,5 @@
-export declare const enum EUserProvider {
+export declare enum EUserProvider {
     Local = 1,
     Google = 2,
-    Facebook = 3,
+    Facebook = 3
 }
