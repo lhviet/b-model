@@ -1,4 +1,6 @@
-import {EGender, EUserProvider} from "../enums";
+import {MPTypes} from '../../MPTypes';
+import Gender = MPTypes.Gender;
+import UserProvider = MPTypes.UserProvider;
 
 export interface IUserBasicInfo {
   keyid: string;
@@ -19,8 +21,8 @@ export interface IUserBasicInfoValue {
   timezone: string;
   quote: string;
 
-  gender: EGender;
-  update_from_provider: EUserProvider;
+  gender: Gender;
+  update_from_provider: UserProvider;
 
   updated_at: number;
 }

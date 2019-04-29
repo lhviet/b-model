@@ -1,8 +1,9 @@
-import {EPSystem} from "../enums";
 import {IWordPLocal} from "./IWordPLocal";
+import {MPTypes} from '../../MPTypes';
+import PronunciationSystem = MPTypes.PronunciationSystem;
 
 
 export interface IWordPSystem {
-  system: EPSystem;
+  system: PronunciationSystem;
   locals: IWordPLocal[];
 }

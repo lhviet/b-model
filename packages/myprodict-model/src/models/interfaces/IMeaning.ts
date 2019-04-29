@@ -1,4 +1,5 @@
-import {EWClass} from '../enums';
+import {MPTypes} from '../../MPTypes';
+import WordClass = MPTypes.WordClass;
 
 export interface IMeaning {
   keyid: string;
@@ -7,7 +8,7 @@ export interface IMeaning {
 
 export interface IMeaningValue {
   word_keyid: string;   // max 16 chars, reference to Word (keyid)
-  word_class: EWClass;
+  word_class: WordClass;
   mean: string;
   tags: string;
 }

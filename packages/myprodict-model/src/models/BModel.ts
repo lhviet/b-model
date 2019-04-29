@@ -8,7 +8,14 @@ import {
   IUserValue,
   IUserBasicInfoValue
 } from './interfaces';
-import {EGender, EPLocal, EPSystem, EStatus, EUserProvider, EUserRole, EWClass} from './enums';
+import {MPTypes} from '../MPTypes';
+import Status = MPTypes.Status;
+import PronunciationSystem = MPTypes.PronunciationSystem;
+import WordClass = MPTypes.WordClass;
+import Local = MPTypes.Local;
+import Gender = MPTypes.Gender;
+import UserProvider = MPTypes.UserProvider;
+import UserRole = MPTypes.UserRole;
 
 const DEFAULT_IMG = {
   COVER: '/images/default-cover.png',
@@ -35,7 +42,7 @@ export class BModel {
     return {
       word: '',
       custom_url: '',
-      status: EStatus.Pending,
+      status: Status.Pending,
       created_at: now(),
       updated_at: now(),
     };
@@ -44,9 +51,9 @@ export class BModel {
   static initPronunciation(): IPronunciationValue {
     return {
       word_keyid: '',
-      word_class: EWClass.all,  // i.e., 1 = all, 2 = noun, 3 = verb, 4 = adjective, 5 = ...
-      system: EPSystem.IPA,     // i.e., 1 = IPA
-      local: EPLocal.US,      // i.e., 1 = US
+      word_class: WordClass.all,  // i.e., 1 = all, 2 = noun, 3 = verb, 4 = adjective, 5 = ...
+      system: PronunciationSystem.IPA,     // i.e., 1 = IPA
+      local: Local.US,      // i.e., 1 = US
       transcript: '',
       description: '',
       sound_url: '',
@@ -58,7 +65,7 @@ export class BModel {
   static initMeaning(): IMeaningValue {
     return {
       word_keyid: '',
-      word_class: EWClass.all,
+      word_class: WordClass.all,
       mean: '',
       tags: '',
     };
@@ -67,7 +74,7 @@ export class BModel {
   static initMeaningUsage(): IMeaningUsageValue {
     return {
       word_keyid: '',
-      word_class: EWClass.all,
+      word_class: WordClass.all,
       meaning_keyid: '',
       usage: '',
       explanation: '',
@@ -89,8 +96,8 @@ export class BModel {
       password: '',
       updated_at: now(),
       created_at: now(),
-      status: EStatus.Pending, // 15 chars,
-      role: EUserRole.User,   // 15 chars
+      status: Status.Pending, // 15 chars,
+      role: UserRole.User,   // 15 chars
     };
   }
 
@@ -111,8 +118,8 @@ export class BModel {
 
       updated_at: now(),
 
-      gender: EGender.NA,
-      update_from_provider: EUserProvider.Local,
+      gender: Gender.NA,
+      update_from_provider: UserProvider.Local,
     };
   }
 }

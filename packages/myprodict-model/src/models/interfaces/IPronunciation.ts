@@ -1,4 +1,7 @@
-import {EPLocal, EPSystem, EWClass} from '../enums';
+import {MPTypes} from '../../MPTypes';
+import WordClass = MPTypes.WordClass;
+import Local = MPTypes.Local;
+import PronunciationSystem = MPTypes.PronunciationSystem;
 
 export interface IPronunciation {
   keyid: string;
@@ -7,9 +10,9 @@ export interface IPronunciation {
 
 export interface IPronunciationValue {
   word_keyid: string;   // max 16 chars, reference to Word (keyid)
-  word_class: EWClass; // class of word, i.e. noun, verb, adjective
-  system: EPSystem;     // pronunciation transcript system, i.e. IPA
-  local: EPLocal;      // i.e., US, GB, AU
+  word_class: WordClass; // class of word, i.e. noun, verb, adjective
+  system: PronunciationSystem;     // pronunciation transcript system, i.e. IPA
+  local: Local;      // i.e., US, GB, AU
   transcript: string;
   description: string;
   sound_url: string;

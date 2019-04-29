@@ -1,7 +1,8 @@
-import {EPLocal} from "../enums";
 import {IPronunciationClass} from "./IPronunciationClass";
+import {MPTypes} from '../../MPTypes';
+import Local = MPTypes.Local;
 
 export interface IWordPLocal {
-  local: EPLocal;
+  local: Local;
   pArr: IPronunciationClass[];
 }

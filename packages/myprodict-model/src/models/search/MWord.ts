@@ -1,10 +1,11 @@
-import {EPLocal, EPSystem, EWClass} from '../enums';
 import {IWordPSystem} from "./IWordPSystem";
 import {IPronunciationClass} from "./IPronunciationClass";
-
+import {MPTypes} from '../../MPTypes';
+import PronunciationSystem = MPTypes.PronunciationSystem;
+import Local = MPTypes.Local;
+import WordClass = MPTypes.WordClass;
 
 export class MWord {
-
   keyid: string;
   word: string;
   custom_url: string;
@@ -22,9 +23,9 @@ export class MWord {
   }
 
   addPronunciation(keyid: string,
-                   system: EPSystem,
-                   local: EPLocal,
-                   wordClass: EWClass,
+                   system: PronunciationSystem,
+                   local: Local,
+                   wordClass: WordClass,
                    pronunciation: string,
                    description: string) {
     const pClass: IPronunciationClass = {
