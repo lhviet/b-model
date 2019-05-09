@@ -6,3 +6,4 @@ export * from './IPronunciation';
 export * from './IWord';
 export * from './IUser';
 export * from './IUserBasicInfo';
+export * from './IReadAloud';

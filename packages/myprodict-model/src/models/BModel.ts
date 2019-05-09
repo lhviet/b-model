@@ -6,7 +6,8 @@ import {
   IPronunciationValue,
   IWordValue,
   IUserValue,
-  IUserBasicInfoValue
+  IUserBasicInfoValue,
+  IReadAloudValue,
 } from './interfaces';
 import {MPTypes} from '../MPTypes';
 import Status = MPTypes.Status;
@@ -120,6 +121,18 @@ export class BModel {
 
       gender: Gender.NA,
       update_from_provider: UserProvider.Local,
+    };
+  }
+
+  static initReadAloud(): IReadAloudValue {
+    return {
+      ra_content: '',
+      status: Status.Active,
+      created_at: now(),
+      updated_at: now(),
+      ra_order: 0,
+      tags: '',
+      audio_url: '',
     };
   }
 }
