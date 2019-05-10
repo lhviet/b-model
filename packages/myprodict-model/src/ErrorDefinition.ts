@@ -24,5 +24,4 @@ export const ERROR = {
     title: 'Internal Server Error',
     detail: 'An internal error in backend server happened.'
   },
-
 };

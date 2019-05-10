@@ -1,10 +1,7 @@
 {
-	"scripts": {
-		"p:all": "yarn p:bibooki && yarn p:prodict",
-		"p:bibooki": "yarn lerna publish --registry=https://registry.npmjs.org/ --scope=\"bibooki-model\"",
-		"p:prodict": "yarn lerna publish --registry=https://registry.npmjs.org/ --scope=\"myprodict-model\""
-	},
-	"devDependencies": {
-		"lerna": "^3.13.4"
-	}
+  "scripts": {
+  },
+  "devDependencies": {
+    "lerna": "^3.13.4"
+  }
 }

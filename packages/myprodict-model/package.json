@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rm ./lib -r && rm ./lib-esm -r && tsc -p tsconfig.json && yarn ts:es6",
     "ts:c": "tsc -p tsconfig.json & yarn ts:es6",
-    "ts:es6": "tsc -m es6 --outDir lib-esm"
+    "ts:es6": "tsc -m es6 --outDir lib-esm",
+    "publish": "lerna publish --registry=https://registry.npmjs.org/"
   },
   "dependencies": {
     "moment": "^2.24.0"
