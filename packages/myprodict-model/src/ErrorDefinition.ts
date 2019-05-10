@@ -14,6 +14,11 @@ export const ERROR = {
     title: 'Forbidden',
     detail: 'You do not have necessary permissions to perform this action.'
   },
+  code404: {
+    code: 404,
+    title: 'Not found.',
+    detail: 'The content is not found. Please check your parameters.'
+  },
   code500: {
     code: 500,
     title: 'Internal Server Error',
